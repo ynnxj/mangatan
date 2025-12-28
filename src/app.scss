@@ -1,0 +1,43 @@
+:root {
+  /* Base Colors */
+  --win98-gray: #c0c0c0;
+  --win98-dark-gray: #808080;
+  --win98-darker-gray: #404040;
+  --win98-black: #000000;
+  --win98-white: #ffffff;
+
+  /* Classic Blues */
+  --win98-blue: #000080;
+  --win98-light-blue: #1084d0;
+  --win98-desktop-blue: #008080;
+
+  /* Accent Colors */
+  --win98-red: #ff0000;
+  --win98-yellow: #ffff00;
+  --win98-green: #00ff00;
+
+  /* Button & Window Colors */
+  --win98-button-face: #c0c0c0;
+  --win98-button-shadow: #808080;
+  --win98-button-highlight: #ffffff;
+  --win98-button-dark-shadow: #404040;
+  --win98-window-bg: #c0c0c0;
+
+  /* Fonts */
+  --win98-font: 'MS Sans Serif', 'Microsoft Sans Serif', Arial, sans-serif;
+  --win98-font-size: 11px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--win98-font);
+  font-size: var(--win98-font-size);
+  background-color: var(--win98-desktop-blue);
+  color: var(--win98-black);
+}
