@@ -1,27 +1,26 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  let currentTime = $state(new Date());
+  import HomeModal from './StartModal.svelte';
 
-  // Get current page
-  const path = $derived($page.url.pathname);
+  let currentTime = $state(new Date()),
+    showModal = $state(false);
 
-  setInterval(() => {
-    currentTime = new Date();
-  }, 1000);
+  const path = $derived($page.url.pathname),
+    formattedTime = $derived(
+      currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    );
 
-  // Menu items
   const menuItems = [
+    { name: 'Home', path: '/' },
     { name: 'Contact', path: '/contact' },
     { name: 'Merch', path: '/merch' }
   ];
 
-  // Formatted time
-  const formattedTime = $derived(
-    currentTime.toLocaleTimeString([], {
-      hour: '2-digit',
-      minute: '2-digit'
-    })
-  );
+  const toggleModal = () => {
+    showModal = !showModal;
+  };
+
+  setInterval(() => (currentTime = new Date()), 1000);
 </script>
 
 <!-- Taskbar Container -->
@@ -29,10 +28,13 @@
   <!-- Menu -->
   <div class="left">
     <!-- Start Button -->
-    <a href="/" class="start-btn {path === '/' ? 'active' : ''}">
+    <button onclick={toggleModal} class="start-btn {showModal ? 'active' : ''}">
       <span class="star">★</span>
       <span class="text">Start</span>
-    </a>
+    </button>
+    {#if showModal}
+      <HomeModal show={showModal} onclose={() => (showModal = false)} />
+    {/if}
 
     <!-- Separator -->
     <div class="separator"></div>
