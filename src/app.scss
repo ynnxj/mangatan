@@ -40,11 +40,13 @@ body {
   font-family: var(--win98-font);
   font-size: var(--win98-font-size);
   background-image: url('/assets/images/background2.jpg');
-  background-size: cover; /* fill screen */
-  background-position: center; /* keep centered */
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: var(--win98-black);
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 main {

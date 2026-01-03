@@ -10,6 +10,7 @@
   <ul>
     {#if gigs.length > 0}
       {#each gigs as gig}
+        <!-- TODO: Move div inside li -->
         <div class="list-items">
           <li>
             <h4>{gig.title}</h4>
