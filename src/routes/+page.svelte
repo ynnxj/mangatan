@@ -12,12 +12,10 @@
   <a href="/about">Enter</a>
 
   <img class="grain-effect" src="/assets/images/grain.jpg" alt="Grain Effect" />
-  <!-- TODO: Change to video background later -->
-  <img
-    class="background-image"
-    src="/assets/images/group-full-warm.jpg"
-    alt="Band Portrait Full Body placeholder"
-  />
+  <!-- TODO: Change video background -->
+  <video class="background-video" autoplay loop muted>
+    <source src="/assets/videos/video1.mp4" type="video/mp4" />
+  </video>
 </section>
 
 <style lang="scss">
@@ -63,11 +61,11 @@
       }
     }
 
-    .background-image {
+    .background-video {
       width: 100vw;
       height: 100vh;
       object-fit: cover;
-      filter: blur(3px) brightness(2) contrast(1.4) saturate(50%) hue-rotate(150deg);
+      filter: sepia(100%) hue-rotate(180deg) saturate(500%) brightness(50%) contrast(70%);
     }
 
     .grain-effect {
