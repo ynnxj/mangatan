@@ -2,30 +2,49 @@
   export let side: 'left' | 'right';
 </script>
 
-<div class="container" class:left={side === 'left'} class:right={side === 'right'}>
-  <h3>{side}</h3>
-
+<div class="container {side}">
   {#if side === 'left'}
-    <div>Some left content</div>
+    <h3>What's up!</h3>
   {:else}
-    <div>Some right content</div>
+    <h3>Heyy!</h3>
   {/if}
 </div>
 
 <style lang="scss">
   .container {
     position: fixed;
-    top: 15%;
-    padding: 50px;
-    border: 2px solid black;
+    top: 135px;
     width: 240px;
-  }
+    height: 70vh;
+    padding: 20px;
+    border: 2px solid rgb(255, 255, 255);
+    border-bottom: 2px solid var(--win98-darker-gray);
+    border-right: 2px solid var(--win98-darker-gray);
+    border-radius: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    background-color: var(--win98-light-gray);
+    --vw-offset: 33vw;
 
-  .left {
-    left: 15%;
-  }
+    // TODO: fix this mess like wth is this girly pop
+    @media (max-width: 1735px) {
+      --vw-offset: 40vw;
+    }
 
-  .right {
-    right: 15%;
+    @media (max-width: 1415px) {
+      --vw-offset: 49vw;
+    }
+
+    &.left {
+      left: calc(50% - var(--vw-offset));
+    }
+
+    &.right {
+      right: calc(50% - var(--vw-offset));
+    }
+
+    @media (max-width: 1100px) {
+      display: none;
+    }
   }
 </style>
