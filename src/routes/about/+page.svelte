@@ -13,11 +13,13 @@
 </section>
 
 <style lang="scss">
+  // TEMPORARY
+  // Will probably refactor
   section {
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    margin: 20px 0;
+    margin: 100px;
   }
 </style>
