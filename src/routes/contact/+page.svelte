@@ -7,39 +7,10 @@
 </script>
 
 <!--TODO: Fix class for Window. This is a v messy solution -->
+<!-- ALSO, refactor some of this -->
 <section>
   <div class="contact-container">
-    <div class="left-column">
-      <Window windowTitle={'Contact Us'}>
-        <h3 class="form-title">Send a Message</h3>
-        <Form />
-      </Window>
-
-      <div class="social-media-window">
-        <Window windowTitle={'Follow Us!'}>
-          <h3 class="social-media-title">⊹₊ ˚‧︵‿₊୨୧₊‿︵‧ ˚ ₊⊹ Social Media .ೃ࿔*:･</h3>
-          <div class="social-media-container">
-            <div class="stamps">
-              <a href="https://www.instagram.com/mangatanband/" title="Instagram" target="_blank"
-                ><img src={instagram} alt="instagram icon" /></a
-              >
-              <a
-                href="https://open.spotify.com/artist/04sRSWXovcYM8oSfApH4a6"
-                title="Spotify"
-                target="_blank"><img src={spotify} alt="spotify icon" /></a
-              >
-              <a
-                href="https://www.youtube.com/channel/UCs3M4AnSaBZ8AiqLlUD4q5w"
-                title="YouTube"
-                target="_blank"><img src={youtube} alt="youtube icon" /></a
-              >
-            </div>
-          </div>
-        </Window>
-      </div>
-    </div>
-
-    <Window windowTitle={'A Message'}>
+    <Window windowTitle={'A Message from Us'}>
       <div class="right">
         <div class="text">
           <pre class="cat">
@@ -52,29 +23,67 @@
 ⣠⠾⠋⠙⣶⣤⣤⣤⣤⣤⣀⣠⣤⣾⣿⠴⠶⠚⠋⠉⠁⠀⠀⠀⠀⠀⠀
 ⠛⠒⠛⠉⠉⠀⠀⠀⣴⠟⢃⡴⠛⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠛⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-      </pre>
+          </pre>
           <p>
             Please visit us on social media or leave a message if you have any questions or just
-            want to say hi, and we'll get back to you as soon as possible.
+            want to say hi, and we'll get back to you as soon as possible. We appreciate all the
+            love and support!
           </p>
-          <p>We appreciate all the love and support!</p>
-          <pre>
+          <pre class="love-cat">
   ∧,,,∧
 ( ̳• · • ̳)
 /   づ♡ We love you
           </pre>
-          <p>Best wishes, Mångatan.</p>
         </div>
+
         <div class="image-container">
           <img src="/assets/images/sparkles-sparkle.gif" class="sparkle" alt="sparkle" />
           <img src="/assets/images/group-full-warm.jpg" class="contact-img" alt="Band portrait" />
         </div>
       </div>
     </Window>
+
+    <Window windowTitle={'Contact Us'}>
+      <h3 class="form-title">
+        Send a Message
+        <img src="src/lib/Icons/bubble.gif" class="bubble-gif" alt="gif" />
+      </h3>
+      <div>
+        <Form />
+      </div></Window
+    >
+
+    <div class="social-media-window">
+      <Window windowTitle={'Follow Us!'}>
+        <h3 class="social-media-title">⊹₊ ˚‧︵‿₊୨୧₊‿︵‧ ˚ ₊⊹ Social Media .ೃ࿔*:･</h3>
+        <div class="social-media-container">
+          <div class="stamps">
+            <a href="https://www.instagram.com/mangatanband/" title="Instagram" target="_blank"
+              ><img src={instagram} alt="instagram icon" /></a
+            >
+            <a
+              href="https://open.spotify.com/artist/04sRSWXovcYM8oSfApH4a6"
+              title="Spotify"
+              target="_blank"><img src={spotify} alt="spotify icon" /></a
+            >
+            <a
+              href="https://www.youtube.com/channel/UCs3M4AnSaBZ8AiqLlUD4q5w"
+              title="YouTube"
+              target="_blank"><img src={youtube} alt="youtube icon" /></a
+            >
+          </div>
+        </div>
+      </Window>
+    </div>
   </div>
 </section>
 
 <style lang="scss">
+  // TEMPORARY
+  section {
+    margin: 60px;
+  }
+
   // TODO: refactor styles,
   // this is way too long
   .social-media-title {
@@ -86,21 +95,6 @@
     box-shadow: 1px 1px 5px rgb(49, 49, 49);
     background-color: rgb(49, 49, 49);
     margin: 0;
-  }
-
-  h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2rem;
-  }
-
-  .left-column {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .social-media-window {
-    margin-left: -100px;
   }
 
   .social-media-container {
@@ -119,13 +113,23 @@
 
   .contact-container {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
     gap: 2rem;
 
     .contact-img {
       max-width: 100%;
       border: 1px solid var(--win98-black);
     }
+  }
+
+  .form-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    padding: 10px;
+    margin-top: 0;
+    text-shadow: 1px 1px 3px var(--win98-black);
+    font-weight: 500;
+    background-color: var(--win98-light-gray);
   }
 
   .right {
@@ -140,10 +144,14 @@
   .text {
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
-    padding: 20px;
-    border: 1px solid rgb(0, 0, 0);
+    padding: 10px 20px 0 20px;
     background-color: var(--win98-light-gray);
+
+    .wonderful-gif {
+      width: 150px;
+      align-self: end;
+      margin: 10px;
+    }
   }
 
   .cat {
