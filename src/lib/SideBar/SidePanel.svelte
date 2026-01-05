@@ -2,27 +2,216 @@
   export let side: 'left' | 'right';
 </script>
 
-<div class="container {side}">
-  {#if side === 'left'}
-    <h3>What's up!</h3>
-  {:else}
-    <h3>Heyy!</h3>
-  {/if}
-</div>
+{#if side === 'left'}
+  <div class="container {side}">
+    <h3>Welcome Home</h3>
+    <h4>Important Links</h4>
+    <div class="links">
+      <ul class="links-list">
+        <li>
+          <!-- TODO: Add actual links -->
+          <img src="src/lib/Icons/SpinningStar.gif" alt="img" />
+          <a href="#" target="_blank" title="Instagram">Instagram</a>
+        </li>
+        <li>
+          <img src="src/lib/Icons/SpinningStar.gif" alt="img" />
+          <a href="#" target="_blank" title="YouTube">YouTube</a>
+        </li>
+        <li>
+          <img src="src/lib/Icons/SpinningStar.gif" alt="img" />
+          <a href="#" target="_blank" title="Apple Music">Apple Music</a>
+        </li>
+        <li>
+          <img src="src/lib/Icons/SpinningStar.gif" alt="img" />
+          <a href="/spotify" target="_blank" title="Spotify">Spotify</a>
+        </li>
+      </ul>
+    </div>
+    <!-- TODO: Maybe make this into its own thing too -->
+    <div class="collection">
+      <img src="src/lib/Icons/desktop.webp" alt="img" />
+      <img src="src/lib/Icons/snowflake.gif" alt="img" />
+      <img src="src/lib/Icons/doll.gif" alt="img" />
+      <img src="src/lib/Icons/cat.gif" alt="img" />
+    </div>
+  </div>
+{:else}
+  <!-- TODO: If these's time, turn this into data to render -->
+  <div class="container {side}">
+    <h3>News</h3>
+    <h4>Highlights</h4>
+    <div class="news-highlight-section">
+      <p>We did an interview / live performance with Fryshuset's Radarn. Check it out!</p>
+      <img src="src/lib/Icons/clickclickclick.webp" class="click" alt="click" />
+      <img src="src/lib/Icons/point-down.webp" class="point-down" alt="pointer cursor" />
+      <div class="news-digicam">
+        <img src="/assets/images/digicam.png" class="digicam" alt="digicam frame" />
+      </div>
+    </div>
+
+    <h4>Updates</h4>
+    <ul class="news-list-section">
+      <li>
+        <h5>500 minuter OUT NOW!</h5>
+        <p>Finally, out new single '500 minuter' is now out on spotify.</p>
+        <!-- TODO: Add spotify link -->
+        <a href="#">Click here to listen TODAY</a>
+      </li>
+      <li>
+        <h5>Omg we have a new website!</h5>
+        <p>
+          Welcome to our brand new website!! This is a dream come true. I hope you enjoy it as much
+          as we do. xoxo
+        </p>
+      </li>
+    </ul>
+  </div>
+{/if}
 
 <style lang="scss">
-  .container {
-    position: fixed;
-    top: 135px;
-    width: 240px;
-    height: 70vh;
+  // TODO: REFACTORRRR
+  .links {
+    background-color: white;
+    padding: 0 10px;
+    margin: 10px 0;
+    border: 1px solid gray;
+    box-shadow: 1px 1px 3px var(--win98-dark-gray);
+    margin: 20px;
+    margin-top: 0;
+  }
+
+  .links-list {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      margin-top: 10px;
+      display: flex;
+      gap: 5px;
+      font-size: 1.5rem;
+      align-items: center;
+    }
+  }
+
+  .collection {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     padding: 20px;
+  }
+
+  .news-highlight-section {
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 1px 1px 3px var(--win98-darker-gray);
+    padding: 10px;
+    margin: 20px;
+    margin-top: 0;
+  }
+
+  .news-digicam {
+    display: flex;
+    justify-content: center;
+
+    .digicam {
+      width: 270px;
+      filter: grayscale(100%) drop-shadow(1px 1px 5px black);
+      z-index: 10;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .news-digicam {
+    background-image: url('/assets/images/radarn.gif');
+    background-repeat: no-repeat;
+    background-position: -30px 30px;
+    background-size: 100%;
+  }
+
+  .news-list-section {
+    list-style: none;
+    padding: 0;
+    margin: 20px;
+    margin-top: 0;
+
+    li {
+      background-color: var(--win98-white);
+      padding: 10px;
+      border: 1px solid black;
+      box-shadow: 1px 1px 3px rgb(59, 59, 59);
+      margin-bottom: 10px;
+    }
+  }
+
+  h4 {
+    font-family: var(--win98-font-title);
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--win98-darker-gray);
+    color: rgb(0, 0, 0);
+    padding: 5px 0;
+    margin: 10px 0;
+    margin: 20px;
+  }
+
+  h3 {
+    font-family: var(--win98-font-title);
+    font-size: 2rem;
+    border-bottom: solid 1px rgb(48, 48, 48);
+    box-shadow: 1px 1px 5px rgb(58, 58, 58);
+    background: #bfbfbf;
+    background: linear-gradient(
+      0deg,
+      rgba(191, 191, 191, 1) 0%,
+      rgba(99, 99, 99, 1) 14%,
+      rgba(74, 70, 70, 1) 29%,
+      rgba(77, 77, 77, 1) 38%,
+      rgba(196, 196, 196, 1) 100%
+    );
+    padding: 0 5px;
+    color: white;
+    text-shadow: 1px 1px 3px white;
+    font-weight: 400;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    left: 0;
+    margin: 0;
+  }
+
+  h5 {
+    font-family: var(--win98-font-title);
+    font-size: 1.2rem;
+    margin: 10px 0;
+    font-weight: 400px;
+  }
+
+  .point-down {
+    width: 30px;
+    position: absolute;
+    right: 30%;
+    top: 25%;
+    z-index: 20;
+  }
+
+  .click {
+    margin: 10px;
+  }
+
+  .container {
+    overflow: visible;
+    position: fixed;
+    top: 80px;
+    width: 250px;
+    height: auto;
     border: 2px solid rgb(255, 255, 255);
     border-bottom: 2px solid var(--win98-darker-gray);
     border-right: 2px solid var(--win98-darker-gray);
     border-radius: 20px;
+    box-shadow: 1px 1px 5px rgb(51, 51, 51);
     box-sizing: border-box;
-    overflow-y: auto;
     background-color: var(--win98-light-gray);
     --vw-offset: 33vw;
 
@@ -41,6 +230,7 @@
 
     &.right {
       right: calc(50% - var(--vw-offset));
+      width: 300px;
     }
 
     @media (max-width: 1100px) {
