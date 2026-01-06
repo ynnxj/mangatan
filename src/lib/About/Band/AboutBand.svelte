@@ -206,10 +206,10 @@
       background-image: url('/assets/images/leopard-bg.jfif');
     }
     &.benjamin {
-      background-image: url('assets/images/benjamin-bg.jpg');
+      background-image: url('assets/images/benjamin-bg.jfif');
     }
     &.frida {
-      background-image: url('assets/images/frida-bg.jpg');
+      background-image: url('assets/images/group-half-legs.jpg');
     }
     &.luna {
       background-image: url('assets/images/luna-bg.jpg');
