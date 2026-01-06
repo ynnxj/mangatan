@@ -75,8 +75,8 @@
   </div>
 
   {#if selectedMember}
-    <div class="member">
-      <button onclick={closeMember}>Close</button>
+    <div class="member {selectedMember.toLowerCase()}">
+      <button class="exit-btn" onclick={closeMember}>X</button>
       {#each members as { name, Member }}
         {#if name === selectedMember}
           <Member />
@@ -194,7 +194,31 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background: white;
-    padding: 2rem;
-    border: 2px solid #000;
+    border: 2px solid black;
+    width: 1000px;
+    height: 700px;
+    padding: 60px 80px;
+    z-index: 10;
+    background-size: cover;
+    background-position: center;
+
+    &.angela {
+      background-image: url('/assets/images/leopard-bg.jfif');
+    }
+    &.benjamin {
+      background-image: url('assets/images/benjamin-bg.jpg');
+    }
+    &.frida {
+      background-image: url('assets/images/frida-bg.jpg');
+    }
+    &.luna {
+      background-image: url('assets/images/luna-bg.jpg');
+    }
+
+    // TODO: Fix this button
+    .exit-btn {
+      position: absolute;
+      padding: 10px 20px;
+    }
   }
 </style>
