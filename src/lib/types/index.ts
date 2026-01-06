@@ -3,11 +3,21 @@ export interface Gig {
   title: string;
   date: string;
   location: string;
-  coordinates: {
-    lat: number;
-    lng: number;
-  };
   venue_link: string;
   tickets_link: string;
-  price: number;
+}
+
+export interface Profile {
+  name: string;
+  img: string;
+  desc: string;
+  likes: string[];
+  favSong: {
+    title: string;
+    artist: string;
+    albumCover: string;
+  };
+  favImg: string;
+  listIcon?: string;
+  cdFrameImg?: string;
 }
