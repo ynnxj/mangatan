@@ -1,0 +1,51 @@
+.angelas-theme {
+  --profile-title-font: 'Comic Sans MS';
+  --profile-font-family: 'Courier New', Courier, monospace;
+
+  --profile-title-color: hotpink;
+  --profile-color: white;
+  --profile-bg-color: black;
+
+  --profile-img-border: white;
+  --profile-border-bottom-color: hotpink;
+  --profile-border-img: url('/assets/images/blacklacelarge.png') 37 round;
+}
+
+.benjamins-theme {
+  --profile-title-font: 'Times New Roman', Times, serif;
+  --profile-font-family: 'Times New Roman', Times, serif;
+
+  --profile-title-color: rgb(53, 90, 255);
+  --profile-color: rgb(0, 0, 0);
+  --profile-bg-color: rgb(255, 255, 255);
+
+  --profile-img-border: white;
+  --profile-border-bottom-color: rgb(53, 38, 255);
+  --profile-border-img: none;
+}
+
+.fridas-theme {
+  --profile-title-font: 'Times New Roman', Times, serif;
+  --profile-font-family: 'Times New Roman', Times, serif;
+
+  --profile-title-color: rgb(43, 98, 150);
+  --profile-color: rgb(255, 255, 255);
+  --profile-bg-color: rgb(185, 174, 167);
+
+  --profile-img-border: white;
+  --profile-border-bottom-color: rgb(255, 223, 135);
+  --profile-border-img: url('/assets/images/whitelace.png') 37 round;
+}
+
+.lunas-theme {
+  --profile-title-font: 'Andale Mono', monospace;
+  --profile-font-family: 'Andale Mono', monospace;
+
+  --profile-title-color: rgb(38, 228, 95);
+  --profile-color: rgb(255, 255, 255);
+  --profile-bg-color: rgb(0, 0, 0);
+
+  --profile-img-border: white;
+  --profile-border-bottom-color: rgb(37, 226, 31);
+  --profile-border-img: url('/assets/images/spike-frame.png') 20 fill round;
+}

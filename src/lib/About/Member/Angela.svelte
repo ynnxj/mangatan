@@ -11,11 +11,12 @@
     nisi ut aliquip ex ea commodo consequat.`,
     likes: ['Lorem ipsum', 'Dolor', 'Sit amet'],
     favSong: {
-      title: '炉心融解(Meltdown)',
-      artist: '鏡音リン',
+      title: 'Meltdown',
+      artist: 'Iroha(sasaki)',
       albumCover: '/assets/images/meltdown-album-cover.jfif'
     },
-    favImg: '/assets/images/angela-full-cold.jpg'
+    favImg: '/assets/images/angela-full-cold.jpg',
+    themeClass: 'angelas-theme'
   };
 </script>
 

@@ -1,12 +1,13 @@
 <script lang="ts">
   import type { Profile } from '$lib/types/index';
+  import '$lib/About/Member/profile-themes.scss';
   export let profile: Profile;
 
   $: listIcon = profile.listIcon || 'src/lib/Icons/SpinningStar.gif';
   $: cdFrameImg = profile.cdFrameImg || 'src/lib/Icons/cd-frame.png';
 </script>
 
-<article>
+<article class={profile.themeClass}>
   <div class="info-box box">
     <div>
       <img src={profile.img} alt={`a portrait of ${profile.name}`} />
@@ -62,19 +63,18 @@
     gap: 20px;
 
     .box {
-      background-color: rgb(0, 0, 0);
+      background-color: var(--profile-bg-color);
       padding: 10px 20px;
-      background-color: rgb(0, 0, 0);
       border: 20px solid transparent;
       background-clip: padding-box;
-      border-image: url('/assets/images/blacklacelarge.png') 37 round;
+      border-image: var(--profile-border-img);
     }
 
     h3,
     h4 {
-      color: hotpink;
-      border-bottom: 1px solid hotpink;
-      font-family: 'Comic Sans MS';
+      color: var(--profile-title-color);
+      border-bottom: 1px solid var(--profile-border-bottom-color);
+      font-family: var(--profile-title-font);
       font-size: 1.7rem;
       margin: 10px 0;
       padding-bottom: 5px;
@@ -82,8 +82,8 @@
 
     p,
     li {
-      font-family: 'Courier New', Courier, monospace;
-      color: white;
+      font-family: var(--profile-font-family);
+      color: var(--profile-color);
       font-size: 1.5rem;
     }
 
@@ -107,7 +107,7 @@
       img {
         width: 100px;
         margin-right: 30px;
-        border: 1px solid white;
+        border: var(--profile-img-border);
       }
     }
 
@@ -124,7 +124,7 @@
           position: relative;
           width: 115px;
           height: 100px;
-          border: 1px solid white;
+          border: var(--profile-img-border);
 
           .album-cover,
           .cd-frame {
@@ -136,7 +136,6 @@
 
           .cd-frame {
             z-index: 10;
-            filter: opacity(70%) brightness(80%);
           }
         }
       }
@@ -145,7 +144,7 @@
     .fav-img {
       img {
         width: 150px;
-        border: 1px solid white;
+        border: var(--profile-img-border);
       }
     }
   }

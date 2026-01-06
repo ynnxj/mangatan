@@ -20,4 +20,5 @@ export interface Profile {
   favImg: string;
   listIcon?: string;
   cdFrameImg?: string;
+  themeClass: string;
 }
