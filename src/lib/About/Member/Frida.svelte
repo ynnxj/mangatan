@@ -1,6 +1,6 @@
 <script lang="ts">
   import ProfileModal from './ProfileModal.svelte';
-  import type { Profile } from '$lib/types/index';
+  import type { Profile } from '$lib/types/profile';
 
   const fridaProfile: Profile = {
     name: 'Frida',

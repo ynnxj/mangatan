@@ -1,5 +1,5 @@
 import { getGigs } from '$lib/server/db';
-import type { Gig } from '$lib/types/index';
+import type { Gig } from '$lib/types/gigs';
 
 export const load = async () => {
   try {

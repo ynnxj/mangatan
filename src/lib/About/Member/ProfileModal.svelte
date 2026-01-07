@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Profile } from '$lib/types/index';
+  import type { Profile } from '$lib/types/profile';
   import '$lib/About/Member/profile-themes.scss';
   export let profile: Profile;
 

@@ -1,6 +1,6 @@
 <script lang="ts">
   import Window from '$lib/WindowBorder/Window.svelte';
-  import type { Gig } from '$lib/types/index';
+  import type { Gig } from '$lib/types/gigs';
 
   export let gigs: Gig[] = [];
 </script>

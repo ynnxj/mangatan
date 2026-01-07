@@ -1,7 +1,7 @@
 <script lang="ts">
   import AboutBand from '$lib/About/Band/AboutBand.svelte';
   import GigsList from '$lib/Gigs/GigsList.svelte';
-  import type { Gig } from '$lib/types/index';
+  import type { Gig } from '$lib/types/gigs';
   import { page } from '$app/stores';
 
   let gigs: Gig[] = $page.data?.gigs || [];
