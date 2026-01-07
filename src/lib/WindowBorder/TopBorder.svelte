@@ -1,7 +1,7 @@
 <script lang="ts">
-  import MinimizeIcon from '$lib/Icons/MinimizeIcon.svg';
-  import WindowIcon from '$lib/Icons/WindowIcon.svg';
-  import CloseIcon from '$lib/Icons/CloseIcon.svg';
+  import MinimizeIcon from '$lib/Icons/WindowIcons/MinimizeIcon.svg';
+  import WindowIcon from '$lib/Icons/WindowIcons/WindowIcon.svg';
+  import CloseIcon from '$lib/Icons/WindowIcons/CloseIcon.svg';
 
   export let title: string = 'Window Title';
 </script>

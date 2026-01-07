@@ -1,6 +1,6 @@
 <script lang="ts">
   import Window from '$lib/WindowBorder/Window.svelte';
-  import SpinningCd from '$lib/Icons/SpinningCd.gif';
+  import SpinningCd from '$lib/Icons//SmallIcons/SpinningCd.gif';
   import { members } from '../../../data/members';
   import './about-band.scss';
 

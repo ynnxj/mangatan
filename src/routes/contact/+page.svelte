@@ -1,9 +1,9 @@
 <script lang="ts">
   import Form from '$lib/Form/Form.svelte';
   import Window from '$lib/WindowBorder/Window.svelte';
-  import instagram from '$lib/Icons/instagram.gif';
-  import youtube from '$lib/Icons/youtube.png';
-  import spotify from '$lib/Icons/spotify.gif';
+  import Instagram from '$lib/Icons/WebStamps/Instagram.gif';
+  import Youtube from '$lib/Icons/WebStamps/Youtube.png';
+  import Spotify from '$lib/Icons/WebStamps/Spotify.gif';
 </script>
 
 <!--TODO: Fix class for Window. This is a v messy solution -->
@@ -46,7 +46,7 @@
     <Window windowTitle={'Contact Us'}>
       <h3 class="form-title">
         Send a Message
-        <img src="src/lib/Icons/bubble.gif" class="bubble-gif" alt="gif" />
+        <img src="src/lib/Icons/SmallIcons/Bubble.gif" class="bubble-gif" alt="gif" />
       </h3>
       <div>
         <Form />
@@ -59,17 +59,17 @@
         <div class="social-media-container">
           <div class="stamps">
             <a href="https://www.instagram.com/mangatanband/" title="Instagram" target="_blank"
-              ><img src={instagram} alt="instagram icon" /></a
+              ><img src={Instagram} alt="instagram icon" /></a
             >
             <a
               href="https://open.spotify.com/artist/04sRSWXovcYM8oSfApH4a6"
               title="Spotify"
-              target="_blank"><img src={spotify} alt="spotify icon" /></a
+              target="_blank"><img src={Spotify} alt="spotify icon" /></a
             >
             <a
               href="https://www.youtube.com/channel/UCs3M4AnSaBZ8AiqLlUD4q5w"
               title="YouTube"
-              target="_blank"><img src={youtube} alt="youtube icon" /></a
+              target="_blank"><img src={Youtube} alt="youtube icon" /></a
             >
           </div>
         </div>

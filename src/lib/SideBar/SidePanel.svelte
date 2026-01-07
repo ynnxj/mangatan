@@ -1,4 +1,6 @@
 <script lang="ts">
+  import SpinningStar from '../Icons/SmallIcons/SpinningStar.gif';
+
   export let side: 'left' | 'right';
 </script>
 
@@ -10,29 +12,29 @@
       <ul class="links-list">
         <li>
           <!-- TODO: Add actual links -->
-          <img src="src/lib/Icons/SpinningStar.gif" alt="img" />
+          <img src={SpinningStar} alt="img" />
           <a href="#" target="_blank" title="Instagram">Instagram</a>
         </li>
         <li>
-          <img src="src/lib/Icons/SpinningStar.gif" alt="img" />
+          <img src={SpinningStar} alt="img" />
           <a href="#" target="_blank" title="YouTube">YouTube</a>
         </li>
         <li>
-          <img src="src/lib/Icons/SpinningStar.gif" alt="img" />
+          <img src={SpinningStar} alt="img" />
           <a href="#" target="_blank" title="Apple Music">Apple Music</a>
         </li>
         <li>
-          <img src="src/lib/Icons/SpinningStar.gif" alt="img" />
+          <img src={SpinningStar} alt="img" />
           <a href="/spotify" target="_blank" title="Spotify">Spotify</a>
         </li>
       </ul>
     </div>
     <!-- TODO: Maybe make this into its own thing too -->
     <div class="collection">
-      <img src="src/lib/Icons/desktop.webp" alt="img" />
-      <img src="src/lib/Icons/snowflake.gif" alt="img" />
-      <img src="src/lib/Icons/doll.gif" alt="img" />
-      <img src="src/lib/Icons/cat.gif" alt="img" />
+      <img src="src/lib/Icons/WebStamps/Desktop.webp" alt="img" />
+      <img src="src/lib/Icons/WebStamps/Snowflake.gif" alt="img" />
+      <img src="src/lib/Icons/WebStamps/Doll.gif" alt="img" />
+      <img src="src/lib/Icons/WebStamps/Cat.gif" alt="img" />
     </div>
   </div>
 {:else}
@@ -42,8 +44,8 @@
     <h4>Highlights</h4>
     <div class="news-highlight-section">
       <p>We did an interview / live performance with Fryshuset's Radarn. Check it out!</p>
-      <img src="src/lib/Icons/clickclickclick.webp" class="click" alt="click" />
-      <img src="src/lib/Icons/point-down.webp" class="point-down" alt="pointer cursor" />
+      <img src="src/lib/Icons/WebStamps/Click.webp" class="click" alt="click" />
+      <img src="src/lib/Icons/SmallIcons/PointDown.webp" class="point-down" alt="pointer cursor" />
       <div class="news-digicam">
         <img src="/assets/images/digicam.png" class="digicam" alt="digicam frame" />
       </div>
