@@ -64,14 +64,16 @@
       <img src="src/lib/Icons/WebStamps/Click.webp" class="click" alt="click" />
       <img src="src/lib/Icons/SmallIcons/PointDown.webp" class="point-down" alt="pointer cursor" />
       <div class="news-digicam">
-        <img src="src/lib/Icons/Frames/Digicam.png" class="digicam" alt="digicam frame" />
+        <a href="https://www.youtube.com/watch?v=zH0dspyWQGE" title="YouTube" target="_blank">
+          <img src="src/lib/Icons/Frames/Digicam.png" class="digicam" alt="digicam frame" />
+        </a>
       </div>
     </div>
 
     <h4 class="panel-under-title">Updates</h4>
     <ul class="news-list-section">
       <li>
-        <h5>500 minuter OUT NOW!</h5>
+        <h5 class="news-title">500 minuter OUT NOW!</h5>
         <p>Finally, out new single '500 minuter' is now out on spotify.</p>
         <a
           href="https://open.spotify.com/track/484HRV0bKybqTmfqNwEyVq?si=fe6b1c8a8f7841d5"
@@ -80,7 +82,7 @@
         >
       </li>
       <li>
-        <h5>Omg we have a new website!</h5>
+        <h5 class="news-title">Omg we have a new website!</h5>
         <p>
           Welcome to our brand new website!! This is a dream come true. I hope you enjoy it as much
           as we do. xoxo
