@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ProfileModal from './ProfileModal.svelte';
+  import ProfileModal from '../MemberProfile/ProfileModal.svelte';
   import type { Profile } from '$lib/types/profile';
 
   const angelaProfile: Profile = {
