@@ -1,0 +1,167 @@
+.links {
+  background-color: white;
+  padding: 0 10px;
+  margin: 10px 0;
+  border: 1px solid gray;
+  box-shadow: 1px 1px 3px var(--win98-dark-gray);
+  margin: 20px;
+  margin-top: 0;
+}
+
+.links-list {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+    font-size: 1.5rem;
+    align-items: center;
+  }
+}
+
+.collection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+.news-highlight-section {
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 1px 1px 3px var(--win98-darker-gray);
+  padding: 10px;
+  margin: 20px;
+  margin-top: 0;
+}
+
+.news-digicam {
+  display: flex;
+  justify-content: center;
+
+  .digicam {
+    width: 270px;
+    filter: grayscale(100%) drop-shadow(1px 1px 5px black);
+    z-index: 10;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.news-digicam {
+  background-image: url('/assets/images/radarn.gif');
+  background-repeat: no-repeat;
+  background-position: -30px 30px;
+  background-size: 100%;
+}
+
+.news-list-section {
+  list-style: none;
+  padding: 0;
+  margin: 20px;
+  margin-top: 0;
+
+  li {
+    background-color: var(--win98-white);
+    padding: 10px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 3px rgb(59, 59, 59);
+    margin-bottom: 10px;
+  }
+}
+
+h4 {
+  font-family: var(--win98-font-title);
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--win98-darker-gray);
+  color: rgb(0, 0, 0);
+  padding: 5px 0;
+  margin: 10px 0;
+  margin: 20px;
+}
+
+h3 {
+  font-family: var(--win98-font-title);
+  font-size: 2rem;
+  border-bottom: solid 1px rgb(48, 48, 48);
+  box-shadow: 1px 1px 5px rgb(58, 58, 58);
+  background: #bfbfbf;
+  background: linear-gradient(
+    0deg,
+    rgba(191, 191, 191, 1) 0%,
+    rgba(99, 99, 99, 1) 14%,
+    rgba(74, 70, 70, 1) 29%,
+    rgba(77, 77, 77, 1) 38%,
+    rgba(196, 196, 196, 1) 100%
+  );
+  padding: 0 5px;
+  color: white;
+  text-shadow: 1px 1px 3px white;
+  font-weight: 400;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  left: 0;
+  margin: 0;
+}
+
+h5 {
+  font-family: var(--win98-font-title);
+  font-size: 1.2rem;
+  margin: 10px 0;
+  font-weight: 400px;
+}
+
+.point-down {
+  width: 30px;
+  position: absolute;
+  right: 30%;
+  top: 25%;
+  z-index: 20;
+}
+
+.click {
+  margin: 10px;
+}
+
+.container {
+  overflow: visible;
+  position: fixed;
+  top: 80px;
+  width: 250px;
+  height: auto;
+  border: 2px solid rgb(255, 255, 255);
+  border-bottom: 2px solid var(--win98-darker-gray);
+  border-right: 2px solid var(--win98-darker-gray);
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px rgb(51, 51, 51);
+  box-sizing: border-box;
+  background-color: var(--win98-light-gray);
+  --vw-offset: 33vw;
+
+  // TODO: fix this mess like wth is this girly pop
+  @media (max-width: 1735px) {
+    --vw-offset: 40vw;
+  }
+
+  @media (max-width: 1415px) {
+    --vw-offset: 49vw;
+  }
+
+  &.left {
+    left: calc(50% - var(--vw-offset));
+  }
+
+  &.right {
+    right: calc(50% - var(--vw-offset));
+    width: 300px;
+  }
+
+  @media (max-width: 1100px) {
+    display: none;
+  }
+}
