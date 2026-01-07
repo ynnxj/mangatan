@@ -1,14 +1,14 @@
 <script lang="ts">
-  import AboutBand from '$lib/About/Band/AboutBand.svelte';
   import GigsList from '$lib/Gigs/GigsList.svelte';
   import type { Gig } from '$lib/types/gigs';
   import { page } from '$app/stores';
+  import About from '$lib/About/About.svelte';
 
   let gigs: Gig[] = $page.data?.gigs || [];
 </script>
 
 <section>
-  <AboutBand />
+  <About />
   <GigsList {gigs} />
 </section>
 

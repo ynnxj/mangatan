@@ -1,0 +1,54 @@
+<script lang="ts">
+  import Window from '$lib/WindowBorder/Window.svelte';
+  import { members } from '../../data/members';
+  import AboutBand from './Band/AboutBand.svelte';
+  import './about-band.scss';
+
+  let selectedMember = $state<string | null>(null);
+  const openMember = (name: string) => (selectedMember = name),
+    closeMember = () => (selectedMember = null);
+</script>
+
+<Window windowTitle="About Us">
+  <AboutBand />
+  <pre>
+⠀⠀⠀⠀⠀⠀⠀⠠⡧⠀⠀⠀⠄⠀⣆
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⡄⠀⠀⠀⢺⠂⠀⠀⠀⢀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣧
+⠀⠐⠗⠀⠀⠀⠀⠁⠀⠀⠀⣼⣿⡏⣿⣷⡀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠐⠺⠂⠀⠀⠀⠀⠀⠀⠄
+⠤⣤⣤⣤⣤⣤⣤⣤⣤⣿⣿⠇⠀⢿⣿⣿⣷⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒
+⠀⠀⠘⢿⣿⣿⣟⠛⠛⠛⠛⠀⠀⠀⠛⠛⠛⠛⠋⠉⠉⠉
+⠀⠀⠁⠀⠈⠛⣿⣿⣦
+⠀⠀⠀⠀⠀⠀⠀⢹⣿⡿
+⠀⠀⠀⠠⡧⠀⠀⣾⣿⠁⢀⣤⣾⣦⡀
+⠀⠠⠀⠀⠀⠀⣸⣿⢇⣶⣿⠟⠙⠻⣿⣄
+⠀⠀⠀⠀⠀⢠⣿⣿⠿⠋⠁⠀⠀⠀⠀⠉⠳⡄
+⠀⠀⠀⠀⠀⡿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈
+  </pre>
+
+  <h3 class="title-members">⋆ Members ⋆⭒˚.⋆𝜗𝜚</h3>
+  <div class="about-members">
+    <ul>
+      {#each members as { name }}
+        <li>
+          <button onclick={() => openMember(name)}>
+            <!-- TODO: replace placeholders -->
+            <img src={`assets/images/${name.toLowerCase()}/${name.toLowerCase()}.png`} alt={name} />
+            {name}
+          </button>
+        </li>
+      {/each}
+    </ul>
+  </div>
+
+  {#if selectedMember}
+    <div class="member {selectedMember.toLowerCase()}">
+      <button class="exit-btn" onclick={closeMember}>X</button>
+      {#each members as { name, Member }}
+        {#if name === selectedMember}
+          <Member />
+        {/if}
+      {/each}
+    </div>
+  {/if}
+</Window>
