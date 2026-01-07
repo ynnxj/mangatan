@@ -52,7 +52,7 @@
       </div>
     </div>
 
-    <h4>Updates</h4>
+    <h4 class="panel-under-title">Updates</h4>
     <ul class="news-list-section">
       <li>
         <h5>500 minuter OUT NOW!</h5>

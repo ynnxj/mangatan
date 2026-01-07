@@ -6,14 +6,13 @@
 </script>
 
 <Window windowTitle="Gigs">
-  <h3 class="title">⋆ Upcoming gigs ⋆‧°𓏲ּ𝄢</h3>
-  <ul>
+  <h3 class="gigs-title">⋆ Upcoming gigs ⋆‧°𓏲ּ𝄢</h3>
+  <ul class="gigs-list">
     {#if gigs.length > 0}
       {#each gigs as gig}
-        <!-- TODO: Move div inside li -->
-        <div class="list-items">
-          <li>
-            <h4>{gig.title}</h4>
+        <li class="gigs">
+          <div>
+            <h4 class="gigs-under-title">{gig.title}</h4>
             <a href={gig.venue_link} target="_blank">{gig.location}</a>
             <p>
               {new Date(gig.date).toLocaleDateString('en-US', {
@@ -23,9 +22,9 @@
                 day: 'numeric'
               })}
             </p>
-          </li>
+          </div>
           <a class="tickets" target="_blank" href={gig.tickets_link}>Tickets</a>
-        </div>
+        </li>
       {/each}
     {:else}
       <li>No gigs available</li>
@@ -35,7 +34,7 @@
 
 <style lang="scss">
   // TODO: fix this. ugly.
-  .title {
+  .gigs-title {
     font-size: 3.5rem;
     font-weight: 400;
     margin: 30px 0;
@@ -45,10 +44,10 @@
     font-family: 'Orbitron', sans-serif;
   }
 
-  ul {
+  .gigs-list {
     padding: 0;
 
-    .list-items {
+    .gigs {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
