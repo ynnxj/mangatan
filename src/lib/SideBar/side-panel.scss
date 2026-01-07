@@ -124,7 +124,7 @@ h5 {
 .panel-container {
   overflow: visible;
   position: fixed;
-  top: 80px;
+  top: 150px;
   width: 250px;
   height: auto;
   border: 2px solid var(--win98-white);
@@ -134,27 +134,16 @@ h5 {
   box-shadow: 1px 1px 5px var(--win98-dark-gray);
   box-sizing: border-box;
   background-color: var(--win98-light-gray);
-  --vw-offset: 33vw;
-
-  // TODO: fix this mess like wth is this girly pop
-  @media (max-width: 1735px) {
-    --vw-offset: 40vw;
-  }
-
-  @media (max-width: 1415px) {
-    --vw-offset: 49vw;
-  }
-
-  &.left {
-    left: calc(50% - var(--vw-offset));
-  }
-
-  &.right {
-    right: calc(50% - var(--vw-offset));
-    width: 300px;
-  }
 
   @media (max-width: 1100px) {
     display: none;
   }
+}
+
+.panel-container.left {
+  left: calc(50% - 600px);
+}
+
+.panel-container.right {
+  right: calc(50% - 600px);
 }

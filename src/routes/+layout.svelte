@@ -10,12 +10,14 @@
 </script>
 
 {#if !isLandingPage}
-  <SidePanel side={'left'} />
-  <main>
-    {@render children()}
-    <Nav />
-  </main>
-  <SidePanel side={'right'} />
+  <div class="layout-container">
+    <SidePanel side={'left'} />
+    <main>
+      {@render children()}
+      <Nav />
+    </main>
+    <SidePanel side={'right'} />
+  </div>
 {/if}
 
 {#if isLandingPage}
