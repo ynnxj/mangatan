@@ -5,8 +5,8 @@
 
   export let profile: Profile;
 
-  $: listIcon = profile.listIcon || 'src/lib/Icons/SpinningStar.gif';
-  $: cdFrameImg = profile.cdFrameImg || 'src/lib/Icons/cd-frame.png';
+  $: listIcon = profile.listIcon || 'src/lib/Icons/SmallIcons/SpinningStar.gif';
+  $: cdFrameImg = profile.cdFrameImg || 'src/lib/Icons/Frames/CdFrame.png';
 </script>
 
 <article class={profile.themeClass}>

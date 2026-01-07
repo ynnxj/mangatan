@@ -8,7 +8,7 @@
 
   --profile-img-border: white;
   --profile-border-bottom-color: hotpink;
-  --profile-border-img: url('/assets/images/blacklacelarge.png') 37 round;
+  --profile-border-img: url('$lib/Icons/Frames/BlackLace.png') 37 round;
 }
 
 .benjamins-theme {
@@ -34,7 +34,7 @@
 
   --profile-img-border: white;
   --profile-border-bottom-color: rgb(255, 223, 135);
-  --profile-border-img: url('/assets/images/whitelace.png') 37 round;
+  --profile-border-img: url('$lib/Icons/Frames/WhiteLace.png') 37 round;
 }
 
 .lunas-theme {
@@ -47,5 +47,5 @@
 
   --profile-img-border: white;
   --profile-border-bottom-color: rgb(37, 226, 31);
-  --profile-border-img: url('/assets/images/spike-frame.png') 20 fill round;
+  --profile-border-img: url('$lib/Icons/Frames/SpikeFrame.png') 20 fill round;
 }

@@ -48,7 +48,7 @@
       <img src="src/lib/Icons/WebStamps/Click.webp" class="click" alt="click" />
       <img src="src/lib/Icons/SmallIcons/PointDown.webp" class="point-down" alt="pointer cursor" />
       <div class="news-digicam">
-        <img src="/assets/images/digicam.png" class="digicam" alt="digicam frame" />
+        <img src="src/lib/Icons/Frames/Digicam.png" class="digicam" alt="digicam frame" />
       </div>
     </div>
 

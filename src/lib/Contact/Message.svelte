@@ -29,7 +29,7 @@
     </div>
 
     <div class="image-container">
-      <img src="/assets/images/sparkles-sparkle.gif" class="sparkle" alt="sparkle" />
+      <img src="src/lib/Icons/Frames/SparkleFilter.gif" class="sparkle" alt="sparkle" />
       <img src="/assets/images/group-full-warm.jpg" class="contact-img" alt="Band portrait" />
     </div>
   </div>
