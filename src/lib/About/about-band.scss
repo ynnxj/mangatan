@@ -16,7 +16,7 @@
   margin-top: 70px;
   padding: 0 10px;
   color: black;
-  text-shadow: 1px 1px 5px black;
+  text-shadow: 1px 1px 5px var(--win98-black);
   font-family: 'Orbitron', sans-serif;
 }
 
@@ -104,8 +104,8 @@ pre {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: white;
-  border: 2px solid black;
+  background: var(--win98-white);
+  border: 2px solid var(--win98-black);
   width: 1000px;
   height: 700px;
   padding: 60px 80px;

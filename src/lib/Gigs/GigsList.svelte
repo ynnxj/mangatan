@@ -35,13 +35,13 @@
 <style lang="scss">
   // TODO: fix this. ugly.
   .gigs-title {
+    font-family: var(--win98-font-title);
     font-size: 3.5rem;
     font-weight: 400;
     margin: 30px 0;
     padding: 0 10px;
-    color: black;
-    text-shadow: 1px 1px 5px black;
-    font-family: 'Orbitron', sans-serif;
+    color: var(--win98-black);
+    text-shadow: 1px 1px 5px var(--win98-black);
   }
 
   .gigs {
@@ -51,25 +51,25 @@
     padding: 10px;
     background-color: var(--win98-light-gray);
     margin-bottom: 20px;
-    border: 2px solid rgb(255, 255, 255);
-    border-right: 2px solid darkgray;
-    border-bottom: 2px solid darkgray;
+    border: 2px solid var(--win98-white);
+    border-right: 2px solid var(--win98-dark-gray);
+    border-bottom: 2px solid var(--win98-dark-gray);
 
     .tickets {
       padding: 10px 30px;
       font-size: 1.2rem;
       align-self: center;
-      text-shadow: 1px 1px 2px black;
-      border: 1px solid #f3f3f3;
-      box-shadow: 0 0 0 1px #707070;
+      text-shadow: 1px 1px 2px var(--win98-black);
+      border: 1px solid var(--win98-white);
+      box-shadow: 0 0 0 1px var(--win98-dark-gray);
       border-radius: 15px;
-      background: linear-gradient(to bottom, #f2f2f2 0%, #d4d6e6 50%, #8996bb 51%, #cfcfcf 100%);
+      background: var(--win7-button-face);
       color: white;
 
       &:hover {
-        border: 1px solid #ecf7fd;
-        box-shadow: 0 0 0 1px #3c7fb1;
-        background: linear-gradient(to bottom, #eaf6fd 0%, #d9f0fc 50%, #bee6fd 51%, #a7d9f5 100%);
+        border: 1px solid var(--win98-white);
+        box-shadow: 0 0 0 1px var(--win98-light-blue);
+        background: var(--win7-button-hover);
       }
     }
   }

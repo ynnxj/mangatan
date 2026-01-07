@@ -1,16 +1,11 @@
 .links {
-  background-color: white;
+  background-color: var(--win98-white);
   padding: 0 10px;
   margin: 10px 0;
-  border: 1px solid gray;
+  border: 1px solid var(--win98-dark-gray);
   box-shadow: 1px 1px 3px var(--win98-dark-gray);
   margin: 20px;
   margin-top: 0;
-}
-
-.links-list {
-  list-style: none;
-  padding-left: 0;
 
   li {
     margin-top: 10px;
@@ -26,11 +21,17 @@
   flex-direction: column;
   gap: 10px;
   padding: 20px;
+
+  // TODO: figure this out. Looks ugly.
+  img {
+    width: 100px;
+    align-self: end;
+  }
 }
 
 .news-highlight-section {
-  background-color: white;
-  border: 1px solid black;
+  background-color: var(--win98-white);
+  border: 1px solid var(--win98-black);
   box-shadow: 1px 1px 3px var(--win98-darker-gray);
   padding: 10px;
   margin: 20px;
@@ -43,7 +44,7 @@
 
   .digicam {
     width: 270px;
-    filter: grayscale(100%) drop-shadow(1px 1px 5px black);
+    filter: grayscale(100%) drop-shadow(1px 1px 5px var(--win98-black));
     z-index: 10;
 
     &:hover {
@@ -68,8 +69,8 @@
   li {
     background-color: var(--win98-white);
     padding: 10px;
-    border: 1px solid black;
-    box-shadow: 1px 1px 3px rgb(59, 59, 59);
+    border: 1px solid var(--win98-black);
+    box-shadow: 1px 1px 3px var(--win98-dark-gray);
     margin-bottom: 10px;
   }
 }
@@ -87,20 +88,12 @@
 .panel-title {
   font-family: var(--win98-font-title);
   font-size: 2rem;
-  border-bottom: solid 1px rgb(48, 48, 48);
-  box-shadow: 1px 1px 5px rgb(58, 58, 58);
-  background: #bfbfbf;
-  background: linear-gradient(
-    0deg,
-    rgba(191, 191, 191, 1) 0%,
-    rgba(99, 99, 99, 1) 14%,
-    rgba(74, 70, 70, 1) 29%,
-    rgba(77, 77, 77, 1) 38%,
-    rgba(196, 196, 196, 1) 100%
-  );
+  border-bottom: solid 1px var(--win98-darker-gray);
+  box-shadow: 1px 1px 5px var(--win98-darker-gray);
+  background: var(--win7-title-header);
   padding: 0 5px;
-  color: white;
-  text-shadow: 1px 1px 3px white;
+  color: var(--win98-white);
+  text-shadow: 1px 1px 3px var(--win98-white);
   font-weight: 400;
   width: 100%;
   border-top-left-radius: 20px;
@@ -134,11 +127,11 @@ h5 {
   top: 80px;
   width: 250px;
   height: auto;
-  border: 2px solid rgb(255, 255, 255);
+  border: 2px solid var(--win98-white);
   border-bottom: 2px solid var(--win98-darker-gray);
   border-right: 2px solid var(--win98-darker-gray);
   border-radius: 20px;
-  box-shadow: 1px 1px 5px rgb(51, 51, 51);
+  box-shadow: 1px 1px 5px var(--win98-dark-gray);
   box-sizing: border-box;
   background-color: var(--win98-light-gray);
   --vw-offset: 33vw;

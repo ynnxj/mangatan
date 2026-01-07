@@ -28,13 +28,13 @@
 
 <style lang="scss">
   .social-media-title {
-    font-family: 'Orbitron', sans-serif;
-    text-shadow: 1px 1px 5px rgb(255, 255, 255);
+    font-family: var(--win98-font-title);
+    text-shadow: 1px 1px 5px var(--win98-white);
     padding: 10px;
     text-align: center;
-    color: white;
-    box-shadow: 1px 1px 5px rgb(49, 49, 49);
-    background-color: rgb(49, 49, 49);
+    color: var(--win98-white);
+    box-shadow: 1px 1px 5px var(--win98-button-dark-shadow);
+    background-color: var(--win98-darker-gray);
     margin: 0;
   }
 
@@ -42,7 +42,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid rgb(49, 49, 49);
+    border: 1px solid var(--win98-darker-gray);
     background-color: var(--win98-light-gray);
     padding: 10px;
 

@@ -10,7 +10,6 @@
   /* Classic Blues */
   --win98-blue: #000080;
   --win98-light-blue: #1084d0;
-  --win98-desktop-blue: #008080;
 
   /* Accent Colors */
   --win98-accent-pink: #ff00ff;
@@ -23,6 +22,31 @@
   --win98-button-highlight: #ffffff;
   --win98-button-dark-shadow: #404040;
   --win98-window-bg: #c0c0c0;
+
+  /* Wndows 7 Styles */
+  --win7-button-face: linear-gradient(
+    to bottom,
+    #f2f2f2 0%,
+    #d4d6e6 50%,
+    #8996bb 51%,
+    #cfcfcf 100%
+  );
+  --win7-button-hover: linear-gradient(
+    to bottom,
+    #eaf6fd 0%,
+    #d9f0fc 50%,
+    #bee6fd 51%,
+    #a7d9f5 100%
+  );
+
+  --win7-title-header: linear-gradient(
+    0deg,
+    rgba(191, 191, 191, 1) 0%,
+    rgba(99, 99, 99, 1) 14%,
+    rgba(74, 70, 70, 1) 29%,
+    rgba(77, 77, 77, 1) 38%,
+    rgba(196, 196, 196, 1) 100%
+  );
 
   /* Fonts */
   --win98-font: 'MS Sans Serif', 'Microsoft Sans Serif', Arial, sans-serif;

@@ -2,7 +2,7 @@
   <h1>
     <img
       class="logo"
-      src="/assets/images/mangatan-logo.PNG"
+      src="/assets/images/mangatan/mangatan-logo.PNG"
       width="3405"
       height="1414"
       alt="Mångatans Logo"
@@ -11,8 +11,7 @@
 
   <a href="/about">Enter</a>
 
-  <img class="grain-effect" src="/assets/images/grain.jpg" alt="Grain Effect" />
-  <!-- TODO: Change video background -->
+  <img class="grain-effect" src="/assets/images/background/grain.jpg" alt="Grain Effect" />
   <video class="background-video" autoplay loop muted>
     <source src="/assets/videos/video1.mp4" type="video/mp4" />
   </video>
@@ -30,7 +29,7 @@
 
     .logo {
       position: absolute;
-      filter: invert(1) drop-shadow(1px 1px 5px rgb(255, 255, 255));
+      filter: invert(1) drop-shadow(1px 1px 5px var(--win98-white));
       width: 1000px;
       max-width: 80vw;
       height: auto;
@@ -46,19 +45,19 @@
       left: 70%;
       padding: 10px 40px;
       font-size: 2em;
-      color: white;
-      text-shadow: 1px 1px 2px black;
-      border: 1px solid #f3f3f3;
-      box-shadow: 0 0 0 1px #707070;
+      color: var(--win98-white);
+      text-shadow: 1px 1px 2px var(--win98-black);
+      border: 1px solid var(--win98-white);
+      box-shadow: 0 0 0 1px var(--win98-dark-gray);
       border-radius: 50px;
-      background: linear-gradient(to bottom, #f2f2f2 0%, #ebebeb 50%, #dddddd 51%, #cfcfcf 100%);
+      background: var(--win7-button-face);
       text-decoration: none;
       z-index: 10;
 
       &:hover {
-        border: 1px solid #ecf7fd;
-        box-shadow: 0 0 0 1px #3c7fb1;
-        background: linear-gradient(to bottom, #eaf6fd 0%, #d9f0fc 50%, #bee6fd 51%, #a7d9f5 100%);
+        border: 1px solid var(--win98-white);
+        box-shadow: 0 0 0 1px var(--win98-light-blue);
+        background: var(--win7-button-hover);
       }
     }
 

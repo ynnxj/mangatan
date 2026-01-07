@@ -15,7 +15,7 @@
 
 <style lang="scss">
   .form-title {
-    font-family: 'Orbitron', sans-serif;
+    font-family: var(--win98-font-title);
     font-size: 2rem;
     padding: 10px;
     margin-top: 0;
