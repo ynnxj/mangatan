@@ -1,6 +1,6 @@
 <script lang="ts">
   import Window from '$lib/WindowBorder/Window.svelte';
-  import { members } from '../../data/members';
+  import { members } from '../data/members';
   import AboutBand from './Band/AboutBand.svelte';
   import './about-band.scss';
 

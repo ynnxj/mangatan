@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import { menuItems } from '../../data/menuItems';
+  import { menuItems } from '../data/menuItems';
   import './nav.scss';
 
   let currentTime = $state(new Date());

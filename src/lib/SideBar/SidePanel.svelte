@@ -1,5 +1,6 @@
 <script lang="ts">
   import SpinningStar from '../Icons/SmallIcons/SpinningStar.gif';
+  import { webStamps } from '../data/webStamps';
   import './side-panel.scss';
 
   export let side: 'left' | 'right';
@@ -8,40 +9,55 @@
 {#if side === 'left'}
   <div class="panel-container {side}">
     <h3 class="panel-title">Welcome Home</h3>
+
     <h4 class="panel-under-title">Important Links</h4>
     <div class="links">
       <ul class="links-list">
         <li>
-          <!-- TODO: Add actual links -->
-          <img src={SpinningStar} alt="img" />
-          <a href="#" target="_blank" title="Instagram">Instagram</a>
+          <img src={SpinningStar} alt="list-star" />
+          <a href="https://www.instagram.com/mangatanband/" target="_blank" title="Instagram"
+            >Instagram</a
+          >
         </li>
         <li>
-          <img src={SpinningStar} alt="img" />
-          <a href="#" target="_blank" title="YouTube">YouTube</a>
+          <img src={SpinningStar} alt="list-star" />
+          <a
+            href="https://www.youtube.com/channel/UCs3M4AnSaBZ8AiqLlUD4q5w"
+            target="_blank"
+            title="YouTube">YouTube</a
+          >
         </li>
         <li>
-          <img src={SpinningStar} alt="img" />
-          <a href="#" target="_blank" title="Apple Music">Apple Music</a>
+          <img src={SpinningStar} alt="list-star" />
+          <a
+            href="https://music.apple.com/se/artist/m%C3%A5ngatan/1462652734"
+            target="_blank"
+            title="Apple Music">Apple Music</a
+          >
         </li>
         <li>
-          <img src={SpinningStar} alt="img" />
-          <a href="/spotify" target="_blank" title="Spotify">Spotify</a>
+          <img src={SpinningStar} alt="list-star" />
+          <a
+            href="https://open.spotify.com/artist/04sRSWXovcYM8oSfApH4a6"
+            target="_blank"
+            title="Spotify">Spotify</a
+          >
         </li>
       </ul>
     </div>
-    <!-- TODO: Maybe make this into its own thing too -->
+
     <div class="collection">
-      <img src="src/lib/Icons/WebStamps/Desktop.webp" alt="img" />
-      <img src="src/lib/Icons/WebStamps/Snowflake.gif" alt="img" />
-      <img src="src/lib/Icons/WebStamps/Doll.gif" alt="img" />
-      <img src="src/lib/Icons/WebStamps/Cat.gif" alt="img" />
+      {#each webStamps as stamp}
+        <img src={stamp.src} alt={stamp.alt} />
+      {/each}
     </div>
   </div>
 {:else}
-  <!-- TODO: If these's time, turn this into data to render -->
+  <!--MOCK-->
+  <!-- TODO: If these's time, turn News into data to render -->
   <div class="panel-container {side}">
     <h3 class="panel-title">News</h3>
+
     <h4 class="panel-under-title">Highlights</h4>
     <div class="news-highlight-section">
       <p>We did an interview / live performance with Fryshuset's Radarn. Check it out!</p>
@@ -57,8 +73,11 @@
       <li>
         <h5>500 minuter OUT NOW!</h5>
         <p>Finally, out new single '500 minuter' is now out on spotify.</p>
-        <!-- TODO: Add spotify link -->
-        <a href="#">Click here to listen TODAY</a>
+        <a
+          href="https://open.spotify.com/track/484HRV0bKybqTmfqNwEyVq?si=fe6b1c8a8f7841d5"
+          target="_blank"
+          title="Spotify">Click here to listen TODAY</a
+        >
       </li>
       <li>
         <h5>Omg we have a new website!</h5>
