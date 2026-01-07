@@ -15,7 +15,7 @@
     <!-- TODO: fix image sizing -->
     <img
       class="image"
-      src="assets/images/group-portrait-cold.jpg"
+      src="assets/images/mangatan/group-portrait-cold.jpg"
       alt="Group portrait of the band Mångatan"
     />
 
@@ -56,7 +56,7 @@
         <li>
           <button onclick={() => openMember(name)}>
             <!-- TODO: replace placeholders -->
-            <img src={`assets/images/${name.toLowerCase()}.png`} alt={name} />
+            <img src={`assets/images/${name.toLowerCase()}/${name.toLowerCase()}.png`} alt={name} />
             {name}
           </button>
         </li>

@@ -4,7 +4,7 @@
 
   const benjaminProfile: Profile = {
     name: 'Benjamin',
-    img: '/assets/images/benjamin.png',
+    img: '/assets/images/benjamin/benjamin.png',
     desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -13,9 +13,9 @@
     favSong: {
       title: 'When It Rains',
       artist: 'Paramore',
-      albumCover: '/assets/images/when-it-rains-cover.jfif'
+      albumCover: '/assets/images/albums/when-it-rains-cover.jfif'
     },
-    favImg: '/assets/images/benjamin-smoke-live.jpg',
+    favImg: '/assets/images/benjamin/benjamin-smoke-live.jpg',
     themeClass: 'benjamins-theme'
   };
 </script>

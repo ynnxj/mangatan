@@ -4,7 +4,7 @@
 
   const lunaProfile: Profile = {
     name: 'Luna',
-    img: '/assets/images/luna.png',
+    img: '/assets/images/luna/luna.png',
     desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -13,9 +13,9 @@
     favSong: {
       title: 'Pozxa',
       artist: 'Cortex',
-      albumCover: '/assets/images/poxa-cover.jfif'
+      albumCover: '/assets/images/albums/poxa-cover.jfif'
     },
-    favImg: '/assets/images/luna-drums-live.jpg',
+    favImg: '/assets/images/luna/luna-drums-live.jpg',
     themeClass: 'lunas-theme'
   };
 </script>

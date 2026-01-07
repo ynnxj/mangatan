@@ -4,7 +4,7 @@
 
   const angelaProfile: Profile = {
     name: 'Angela Rocky',
-    img: '/assets/images/angela.png',
+    img: '/assets/images/angela/angela.png',
     desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -13,9 +13,9 @@
     favSong: {
       title: 'Meltdown',
       artist: 'Iroha(sasaki)',
-      albumCover: '/assets/images/meltdown-album-cover.jfif'
+      albumCover: '/assets/images/albums/meltdown-album-cover.jfif'
     },
-    favImg: '/assets/images/angela-full-cold.jpg',
+    favImg: '/assets/images/angela/angela-full-cold.jpg',
     themeClass: 'angelas-theme'
   };
 </script>

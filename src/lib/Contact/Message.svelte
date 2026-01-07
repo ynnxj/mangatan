@@ -30,7 +30,11 @@
 
     <div class="image-container">
       <img src="src/lib/Icons/Frames/SparkleFilter.gif" class="sparkle" alt="sparkle" />
-      <img src="/assets/images/group-full-warm.jpg" class="contact-img" alt="Band portrait" />
+      <img
+        src="/assets/images/mangatan/group-full-warm.jpg"
+        class="contact-img"
+        alt="Band portrait"
+      />
     </div>
   </div>
 </Window>

@@ -4,7 +4,7 @@
 
   const fridaProfile: Profile = {
     name: 'Frida',
-    img: '/assets/images/frida.png',
+    img: '/assets/images/frida/frida.png',
     desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -13,9 +13,9 @@
     favSong: {
       title: 'September Gurls',
       artist: 'The Bangles',
-      albumCover: '/assets/images/september-gurls-cover.jfif'
+      albumCover: '/assets/images/albums/september-gurls-cover.jfif'
     },
-    favImg: '/assets/images/frida-guitar-live.jpg',
+    favImg: '/assets/images/frida/frida-guitar-live.jpg',
     themeClass: 'fridas-theme'
   };
 </script>
