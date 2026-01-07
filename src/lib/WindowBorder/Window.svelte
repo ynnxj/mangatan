@@ -21,7 +21,6 @@
     border-right: 2px solid var(--win98-darker-gray);
     border-bottom: 2px solid var(--win98-darker-gray);
     background: var(--win98-gray);
-    border-top: 2px solid var(--win98-white);
 
     .window-content {
       overflow: auto;

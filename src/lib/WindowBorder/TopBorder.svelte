@@ -9,15 +9,15 @@
 <div class="window-top-border">
   <span>{title}</span>
   <div class="window-left">
-    <img src={MinimizeIcon} alt="Minimize" />
-    <img src={WindowIcon} alt="Maximize" />
-    <img src={CloseIcon} alt="Close" />
+    <img src={MinimizeIcon} class="window-icon" alt="Minimize icon" />
+    <img src={WindowIcon} class="window-icon" alt="Maximize icon" />
+    <img src={CloseIcon} class="window-icon" alt="Close icon" />
   </div>
 </div>
 
 <style lang="scss">
   .window-top-border {
-    border: 2px solid var(--win98-white);
+    border: 1px solid var(--win98-white);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,10 +31,16 @@
 
     .window-left {
       display: flex;
-      gap: 0.5rem;
-      padding: 0.25rem;
-      background-color: white;
+      padding: 3px;
+      gap: 2px;
       border-radius: 2px;
+
+      .window-icon {
+        border: 2px solid var(--win98-white);
+        border-right: 2px solid var(--win98-dark-gray);
+        border-bottom: 2px solid var(--win98-dark-gray);
+        background-color: var(--win98-light-gray);
+      }
     }
   }
 </style>
