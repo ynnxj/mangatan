@@ -6,9 +6,9 @@
 </script>
 
 {#if side === 'left'}
-  <div class="container {side}">
-    <h3>Welcome Home</h3>
-    <h4>Important Links</h4>
+  <div class="panel-container {side}">
+    <h3 class="panel-title">Welcome Home</h3>
+    <h4 class="panel-under-title">Important Links</h4>
     <div class="links">
       <ul class="links-list">
         <li>
@@ -40,9 +40,9 @@
   </div>
 {:else}
   <!-- TODO: If these's time, turn this into data to render -->
-  <div class="container {side}">
-    <h3>News</h3>
-    <h4>Highlights</h4>
+  <div class="panel-container {side}">
+    <h3 class="panel-title">News</h3>
+    <h4 class="panel-under-title">Highlights</h4>
     <div class="news-highlight-section">
       <p>We did an interview / live performance with Fryshuset's Radarn. Check it out!</p>
       <img src="src/lib/Icons/WebStamps/Click.webp" class="click" alt="click" />
