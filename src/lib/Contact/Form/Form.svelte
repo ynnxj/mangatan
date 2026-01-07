@@ -1,7 +1,3 @@
-<script>
-  import Window from '$lib/WindowBorder/Window.svelte';
-</script>
-
 <!--TODO: Add accessibility attributes to all form elements 
 and ensure proper labeling for screen readers -->
 <form method="post" action="/contact">
