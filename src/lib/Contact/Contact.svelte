@@ -6,9 +6,7 @@
 
 <div class="contact-container">
   <Message />
-
   <ContactForm />
-
   <SocialMedia />
 </div>
 

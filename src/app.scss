@@ -74,6 +74,12 @@ body {
   overflow-y: auto;
 }
 
+main {
+  display: flex;
+  justify-content: center;
+  margin: 0 270px;
+}
+
 ul {
   list-style: none;
   padding-left: 0;
