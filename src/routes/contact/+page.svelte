@@ -5,9 +5,3 @@
 <section>
   <Contact />
 </section>
-
-<style lang="scss">
-  section {
-    margin: 60px;
-  }
-</style>

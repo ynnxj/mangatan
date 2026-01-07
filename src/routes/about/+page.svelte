@@ -7,19 +7,15 @@
   let gigs: Gig[] = $page.data?.gigs || [];
 </script>
 
-<section>
+<section class="about-container">
   <About />
   <GigsList {gigs} />
 </section>
 
 <style lang="scss">
-  // TEMPORARY
-  // Will probably refactor
-  section {
+  .about-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    align-items: center;
-    margin: 100px;
   }
 </style>

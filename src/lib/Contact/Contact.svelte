@@ -14,6 +14,6 @@
   .contact-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 20px;
   }
 </style>
