@@ -5,11 +5,12 @@
   import { page } from '$app/stores';
 
   const isLandingPage = $derived($page.url.pathname === '/');
+  const isMerchPage = $derived($page.url.pathname === '/merch');
 
   let { children } = $props();
 </script>
 
-{#if !isLandingPage}
+{#if !isLandingPage && !isMerchPage}
   <div class="layout-container">
     <SidePanel side={'left'} />
     <main>
@@ -22,4 +23,11 @@
 
 {#if isLandingPage}
   {@render children()}
+{/if}
+
+{#if isMerchPage}
+  <main>
+    {@render children()}
+    <Nav />
+  </main>
 {/if}
