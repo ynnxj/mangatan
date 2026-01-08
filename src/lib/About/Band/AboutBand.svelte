@@ -7,7 +7,7 @@
   <!-- TODO: fix image sizing -->
   <img
     class="image"
-    src="assets/images/mangatan/group-portrait-cold.jpg"
+    src="/assets/images/mangatan/group-portrait-warm.jpg"
     alt="Group portrait of the band Mångatan"
   />
 
