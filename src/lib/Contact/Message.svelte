@@ -5,17 +5,6 @@
 <Window windowTitle={'A Message from Us'}>
   <div class="message-container">
     <div class="message-text">
-      <pre class="cat">
-  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀
-⠀⠀⠀⠀⢀⡴⣆⠀⠀⠀⠀⠀⣠⡀⠀⠀⠀⠀⠀⠀⣼⣿⡗⠀⠀⠀⠀
-⠀⠀⠀⣠⠟⠀⠘⠷⠶⠶⠶⠾⠉⢳⡄⠀⠀⠀⠀⠀⣧⣿⠀⠀⠀⠀⠀
-⠀⠀⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣤⣤⣤⣤⣤⣿⢿⣄⠀⠀⠀⠀
-⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣧⠀⠀⠀⠀⠀⠀⠙⣷⡴⠶⣦
-⠀⠀⢱⡀⠀⠉⠉⠀⠀⠀⠀⠛⠃⠀⢠⡟⠀⠀⠀⢀⣀⣠⣤⠿⠞⠛⠋
-⣠⠾⠋⠙⣶⣤⣤⣤⣤⣤⣀⣠⣤⣾⣿⠴⠶⠚⠋⠉⠁⠀⠀⠀⠀⠀⠀
-⠛⠒⠛⠉⠉⠀⠀⠀⣴⠟⢃⡴⠛⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠛⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-          </pre>
       <p>
         Please visit us on social media or leave a message if you have any questions or just want to
         say hi, and we'll get back to you as soon as possible. We appreciate all the love and
@@ -31,7 +20,7 @@
     <div class="image-container">
       <img src="src/lib/Icons/Frames/SparkleFilter.gif" class="sparkle" alt="sparkle" />
       <img
-        src="/assets/images/mangatan/group-full-warm.jpg"
+        src="/assets/images/mangatan/group-half-cold.jpg"
         class="contact-img"
         alt="Band portrait"
       />
@@ -53,13 +42,6 @@
       flex-direction: column;
       padding: 10px 20px 0 20px;
       background-color: var(--win98-light-gray);
-
-      .cat {
-        color: white;
-        position: absolute;
-        left: 5%;
-        bottom: 0;
-      }
     }
 
     .contact-img {
