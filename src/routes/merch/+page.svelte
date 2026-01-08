@@ -4,8 +4,14 @@
 
   export let data: { merch: Item[] };
 
-  const isInStock = (item: Item) => item.in_stock ?? item.stock_count > 0;
-  const { merch } = data;
+  const isInStock = (item: Item) => item.in_stock ?? item.stock_count > 0,
+    { merch } = data;
+
+  let showCategories = false;
+
+  const toggle = () => {
+    showCategories = !showCategories;
+  };
 </script>
 
 <section>
@@ -22,12 +28,19 @@
     <span>Sort by:</span>
     <button class="name">Name</button>
     <button class="price">Price</button>
-    <button class="category">Category</button>
-    <div class="category-list">
-      <p>Apparel</p>
-      <p>Accessories</p>
-      <p>Albums</p>
-    </div>
+    <button
+      class="category"
+      aria-haspopup="listbox"
+      aria-expanded={showCategories}
+      on:click={toggle}>Category</button
+    >
+    {#if showCategories}
+      <div class="category-list">
+        <p>Apparel</p>
+        <p>Accessories</p>
+        <p>Albums</p>
+      </div>
+    {/if}
   </div>
 
   <ul class="merch-list">
