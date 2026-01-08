@@ -8,7 +8,7 @@
 
 {#if side === 'left'}
   <div class="panel-container {side}">
-    <h3 class="panel-title">Welcome Home</h3>
+    <h3 class="panel-title">Welcome</h3>
 
     <h4 class="panel-under-title">Important Links</h4>
     <div class="links">
@@ -58,20 +58,17 @@
   <div class="panel-container {side}">
     <h3 class="panel-title">News</h3>
 
-    <h4 class="panel-under-title">Highlights</h4>
-    <div class="news-highlight-section">
-      <p>We did an interview / live performance with Fryshuset's Radarn. Check it out!</p>
-      <img src="src/lib/Icons/WebStamps/Click.webp" class="click" alt="click" />
-      <img src="src/lib/Icons/SmallIcons/PointDown.webp" class="point-down" alt="pointer cursor" />
-      <div class="news-digicam">
-        <a href="https://www.youtube.com/watch?v=zH0dspyWQGE" title="YouTube" target="_blank">
-          <img src="src/lib/Icons/Frames/Digicam.png" class="digicam" alt="digicam frame" />
-        </a>
-      </div>
-    </div>
-
     <h4 class="panel-under-title">Updates</h4>
     <ul class="news-list-section">
+      <li>
+        <h5 class="news-title">500 minuter OUT NOW!</h5>
+        <p>Finally, out new single '500 minuter' is now out on spotify.</p>
+        <a
+          href="https://open.spotify.com/track/484HRV0bKybqTmfqNwEyVq?si=fe6b1c8a8f7841d5"
+          target="_blank"
+          title="Spotify">Click here to listen TODAY</a
+        >
+      </li>
       <li>
         <h5 class="news-title">500 minuter OUT NOW!</h5>
         <p>Finally, out new single '500 minuter' is now out on spotify.</p>
@@ -89,5 +86,14 @@
         </p>
       </li>
     </ul>
+    <div class="highlight">
+      <img src="src/lib/Icons/WebStamps/Click.webp" class="click" alt="click" />
+      <img src="src/lib/Icons/SmallIcons/PointDown.webp" class="point" alt="pointer cursor" />
+      <div class="highlight-wmp">
+        <a href="https://www.youtube.com/watch?v=zH0dspyWQGE" title="YouTube" target="_blank">
+          <img src="src/lib/Icons/Frames/Digicam.png" class="wmp" alt="wmp frame" />
+        </a>
+      </div>
+    </div>
   </div>
 {/if}

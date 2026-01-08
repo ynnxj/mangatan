@@ -82,37 +82,37 @@
     }
   }
 
-  .news-highlight-section {
-    background-color: var(--win98-white);
-    border: 1px solid var(--win98-black);
-    box-shadow: 1px 1px 3px var(--win98-darker-gray);
-    padding: 10px;
+  .highlight {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
     margin: 20px;
-    margin-top: 0;
+    left: 0;
 
-    .point-down {
+    .click {
+      width: 150px;
+      align-self: end;
+      margin: 10px 5px;
+    }
+
+    .point {
       width: 30px;
       position: absolute;
-      right: 30%;
-      top: 25%;
+      right: 15px;
+      top: 25px;
       z-index: 20;
     }
 
-    .click {
-      margin: 10px;
-    }
-
-    .news-digicam {
-      display: flex;
-      justify-content: center;
+    .highlight-wmp {
       background-image: url('/assets/images/mangatan/radarn.gif');
       background-repeat: no-repeat;
-      background-position: -30px 30px;
-      background-size: 100%;
+      background-size: 295px;
+      border-radius: 20px;
+      filter: drop-shadow(1px 1px 5px var(--win98-black));
 
-      .digicam {
-        width: 250px;
-        filter: grayscale(100%) drop-shadow(1px 1px 5px var(--win98-black));
+      .wmp {
+        width: 300px;
         z-index: 10;
 
         &:hover {
