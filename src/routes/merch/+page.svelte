@@ -1,20 +1,46 @@
 <script lang="ts">
   import Window from '$lib/WindowBorder/Window.svelte';
+  import CartPreview from '$lib/Cart/CartPreview.svelte';
   import type { Item } from '$lib/types/merch';
 
-  export let data: { merch: Item[] };
+  const { data } = $props<{ data: { merch: Item[] } }>();
+  const merch = $derived(data.merch);
 
-  const isInStock = (item: Item) => item.in_stock ?? item.stock_count > 0,
-    { merch } = data;
+  let cart = $state<Item[]>([]),
+    showCategories = $state(false),
+    showAddModal = $state(false);
 
-  let showCategories = false;
+  const cartTotal = $derived(cart.reduce((sum, item) => sum + item.price, 0));
 
-  const toggle = () => {
-    showCategories = !showCategories;
+  const isInStock = (item: Item) => item.in_stock ?? item.stock_count > 0;
+
+  const addToCart = (item: Item) => {
+    cart.push(item);
+    showAddModal = true;
   };
+
+  const toggleCategoryBtn = () => (showCategories = !showCategories),
+    closeAddModal = () => (showAddModal = false);
+
+  // Load cart on mount
+  $effect(() => {
+    const stored = localStorage.getItem('cart');
+    if (stored) cart = JSON.parse(stored);
+  });
+
+  // Save cart
+  $effect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  });
 </script>
 
-<section>
+<section class="merch-page">
+  <button class="shopping-bag">
+    <img src="src/lib/Icons/ShoppingBag.png" alt="A brown paper shopping bag" />
+  </button>
+
+  <CartPreview {cart} {cartTotal} />
+
   <div class="merch-page-header">
     <img
       class="merch-page-logo"
@@ -28,19 +54,18 @@
     <span>Sort by:</span>
     <button class="name">Name</button>
     <button class="price">Price</button>
-    <button
-      class="category"
-      aria-haspopup="listbox"
-      aria-expanded={showCategories}
-      on:click={toggle}>Category</button
-    >
-    {#if showCategories}
-      <div class="category-list">
-        <p>Apparel</p>
-        <p>Accessories</p>
-        <p>Albums</p>
-      </div>
-    {/if}
+    <div>
+      <button class="category" aria-expanded={showCategories} onclick={toggleCategoryBtn}
+        >Category</button
+      >
+      {#if showCategories}
+        <div class="category-list">
+          <p>Apparel</p>
+          <p>Accessories</p>
+          <p>Albums</p>
+        </div>
+      {/if}
+    </div>
   </div>
 
   <ul class="merch-list">
@@ -56,13 +81,22 @@
             <h3 class="item-name">{item.name}</h3>
             <p class="item-desc">{item.description}</p>
             <p class="item-price">{item.price}SEK</p>
-            <p class="item-stock">
-              {#if isInStock(item)}
-                In stock
-              {:else}
-                Sold out
+            <p class="item-stock">{isInStock(item) ? 'In stock' : 'Sold out'}</p>
+
+            <div class="add-to-cart">
+              <button class="add-btn" onclick={() => addToCart(item)}>Add to Cart</button>
+
+              {#if showAddModal}
+                <div class="added-modal">
+                  <p>Added!</p>
+
+                  <div class="btn-container">
+                    <button onclick={closeAddModal}>Continue shopping</button>
+                    <button>Go to checkout</button>
+                  </div>
+                </div>
               {/if}
-            </p>
+            </div>
           </Window>
         </li>
       {/each}
@@ -73,6 +107,19 @@
 </section>
 
 <style lang="scss">
+  .shopping-bag {
+    position: absolute;
+    background: none;
+    border: none;
+    right: 0;
+    top: 0;
+    margin: 20px;
+
+    img {
+      width: 80px;
+    }
+  }
+
   .merch-page-header {
     display: flex;
     flex-direction: row;
@@ -80,7 +127,7 @@
     justify-content: center;
     margin: 80px 0 40px 0;
     border-bottom: 30px solid transparent;
-    border-image: url('/src/lib/Icons/Divider.webp') 30 repeat;
+    border-image: url('/src/lib/Icons/Divider.webp') 30 stretch;
     border-image-slice: 30;
     border-image-width: 1;
     border-image-outset: 0;
@@ -103,8 +150,33 @@
     }
   }
 
+  .added-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: white;
+  }
+
   .sort-container {
-    text-align: end;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+
+    .category-list {
+      position: absolute;
+      padding: 10px;
+
+      z-index: 10;
+      background-color: white;
+
+      p {
+        border-bottom: 1px solid var(--win98-black);
+        text-align: left;
+      }
+    }
   }
 
   .merch-list {
