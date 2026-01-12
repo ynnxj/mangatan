@@ -1,34 +1,68 @@
 <script lang="ts">
   import Window from '$lib/WindowBorder/Window.svelte';
   import CartPreview from '$lib/Cart/CartPreview.svelte';
-  import type { Item } from '$lib/types/merch';
+  import type { Item, Cart } from '$lib/types/merch';
 
-  const { data } = $props<{ data: { merch: Item[] } }>();
-  const merch = $derived(data.merch);
+  // Props
+  const { data } = $props<{ data: { merch: Item[] } }>(),
+    merch = $derived(data.merch);
 
-  let cart = $state<Item[]>([]),
+  // States
+  let cart = $state<Cart[]>([]),
     showCategories = $state(false),
     showAddModal = $state(false);
 
-  const cartTotal = $derived(cart.reduce((sum, item) => sum + item.price, 0));
+  // Computed values
+  const cartTotal = $derived.by(() =>
+    cart.reduce((sum, cartItem) => sum + cartItem.item.price * cartItem.quantity, 0)
+  );
 
+  /* -------------------------------------------------------------------------- */
+  /*                               Cart operators                               */
+  /* -------------------------------------------------------------------------- */
   const isInStock = (item: Item) => item.in_stock ?? item.stock_count > 0;
-
   const addToCart = (item: Item) => {
-    cart.push(item);
+    const existingIndex = cart.findIndex((cartItem) => cartItem.item._id === item._id);
+
+    if (existingIndex !== -1) {
+      // Increase quantity
+      cart[existingIndex].quantity += 1;
+    } else {
+      // Add new item
+      cart.push({ item, quantity: 1 });
+    }
+
+    cart = [...cart];
     showAddModal = true;
   };
 
+  const updateQuantity = (itemId: string, updatedQuantity: number) => {
+    const index = cart.findIndex((cartItem) => cartItem.item._id === itemId);
+
+    if (index !== -1) {
+      if (updatedQuantity <= 0) {
+        cart.splice(index, 1);
+      } else {
+        cart[index].quantity = updatedQuantity;
+      }
+      cart = [...cart];
+    }
+  };
+
+  /* -------------------------------------------------------------------------- */
+  /*                               Toggle Buttons                               */
+  /* -------------------------------------------------------------------------- */
   const toggleCategoryBtn = () => (showCategories = !showCategories),
     closeAddModal = () => (showAddModal = false);
 
-  // Load cart on mount
+  /* -------------------------------------------------------------------------- */
+  /*                                Local Storage                               */
+  /* -------------------------------------------------------------------------- */
   $effect(() => {
     const stored = localStorage.getItem('cart');
     if (stored) cart = JSON.parse(stored);
   });
 
-  // Save cart
   $effect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
   });
@@ -39,7 +73,7 @@
     <img src="src/lib/Icons/ShoppingBag.png" alt="A brown paper shopping bag" />
   </button>
 
-  <CartPreview {cart} {cartTotal} />
+  <CartPreview {cart} {cartTotal} onCartUpdate={updateQuantity} />
 
   <div class="merch-page-header">
     <img

@@ -8,3 +8,8 @@ export interface Item {
   in_stock: boolean;
   stock_count: number;
 }
+
+export interface Cart {
+  item: Item;
+  quantity: number;
+}

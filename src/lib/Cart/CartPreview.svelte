@@ -1,45 +1,62 @@
 <script lang="ts">
-  import type { Item } from '$lib/types/merch';
+  import type { Cart } from '$lib/types/merch';
 
+  // Props
   const props = $props<{
-    cart: Item[];
+    cart: Cart[];
     cartTotal: number;
+    onCartUpdate?: (itemId: string, quantity: number) => void;
   }>();
 
-  let cart = $derived(props.cart);
-  let cartTotal = $derived(props.cartTotal);
+  /* -------------------------------------------------------------------------- */
+  /*                               Handle Quantity                              */
+  /* -------------------------------------------------------------------------- */
+  const handleAdd = (itemId: string) => {
+    const cartItem = props.cart.find((item: Cart) => item.item._id === itemId);
+    if (cartItem && props.onCartUpdate) {
+      props.onCartUpdate(itemId, cartItem.quantity + 1);
+    }
+  };
+
+  const handleRemove = (itemId: string) => {
+    const cartItem = props.cart.find((item: Cart) => item.item._id === itemId);
+    if (cartItem && props.onCartUpdate) {
+      props.onCartUpdate(itemId, cartItem.quantity - 1);
+    }
+  };
 </script>
 
 <div class="cart-preview">
-  <div>
-    <h3>Cart</h3>
-
-    {#if cart.length === 0}
+  <h3>Cart</h3>
+  <div class="cart-content">
+    {#if props.cart.length === 0}
       <p>Cart is empty</p>
     {:else}
       <ul>
-        {#each cart as item}
+        {#each props.cart as cartItem}
           <li>
             <img
               class="item-img"
               src="/assets/images/placeholders/tote-placeholder.jpg"
-              alt={item.name}
+              alt={cartItem.item.name}
             />
             <div>
-              {item.name}: {item.price} SEK
-
-              <div class="cart-btn-container">
-                <button>+</button>
-                <input type="number" min="0" />
-                <button>-</button>
-                <button class="remove-btn">Remove</button>
+              <p>{cartItem.item.name}</p>
+              <div class="quantity-controls">
+                <button onclick={() => handleRemove(cartItem.item._id)}>-</button>
+                <span class="quantity">{cartItem.quantity}</span>
+                <button onclick={() => handleAdd(cartItem.item._id)}>+</button>
               </div>
+              <p class="item-total">
+                {cartItem.item.price} SEK × {cartItem.quantity} =
+                {cartItem.item.price * cartItem.quantity} SEK
+              </p>
             </div>
           </li>
         {/each}
       </ul>
 
-      <p>Subtotal: {cartTotal} SEK</p>
+      <p>Subtotal: {props.cartTotal} SEK</p>
     {/if}
   </div>
   <a href="#" class="checkout-btn">Checkout</a>
@@ -50,19 +67,32 @@
     position: fixed;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+
     top: 0;
     right: 0;
     width: 500px;
     height: 100%;
     background-color: rgb(30, 163, 168);
-    padding: 50px;
     z-index: 30;
 
     h3 {
       font-family: var(--win98-font-title);
       font-size: 3rem;
       margin-top: 0;
+    }
+
+    .cart-content {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    ul {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      padding: 30px;
     }
 
     li {
@@ -77,17 +107,40 @@
 
       img {
         margin-bottom: 30px;
-        width: 50%;
+        width: 35%;
         border: 1px solid white;
         box-shadow: 1px 1px 20px rgb(129, 179, 180);
       }
     }
 
     .cart-btn-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
       margin: 15px 0;
+      width: 100px;
+      padding: 10px;
+
+      button {
+        background: none;
+        border: none;
+      }
 
       input {
         width: 30px;
+        background: none;
+        border: none;
+        text-align: center;
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      .cart-item-price {
+        text-align: end;
       }
     }
 
