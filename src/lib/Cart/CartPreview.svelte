@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Cart } from '$lib/types/merch';
+  import { onMount } from 'svelte';
 
   // Props
   const props = $props<{
@@ -13,7 +14,20 @@
 
   const toggleCart = () => {
     isCartOpen = !isCartOpen;
+
+    if (isCartOpen) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
   };
+
+  onMount(() => {
+    return () => {
+      document.body.classList.remove('no-scroll');
+      document.body.style.top = '';
+    };
+  });
 
   /* -------------------------------------------------------------------------- */
   /*                               Handle Quantity                              */
@@ -38,9 +52,15 @@
 </button>
 
 {#if isCartOpen}
+  <button class="cart-overlay" onclick={toggleCart} aria-label="Close cart"></button>
+
   <div class="cart-preview">
-    <button class="close-btn" onclick={toggleCart}>x</button>
-    <h3>Cart</h3>
+    <div class="cart-preview-header">
+      <h3 class="cart-preview-title">Cart</h3>
+      <button class="close-btn" onclick={toggleCart}
+        ><img src="src/lib/Icons/WindowIcons/CloseIcon.svg" alt="Close window button" /></button
+      >
+    </div>
     <div class="cart-content">
       {#if props.cart.length === 0}
         <p>Cart is empty</p>
@@ -55,15 +75,15 @@
               />
               <div>
                 <p>{cartItem.item.name}</p>
-                <div class="quantity-controls">
+                <p class="cart-item-total">
+                  {cartItem.item.price} SEK × {cartItem.quantity} =
+                  {cartItem.item.price * cartItem.quantity} SEK
+                </p>
+                <div class="cart-btn-container">
                   <button onclick={() => handleRemove(cartItem.item._id)}>-</button>
                   <span class="quantity">{cartItem.quantity}</span>
                   <button onclick={() => handleAdd(cartItem.item._id)}>+</button>
                 </div>
-                <p class="item-total">
-                  {cartItem.item.price} SEK × {cartItem.quantity} =
-                  {cartItem.item.price * cartItem.quantity} SEK
-                </p>
               </div>
             </li>
           {/each}
@@ -77,6 +97,17 @@
 {/if}
 
 <style lang="scss">
+  .cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: 20;
+  }
+
   .shopping-bag {
     position: absolute;
     background: none;
@@ -101,18 +132,27 @@
     background-color: rgb(30, 163, 168);
     z-index: 30;
 
-    .close-btn {
-      width: 40px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 2rem;
-    }
+    .cart-preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid blue;
 
-    h3 {
-      font-family: var(--win98-font-title);
-      font-size: 3rem;
-      margin-top: 0;
+      .cart-preview-title {
+        font-family: 'Times New Roman', Times, serif;
+        font-style: italic;
+        font-size: 3rem;
+        margin: 0;
+        padding: 20px 30px;
+      }
+
+      .close-btn {
+        width: 50px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 2rem;
+      }
     }
 
     .cart-content {
@@ -120,6 +160,10 @@
       min-height: 0;
       display: flex;
       flex-direction: column;
+
+      .cart-item-total {
+        font-size: 1rem;
+      }
     }
 
     ul {
@@ -158,36 +202,6 @@
       button {
         background: none;
         border: none;
-      }
-
-      input {
-        width: 30px;
-        background: none;
-        border: none;
-        text-align: center;
-      }
-
-      input::-webkit-outer-spin-button,
-      input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
-
-      .cart-item-price {
-        text-align: end;
-      }
-    }
-
-    .remove-btn {
-      color: white;
-      text-shadow: 1px 1px 1px black;
-      background: var(--win7-button-face);
-      border-radius: 5px;
-      border: 1px solid white;
-      box-shadow: 1px 1px 20px rgb(129, 179, 180);
-
-      &:hover {
-        background: var(--win7-button-hover);
       }
     }
 
