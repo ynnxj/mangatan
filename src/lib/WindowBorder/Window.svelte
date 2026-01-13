@@ -14,7 +14,8 @@
 <style lang="scss">
   .window {
     position: relative;
-    width: 600px;
+    max-width: 600px;
+    min-width: 400px;
     height: auto;
     border-top: 2px solid var(--win98-white);
     border-left: 2px solid var(--win98-white);

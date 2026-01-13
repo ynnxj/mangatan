@@ -84,7 +84,7 @@
         <p>Subtotal: {props.cartTotal} SEK</p>
       {/if}
     </div>
-    <a href="#" class="checkout-btn">Checkout</a>
+    <a href="/merch/checkout" class="checkout-btn">Checkout</a>
   </div>
 {/if}
 

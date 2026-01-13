@@ -6,11 +6,13 @@
 
   const isLandingPage = $derived($page.url.pathname === '/');
   const isMerchPage = $derived($page.url.pathname === '/merch');
+  const isCheckoutPage = $derived($page.url.pathname === '/merch/checkout');
 
   let { children } = $props();
 </script>
 
-{#if !isLandingPage && !isMerchPage}
+<!-- TODO: Maybe fix this eventually. It's looking a bit messy atm -->
+{#if !isLandingPage && !isMerchPage && !isCheckoutPage}
   <div class="layout-container">
     <SidePanel side={'left'} />
     <main>
@@ -25,7 +27,7 @@
   {@render children()}
 {/if}
 
-{#if isMerchPage}
+{#if isMerchPage || isCheckoutPage}
   <main>
     {@render children()}
     <Nav />
