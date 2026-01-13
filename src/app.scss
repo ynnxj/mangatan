@@ -72,13 +72,6 @@ body {
   color: var(--win98-black);
   overflow-x: hidden;
   overflow-y: auto;
-
-  body.no-scroll {
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-  }
 }
 
 main {

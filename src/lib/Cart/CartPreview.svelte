@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Cart } from '$lib/types/merch';
-  import { onMount } from 'svelte';
+  import { scroll } from '$lib/utils/scroll';
 
   // Props
   const props = $props<{
@@ -11,22 +11,14 @@
 
   // Preview cart toggle
   let isCartOpen = $state(false);
-
   const toggleCart = () => {
     isCartOpen = !isCartOpen;
-
-    if (isCartOpen) {
-      document.body.classList.add('no-scroll');
-    } else {
-      document.body.classList.remove('no-scroll');
-    }
   };
 
-  onMount(() => {
-    return () => {
-      document.body.classList.remove('no-scroll');
-      document.body.style.top = '';
-    };
+  // Scroll toggle
+  $effect(() => {
+    scroll.toggle(isCartOpen);
+    return () => scroll.unlock();
   });
 
   /* -------------------------------------------------------------------------- */

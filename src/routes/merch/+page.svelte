@@ -3,6 +3,7 @@
   import CartPreview from '$lib/Cart/CartPreview.svelte';
   import { overlayClick } from '$lib/actions/overlayClick';
   import type { Item, Cart } from '$lib/types/merch';
+  import { scroll } from '$lib/utils/scroll';
 
   // Props
   const { data } = $props<{ data: { merch: Item[] } }>(),
@@ -55,6 +56,12 @@
   /* -------------------------------------------------------------------------- */
   const toggleCategoryBtn = () => (showCategories = !showCategories),
     closeAddModal = () => (showAddModal = false);
+
+  // Scroll toggle
+  $effect(() => {
+    scroll.toggle(showAddModal);
+    return () => scroll.unlock();
+  });
 
   /* -------------------------------------------------------------------------- */
   /*                                Local Storage                               */
