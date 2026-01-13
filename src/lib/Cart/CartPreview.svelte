@@ -55,7 +55,7 @@
     </div>
     <div class="cart-content">
       {#if props.cart.length === 0}
-        <p>Cart is empty</p>
+        <p class="empty-text">Your cart is empty</p>
       {:else}
         <ul>
           {#each props.cart as cartItem}
@@ -80,11 +80,15 @@
             </li>
           {/each}
         </ul>
-
-        <p>Subtotal: {props.cartTotal} SEK</p>
+        <div class="subtotal-text">
+          <span class="subtotal">Subtotal: </span>
+          <span>{props.cartTotal} SEK</span>
+        </div>
       {/if}
     </div>
-    <a href="/merch/checkout" class="checkout-btn">Checkout</a>
+    {#if props.cart.length > 0}
+      <a href="/merch/checkout" class="checkout-btn">Checkout</a>
+    {/if}
   </div>
 {/if}
 
@@ -153,6 +157,22 @@
       display: flex;
       flex-direction: column;
 
+      .empty-text {
+        padding: 20px;
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      .subtotal-text {
+        font-size: 1.5rem;
+        text-align: right;
+        padding: 20px;
+
+        .subtotal {
+          font-weight: bold;
+        }
+      }
+
       .cart-item-total {
         font-size: 1rem;
       }
@@ -208,7 +228,7 @@
       border-radius: 15px;
       border: 1px solid white;
       box-shadow: 1px 1px 20px rgb(129, 179, 180);
-      margin: 30px;
+      margin-bottom: 90px;
 
       &:hover {
         background: var(--win7-button-hover);
