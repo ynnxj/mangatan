@@ -1,6 +1,7 @@
 <script lang="ts">
   import Window from '$lib/WindowBorder/Window.svelte';
   import CartPreview from '$lib/Cart/CartPreview.svelte';
+  import { overlayClick } from '$lib/actions/overlayClick';
   import type { Item, Cart } from '$lib/types/merch';
 
   // Props
@@ -85,14 +86,14 @@
     <button class="name">Name</button>
     <button class="price">Price</button>
     <div>
-      <button class="category" aria-expanded={showCategories} onclick={toggleCategoryBtn}
-        >Category</button
-      >
+      <button class="category" onclick={toggleCategoryBtn}>Category</button>
       {#if showCategories}
-        <div class="category-list">
-          <p>Apparel</p>
-          <p>Accessories</p>
-          <p>Albums</p>
+        <div class="category-list" use:overlayClick={() => (showCategories = false)}>
+          <ul class="categories">
+            <li>Apparel</li>
+            <li>Accessories</li>
+            <li>Albums</li>
+          </ul>
         </div>
       {/if}
     </div>
@@ -117,7 +118,7 @@
               <button class="add-btn" onclick={() => addToCart(item)}>Add to Cart</button>
 
               {#if showAddModal}
-                <div class="added-modal">
+                <div class="added-modal" use:overlayClick={() => (showAddModal = false)}>
                   <p>Added!</p>
 
                   <div class="btn-container">
@@ -137,6 +138,14 @@
 </section>
 
 <style lang="scss">
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   .merch-page-header {
     display: flex;
     flex-direction: row;
@@ -184,14 +193,16 @@
 
     .category-list {
       position: absolute;
-      padding: 10px;
-
+      padding: 0 10px;
       z-index: 10;
       background-color: white;
 
-      p {
-        border-bottom: 1px solid var(--win98-black);
-        text-align: left;
+      .categories {
+        li {
+          border-bottom: 1px solid var(--win98-black);
+          text-align: left;
+          margin-bottom: 10px;
+        }
       }
     }
   }
