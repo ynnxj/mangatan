@@ -69,10 +69,6 @@
 </script>
 
 <section class="merch-page">
-  <button class="shopping-bag">
-    <img src="src/lib/Icons/ShoppingBag.png" alt="A brown paper shopping bag" />
-  </button>
-
   <CartPreview {cart} {cartTotal} onCartUpdate={updateQuantity} />
 
   <div class="merch-page-header">
@@ -141,19 +137,6 @@
 </section>
 
 <style lang="scss">
-  .shopping-bag {
-    position: absolute;
-    background: none;
-    border: none;
-    right: 0;
-    top: 0;
-    margin: 20px;
-
-    img {
-      width: 80px;
-    }
-  }
-
   .merch-page-header {
     display: flex;
     flex-direction: row;

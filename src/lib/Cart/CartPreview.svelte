@@ -8,6 +8,13 @@
     onCartUpdate?: (itemId: string, quantity: number) => void;
   }>();
 
+  // Preview cart toggle
+  let isCartOpen = $state(false);
+
+  const toggleCart = () => {
+    isCartOpen = !isCartOpen;
+  };
+
   /* -------------------------------------------------------------------------- */
   /*                               Handle Quantity                              */
   /* -------------------------------------------------------------------------- */
@@ -26,54 +33,81 @@
   };
 </script>
 
-<div class="cart-preview">
-  <h3>Cart</h3>
-  <div class="cart-content">
-    {#if props.cart.length === 0}
-      <p>Cart is empty</p>
-    {:else}
-      <ul>
-        {#each props.cart as cartItem}
-          <li>
-            <img
-              class="item-img"
-              src="/assets/images/placeholders/tote-placeholder.jpg"
-              alt={cartItem.item.name}
-            />
-            <div>
-              <p>{cartItem.item.name}</p>
-              <div class="quantity-controls">
-                <button onclick={() => handleRemove(cartItem.item._id)}>-</button>
-                <span class="quantity">{cartItem.quantity}</span>
-                <button onclick={() => handleAdd(cartItem.item._id)}>+</button>
-              </div>
-              <p class="item-total">
-                {cartItem.item.price} SEK × {cartItem.quantity} =
-                {cartItem.item.price * cartItem.quantity} SEK
-              </p>
-            </div>
-          </li>
-        {/each}
-      </ul>
+<button class="shopping-bag" onclick={toggleCart}>
+  <img src="src/lib/Icons/ShoppingBag.png" alt="A brown paper shopping bag" />
+</button>
 
-      <p>Subtotal: {props.cartTotal} SEK</p>
-    {/if}
+{#if isCartOpen}
+  <div class="cart-preview">
+    <button class="close-btn" onclick={toggleCart}>x</button>
+    <h3>Cart</h3>
+    <div class="cart-content">
+      {#if props.cart.length === 0}
+        <p>Cart is empty</p>
+      {:else}
+        <ul>
+          {#each props.cart as cartItem}
+            <li>
+              <img
+                class="item-img"
+                src="/assets/images/placeholders/tote-placeholder.jpg"
+                alt={cartItem.item.name}
+              />
+              <div>
+                <p>{cartItem.item.name}</p>
+                <div class="quantity-controls">
+                  <button onclick={() => handleRemove(cartItem.item._id)}>-</button>
+                  <span class="quantity">{cartItem.quantity}</span>
+                  <button onclick={() => handleAdd(cartItem.item._id)}>+</button>
+                </div>
+                <p class="item-total">
+                  {cartItem.item.price} SEK × {cartItem.quantity} =
+                  {cartItem.item.price * cartItem.quantity} SEK
+                </p>
+              </div>
+            </li>
+          {/each}
+        </ul>
+
+        <p>Subtotal: {props.cartTotal} SEK</p>
+      {/if}
+    </div>
+    <a href="#" class="checkout-btn">Checkout</a>
   </div>
-  <a href="#" class="checkout-btn">Checkout</a>
-</div>
+{/if}
 
 <style lang="scss">
+  .shopping-bag {
+    position: absolute;
+    background: none;
+    border: none;
+    right: 0;
+    top: 0;
+    margin: 20px;
+
+    img {
+      width: 80px;
+    }
+  }
+
   .cart-preview {
     position: fixed;
     display: flex;
     flex-direction: column;
-
     top: 0;
     right: 0;
     width: 500px;
     height: 100%;
     background-color: rgb(30, 163, 168);
     z-index: 30;
+
+    .close-btn {
+      width: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 2rem;
+    }
 
     h3 {
       font-family: var(--win98-font-title);
