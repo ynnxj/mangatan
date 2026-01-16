@@ -11,7 +11,6 @@
 
   <a class="enter-btn" href="/about">Enter</a>
 
-  <img class="grain-effect" src="/assets/images/background/grain.jpg" alt="Grain Effect" />
   <video class="background-video" autoplay loop muted>
     <source src="/assets/videos/video1.mp4" type="video/mp4" />
   </video>
@@ -42,7 +41,6 @@
     .enter-btn {
       position: absolute;
       font-family: 'Times New Roman', Times, serif;
-
       top: 50%;
       left: 65%;
       padding: 10px 40px;
@@ -62,18 +60,6 @@
       height: 100vh;
       object-fit: cover;
       filter: sepia(100%) hue-rotate(180deg) saturate(350%) brightness(60%) contrast(80%);
-    }
-
-    .grain-effect {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      opacity: 0.2;
-      z-index: 1;
-      filter: pacity(1);
     }
   }
 </style>
