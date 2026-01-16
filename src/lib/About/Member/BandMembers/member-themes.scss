@@ -1,51 +1,123 @@
+@font-face {
+  font-family: 'Old London';
+  src: url('/assets/fonts/OldLondon.ttf') format('truetype');
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   Angela                                   */
+/* -------------------------------------------------------------------------- */
 .angelas-theme {
+  // Fonts
   --profile-title-font: 'Comic Sans MS';
   --profile-font-family: 'Courier New', Courier, monospace;
 
+  // Colors
   --profile-title-color: hotpink;
   --profile-color: white;
   --profile-bg-color: black;
 
+  // Borders
   --profile-img-border: white;
   --profile-border-bottom-color: hotpink;
   --profile-border-img: url('$lib/Icons/Frames/BlackLace.png') 37 round;
+
+  // Unique values
+  .profile-img {
+    filter: (grayscale(20%));
+  }
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                  Benjamin                                  */
+/* -------------------------------------------------------------------------- */
 .benjamins-theme {
-  --profile-title-font: 'Times New Roman', Times, serif;
+  // Fonts
+  --profile-title-font: 'Old London';
   --profile-font-family: 'Times New Roman', Times, serif;
 
-  --profile-title-color: rgb(53, 90, 255);
-  --profile-color: rgb(0, 0, 0);
-  --profile-bg-color: rgb(255, 255, 255);
-
-  --profile-img-border: white;
-  --profile-border-bottom-color: rgb(53, 38, 255);
-  --profile-border-img: none;
-}
-
-.fridas-theme {
-  --profile-title-font: 'Times New Roman', Times, serif;
-  --profile-font-family: 'Times New Roman', Times, serif;
-
-  --profile-title-color: rgb(43, 98, 150);
+  // Colors
+  --profile-title-color: rgb(255, 255, 255);
   --profile-color: rgb(255, 255, 255);
-  --profile-bg-color: rgb(185, 174, 167);
+  --profile-bg-color: rgb(19, 22, 24);
 
-  --profile-img-border: white;
-  --profile-border-bottom-color: rgb(255, 223, 135);
-  --profile-border-img: url('$lib/Icons/Frames/WhiteLace.png') 37 round;
+  // Borders
+  --profile-img-border: rgb(0, 0, 0);
+  --profile-border-bottom-color: rgb(255, 255, 255);
+  --profile-border-img: url('$lib/Icons/Frames/GothFramee.png') 600 fill;
+
+  // Unique values
+  h3 {
+    font-size: 2.5rem;
+  }
+  h4 {
+    font-size: 2rem;
+  }
+  .profile-img {
+    filter: (grayscale(80%));
+  }
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                    Frida                                   */
+/* -------------------------------------------------------------------------- */
+.fridas-theme {
+  // Fonts
+  --profile-title-font: 'Fleur De Leah', cursive;
+  --profile-font-family: 'Times New Roman', Times, serif;
+
+  // Colors
+  --profile-title-color: rgb(0, 0, 0);
+  --profile-color: rgb(0, 0, 0);
+  --profile-bg-color: rgb(216, 209, 204);
+
+  // Borders
+  --profile-img-border: white;
+  --profile-border-bottom-color: rgb(158, 219, 255);
+  --profile-border-img: url('$lib/Icons/Frames/WhiteLace.png') fill 37 round;
+
+  // Unique values
+  h3 {
+    font-size: 3rem;
+  }
+  h4 {
+    font-size: 2.5rem;
+    padding: 0;
+    margin-bottom: 0;
+  }
+  p,
+  li {
+    font-style: italic;
+  }
+  .profile-img {
+    filter: (grayscale(40%));
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    Luna                                    */
+/* -------------------------------------------------------------------------- */
 .lunas-theme {
+  // Fonts
   --profile-title-font: 'Andale Mono', monospace;
   --profile-font-family: 'Andale Mono', monospace;
 
-  --profile-title-color: rgb(38, 228, 95);
+  // Colors
+  --profile-title-color: rgb(255, 255, 255);
   --profile-color: rgb(255, 255, 255);
-  --profile-bg-color: rgb(0, 0, 0);
+  --profile-bg-color: none;
 
+  // Borders
   --profile-img-border: white;
-  --profile-border-bottom-color: rgb(37, 226, 31);
-  --profile-border-img: url('$lib/Icons/Frames/SpikeFrame.png') 20 fill round;
+  --profile-border-bottom-color: rgb(255, 255, 255);
+  --profile-border-img: url('$lib/Icons/Frames/FrameBlack.png') fill 50 round;
+
+  // Unique values
+  .box {
+    p {
+      margin-right: 20px;
+    }
+  }
+  .profile-img {
+    filter: (grayscale(100%));
+  }
 }

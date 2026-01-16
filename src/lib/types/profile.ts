@@ -6,10 +6,11 @@ export interface Profile {
   favSong: {
     title: string;
     artist: string;
-    albumCover: string;
+    songLink: string;
   };
   favImg: string;
   listIcon?: string;
-  cdFrameImg?: string;
+  listGif?: string;
+  divider?: string;
   themeClass: string;
 }

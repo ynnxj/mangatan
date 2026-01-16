@@ -13,9 +13,12 @@
     favSong: {
       title: 'Meltdown',
       artist: 'Iroha(sasaki)',
-      albumCover: '/assets/images/albums/meltdown-album-cover.jfif'
+      songLink: 'soundcloud%253Atracks%253A1062635944&color=%23ff01e3'
     },
     favImg: '/assets/images/angela/angela-full-cold.jpg',
+    listIcon: '/src/lib/Icons/SmallIcons/PinkBow.gif',
+    listGif: '/src/lib/Icons/Gifs/Gyaru.webp',
+    divider: '/src/lib/Icons/Dividers/PinkDivider.webp',
     themeClass: 'angelas-theme'
   };
 </script>

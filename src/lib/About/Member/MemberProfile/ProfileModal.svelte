@@ -6,16 +6,16 @@
   export let profile: Profile;
 
   $: listIcon = profile.listIcon || 'src/lib/Icons/SmallIcons/SpinningStar.gif';
-  $: cdFrameImg = profile.cdFrameImg || 'src/lib/Icons/Frames/CdFrame.png';
 </script>
 
 <article class={profile.themeClass}>
   <div class="info-box box">
     <div>
-      <img src={profile.img} alt={`a portrait of ${profile.name}`} />
+      <img src={profile.img} alt={`a portrait of ${profile.name}`} class="profile-img" />
     </div>
     <div class="info-text">
       <h3>{profile.name}</h3>
+      <img src={profile.divider} alt="A gif" class="divider" />
       <p>{profile.desc}</p>
     </div>
   </div>
@@ -25,29 +25,36 @@
     <ul>
       {#each profile.likes as like}
         <li>
-          <img src={listIcon} alt="spinning star gif" />
+          <img src={listIcon} alt="List icon" />
           {like}
         </li>
       {/each}
     </ul>
+    <img src={profile.listGif} alt="A gif" class="list-img" />
   </div>
 
   <div class="fav-song box">
-    <h4>Favorite song</h4>
-    <div class="song">
-      <div class="album">
-        <img src={cdFrameImg} class="cd-frame" alt="cd album frame" />
-        <img
-          src={profile.favSong.albumCover}
-          class="album-cover"
-          alt={`${profile.favSong.title} album cover`}
-        />
+    <div>
+      <h4>Favorite song</h4>
+      <div class="song">
+        <p>{profile.favSong.title} by {profile.favSong.artist}</p>
       </div>
-      <p>{profile.favSong.title} by {profile.favSong.artist}</p>
+      <iframe
+        class="fave-song-link"
+        title="Music Player"
+        width="380"
+        height="95"
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{profile
+          .favSong
+          .songLink}&auto_play=false&hide_related=true&show_comments=true&show_user=false&show_reposts=false&show_teaser=false"
+      ></iframe>
     </div>
   </div>
 
   <div class="fav-img box">
-    <img src={profile.favImg} alt="favorite img" />
+    <img src={profile.favImg} alt="favorite img" class="fav-img" />
   </div>
 </article>

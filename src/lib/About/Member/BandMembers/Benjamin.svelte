@@ -13,9 +13,12 @@
     favSong: {
       title: 'When It Rains',
       artist: 'Paramore',
-      albumCover: '/assets/images/albums/when-it-rains-cover.jfif'
+      songLink: 'soundcloud%253Atracks%253A256142132&color=%23000000'
     },
-    favImg: '/assets/images/benjamin/benjamin-smoke-live.jpg',
+    favImg: '/assets/images/benjamin/benjamin-half-portrait.png',
+    listIcon: '/src/lib/Icons/SmallIcons/Cross.gif',
+    listGif: '/src/lib/Icons/Gifs/Crow.gif',
+    divider: '/src/lib/Icons/Dividers/SwordDivider.png',
     themeClass: 'benjamins-theme'
   };
 </script>

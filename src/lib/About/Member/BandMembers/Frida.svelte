@@ -13,9 +13,12 @@
     favSong: {
       title: 'September Gurls',
       artist: 'The Bangles',
-      albumCover: '/assets/images/albums/september-gurls-cover.jfif'
+      songLink: 'soundcloud%253Atracks%253A255915799&color=%23955b4c'
     },
-    favImg: '/assets/images/frida/frida-guitar-live.jpg',
+    favImg: '/assets/images/frida/frida-fav-img.jpg',
+    listIcon: '/src/lib/Icons/SmallIcons/Ring.webp',
+    listGif: '/src/lib/Icons/Gifs/Dawn.webp',
+    divider: '/src/lib/Icons/Dividers/BlueDivider.png',
     themeClass: 'fridas-theme'
   };
 </script>
