@@ -3,7 +3,7 @@
   import './about-band.scss';
 </script>
 
-<h2 class="about-title">―⋆Welcome⋆˙</h2>
+<h2 class="about-greeting-title">―⋆Welcome⋆˙</h2>
 <div class="about">
   <img
     class="image"
@@ -14,7 +14,7 @@
   />
 
   <div class="about-text">
-    <h3>About Mångatan</h3>
+    <h3 class="about-title">About Mångatan</h3>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea aperiam dolorem assumenda ad
       perspiciatis dignissimos numquam vitae tenetur aliquam, mollitia iste laudantium, debitis

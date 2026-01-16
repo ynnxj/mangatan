@@ -1,4 +1,4 @@
-.about-title {
+.about-greeting-title {
   font-size: 5rem;
   font-weight: 400;
   margin: 10px 0;
@@ -7,6 +7,7 @@
   background-color: var(--win98-darker-gray);
   font-family: 'Orbitron', sans-serif;
 }
+
 .about {
   display: flex;
   flex-direction: row;
@@ -17,6 +18,14 @@
   background-color: var(--win98-light-gray);
   border: 1px solid var(--win98-darker-gray);
   box-shadow: 1px 1px 4px var(--win98-darker-gray);
+
+  .about-title {
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    border-bottom: 1px solid var(--win98-black);
+  }
 
   .image {
     min-width: 300px;

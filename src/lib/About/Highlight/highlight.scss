@@ -1,0 +1,24 @@
+.highlight {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 50px 0;
+
+  .highlight-wmp {
+    background-image: url('/assets/images/mangatan/radarn.gif');
+    background-repeat: no-repeat;
+    background-position: center 10px;
+    background-size: 100%;
+    border-radius: 30px;
+    filter: drop-shadow(1px 1px 5px var(--win98-black));
+
+    .wmp {
+      z-index: 10;
+      width: 100%;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
