@@ -1,7 +1,8 @@
 <script lang="ts">
   import { patterns } from '$lib/utils/validation';
   import Window from '$lib/WindowBorder/Window.svelte';
-  import FeedbackModal from './FeedbackModal.svelte';
+  import FeedbackModal from '../FeedbackModal.svelte';
+  import './checkout-form.scss';
 
   let showFeedbackModal = $state(false);
 
@@ -157,71 +158,3 @@
     <FeedbackModal />
   </div>
 {/if}
-
-<style lang="scss">
-  .message-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(2px);
-    z-index: 20;
-  }
-
-  form {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-
-    label {
-      margin-top: 1em;
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 500;
-    }
-
-    input {
-      margin-top: 5px;
-      padding: 10px;
-      font-size: 1em;
-      width: 100%;
-      font-family: inherit;
-    }
-
-    .contact-buttons {
-      display: flex;
-      justify-content: end;
-      gap: 15px;
-      margin: 15px 0;
-
-      button {
-        padding: 10px 30px;
-        margin-bottom: 15px;
-        font-size: 1.2rem;
-        font-family: 'Orbitron', sans-serif;
-        align-self: center;
-        text-shadow: 1px 1px 2px var(--win98-black);
-        border: 1px solid var(--win98-white);
-        box-shadow: 0 0 0 1px var(--win98-dark-gray);
-        border-radius: 15px;
-        background: var(--win7-button-face);
-        color: white;
-
-        &:hover {
-          border: 1px solid #ecf7fd;
-          box-shadow: 0 0 0 1px var(--win98-light-blue);
-          background: var(--win7-button-hover);
-        }
-      }
-    }
-  }
-
-  .confrimation-modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 50;
-  }
-</style>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Form from './Form.svelte';
+  import CheckoutForm from './Form/CheckoutForm.svelte';
   import OrderSummary from './OrderSummary.svelte';
 </script>
 
@@ -10,12 +10,16 @@
       src="/assets/images/mangatan/mangatan-logo.PNG"
       alt="Mångatan logo"
     />
-    <img class="merch-page-title" src="/src/lib/Icons/GlitterTitle.gif" alt="Glitter merch logo" />
+    <img
+      class="merch-page-title"
+      src="/src/lib/Icons/Merch/GlitterTitle.gif"
+      alt="Glitter merch logo"
+    />
   </div>
 
   <div class="checkout-content">
     <div>
-      <Form />
+      <CheckoutForm />
     </div>
     <div>
       <OrderSummary />
@@ -35,7 +39,7 @@
     justify-content: center;
     margin: 10px 0 40px 0;
     border-bottom: 30px solid transparent;
-    border-image: url('/src/lib/Icons/Divider.webp') 30 stretch;
+    border-image: url('/src/lib/Icons/Merch/Divider.webp') 30 stretch;
     border-image-slice: 30;
     border-image-width: 1;
     border-image-outset: 0;
