@@ -1,10 +1,12 @@
 <script lang="ts">
   import TopBorder from './TopBorder.svelte';
 
-  export let windowTitle: string = 'Window Title';
+  export let windowTitle: string = 'Window Title',
+    width: string = 'auto',
+    Class: string = '';
 </script>
 
-<div class="window">
+<div class="window {Class}" style="width: {width};">
   <TopBorder title={windowTitle} />
   <div class="window-content">
     <slot />
@@ -15,13 +17,13 @@
   .window {
     position: relative;
     max-width: 600px;
-    min-width: 400px;
     height: auto;
     border-top: 2px solid var(--win98-white);
     border-left: 2px solid var(--win98-white);
     border-right: 2px solid var(--win98-darker-gray);
     border-bottom: 2px solid var(--win98-darker-gray);
     background: var(--win98-gray);
+    margin-bottom: 20px;
 
     .window-content {
       overflow: auto;

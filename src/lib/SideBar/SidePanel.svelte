@@ -1,16 +1,14 @@
 <script lang="ts">
+  import Window from '$lib/WindowBorder/Window.svelte';
   import SpinningStar from '../Icons/SmallIcons/SpinningStar.gif';
-  import { webStamps } from '../data/webStamps';
   import './side-panel.scss';
 
   export let side: 'left' | 'right';
 </script>
 
 {#if side === 'left'}
-  <div class="panel-container {side}">
-    <h3 class="panel-title">Welcome</h3>
-
-    <h4 class="panel-under-title">Important Links</h4>
+  <Window windowTitle="Important Links" width="200px" Class="panel-container {side}">
+    <h4 class="panel-under-title">Social Media</h4>
     <div class="links">
       <ul class="links-list">
         <li>
@@ -45,19 +43,12 @@
         </li>
       </ul>
     </div>
-
-    <div class="collection">
-      {#each webStamps as stamp}
-        <img src={stamp.src} alt={stamp.alt} />
-      {/each}
-    </div>
-  </div>
+    <img class="left-img" src="/src/lib/Icons/WebStamps/desktop.webp" alt="stamp" />
+  </Window>
 {:else}
   <!--MOCK-->
   <!-- TODO: If these's time, turn News into data to render -->
-  <div class="panel-container {side}">
-    <h3 class="panel-title">News</h3>
-
+  <Window windowTitle="News.exe" width="300px" Class="panel-container {side}">
     <h4 class="panel-under-title">Updates</h4>
     <ul class="news-list-section">
       <li>
@@ -85,15 +76,13 @@
           as we do. xoxo
         </p>
       </li>
+      <li>
+        <h5 class="news-title">Omg we have a new website!</h5>
+        <p>
+          Welcome to our brand new website!! This is a dream come true. I hope you enjoy it as much
+          as we do. xoxo
+        </p>
+      </li>
     </ul>
-    <div class="highlight">
-      <img src="src/lib/Icons/WebStamps/Click.webp" class="click" alt="click" />
-      <img src="src/lib/Icons/SmallIcons/PointDown.webp" class="point" alt="pointer cursor" />
-      <div class="highlight-wmp">
-        <a href="https://www.youtube.com/watch?v=zH0dspyWQGE" title="YouTube" target="_blank">
-          <img src="src/lib/Icons/Frames/Digicam.png" class="wmp" alt="wmp frame" />
-        </a>
-      </div>
-    </div>
-  </div>
+  </Window>
 {/if}
