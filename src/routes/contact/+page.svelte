@@ -2,6 +2,4 @@
   import Contact from '$lib/Contact/Contact.svelte';
 </script>
 
-<section>
-  <Contact />
-</section>
+<Contact />
