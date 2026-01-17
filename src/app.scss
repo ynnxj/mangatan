@@ -9,10 +9,12 @@
 
   /* Classic Blues */
   --win98-blue: #000080;
+  --win98-accent-blue: blue;
   --win98-light-blue: #1084d0;
 
   /* Accent Colors */
   --win98-accent-pink: #ff00ff;
+  --win98-accent-purple: rgb(97, 53, 155);
   --win98-accent-hover: #d4d4d4;
   --win98-accent-active: rgb(219, 219, 219);
 
@@ -83,4 +85,8 @@ main {
 ul {
   list-style: none;
   padding-left: 0;
+}
+
+button:hover {
+  cursor: pointer;
 }

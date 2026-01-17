@@ -11,7 +11,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: 80px 0 40px 0;
+  margin: 10px 0 40px 0;
   border-bottom: 30px solid transparent;
   border-image: url('/src/lib/Icons/Merch/Divider.webp') 30 stretch;
   border-image-slice: 30;
@@ -41,28 +41,40 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10;
-  background-color: white;
-}
+  z-index: 40;
 
-.sort-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  align-items: center;
+  p {
+    font-size: 2rem;
+    padding: 20px;
+    text-align: center;
+  }
 
-  .category-list {
-    position: absolute;
+  .btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     padding: 0 10px;
-    z-index: 10;
-    background-color: white;
+  }
 
-    .categories {
-      li {
-        border-bottom: 1px solid var(--win98-black);
-        text-align: left;
-        margin-bottom: 10px;
-      }
+  button {
+    height: 28px;
+    padding: 0 12px;
+    background: var(--win98-button-face);
+    border: 2px solid;
+    border-top-color: var(--win98-button-highlight);
+    border-left-color: var(--win98-button-highlight);
+    border-right-color: var(--win98-button-shadow);
+    border-bottom-color: var(--win98-button-shadow);
+    color: var(--win98-black);
+    align-items: center;
+
+    &:hover {
+      background: var(--win98-accent-hover);
+    }
+
+    a {
+      color: var(--win98-black);
+      text-decoration: none;
     }
   }
 }

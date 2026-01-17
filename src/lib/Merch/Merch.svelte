@@ -5,20 +5,29 @@
   import type { Item, Cart } from '$lib/types/merch';
   import { scroll } from '$lib/utils/scroll';
   import './merch.scss';
+  import SortBy from './SortBy/SortBy.svelte';
+
+  // States
+  let sortBy = $state(''),
+    selectedCategory = $state('all'),
+    cart = $state<Cart[]>([]),
+    showAddModal = $state(false);
 
   // Props
   const { data } = $props<{ data: { merch: Item[] } }>(),
     merch = $derived(data.merch);
 
-  // States
-  let cart = $state<Cart[]>([]),
-    showCategories = $state(false),
-    showAddModal = $state(false);
-
   // Computed values
-  const cartTotal = $derived.by(() =>
-    cart.reduce((sum, cartItem) => sum + cartItem.item.price * cartItem.quantity, 0)
-  );
+  const sortedMerch = $derived.by(() => {
+      let items = [...merch];
+      if (selectedCategory !== 'all') items = items.filter((i) => i.type === selectedCategory);
+      return items.sort((a, b) =>
+        sortBy === 'name' ? a.name.localeCompare(b.name) : a.price - b.price
+      );
+    }),
+    cartTotal = $derived.by(() =>
+      cart.reduce((sum, cartItem) => sum + cartItem.item.price * cartItem.quantity, 0)
+    );
 
   /* -------------------------------------------------------------------------- */
   /*                               Cart operators                               */
@@ -55,8 +64,8 @@
   /* -------------------------------------------------------------------------- */
   /*                               Toggle Buttons                               */
   /* -------------------------------------------------------------------------- */
-  const toggleCategoryBtn = () => (showCategories = !showCategories),
-    closeAddModal = () => (showAddModal = false);
+
+  const closeAddModal = () => (showAddModal = false);
 
   // Scroll toggle
   $effect(() => {
@@ -93,27 +102,19 @@
     />
   </div>
 
-  <div class="sort-container">
-    <span>Sort by:</span>
-    <button class="name">Name</button>
-    <button class="price">Price</button>
-    <div>
-      <button class="category" onclick={toggleCategoryBtn}>Category</button>
-      {#if showCategories}
-        <div class="category-list" use:overlayClick={() => (showCategories = false)}>
-          <ul class="categories">
-            <li>Apparel</li>
-            <li>Accessories</li>
-            <li>Albums</li>
-          </ul>
-        </div>
-      {/if}
-    </div>
-  </div>
+  <SortBy
+    {sortBy}
+    onSort={(type) => (sortBy = type)}
+    onCategory={(category) => (selectedCategory = category)}
+    onReset={() => {
+      sortBy = '';
+      selectedCategory = 'all';
+    }}
+  />
 
   <ul class="merch-list">
-    {#if merch.length > 0}
-      {#each merch as item}
+    {#if sortedMerch.length > 0}
+      {#each sortedMerch as item}
         <li>
           <Window windowTitle={'Item.exe'}>
             <img
@@ -131,12 +132,14 @@
 
               {#if showAddModal}
                 <div class="added-modal" use:overlayClick={() => (showAddModal = false)}>
-                  <p>Added!</p>
+                  <Window windowTitle="Success!">
+                    <p>˖⟡˚Added item to Cart˚⟡˖ ࣪</p>
 
-                  <div class="btn-container">
-                    <button onclick={closeAddModal}>Continue shopping</button>
-                    <button>Go to checkout</button>
-                  </div>
+                    <div class="btn-container">
+                      <button onclick={closeAddModal}>Continue shopping</button>
+                      <button><a href="merch/checkout">Go to checkout</a></button>
+                    </div>
+                  </Window>
                 </div>
               {/if}
             </div>
@@ -144,7 +147,15 @@
         </li>
       {/each}
     {:else}
-      <li>No merch available</li>
+      <li>
+        {#if merch.length === 0}
+          No merch available
+        {:else if selectedCategory !== 'all'}
+          No items in the "{selectedCategory}" category
+        {:else}
+          No merch available
+        {/if}
+      </li>
     {/if}
   </ul>
 </section>

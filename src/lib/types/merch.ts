@@ -1,7 +1,7 @@
 export interface Item {
   _id: string;
   name: string;
-  type: string;
+  type: string; //types are "apparel", "accessories" and "albums"
   price: number;
   description: string;
   image_url: string;
