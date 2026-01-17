@@ -17,7 +17,7 @@
   });
 </script>
 
-<Window windowTitle="Items.exe">
+<Window windowTitle="Items.exe" width="400px">
   <div class="order-summary">
     <h3 class="order-title">Your Order</h3>
     <ul class="order-item-list">

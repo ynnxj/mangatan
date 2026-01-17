@@ -75,7 +75,7 @@
   };
 </script>
 
-<Window windowTitle="Form.exe">
+<Window windowTitle="Form.exe" width="450px">
   <form onsubmit={handleSubmit}>
     <label for="name">Full Name:</label>
     <input
