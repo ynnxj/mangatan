@@ -1,9 +1,11 @@
 <script lang="ts">
   import Window from '$lib/WindowBorder/Window.svelte';
+  import type { Post } from '$lib/types/posts';
   import SpinningStar from '../Icons/SmallIcons/SpinningStar.gif';
   import './side-panel.scss';
 
   export let side: 'left' | 'right';
+  export let news: Post[] = [];
 </script>
 
 {#if side === 'left'}
@@ -46,43 +48,30 @@
     <img class="left-img" src="/src/lib/Icons/WebStamps/desktop.webp" alt="stamp" />
   </Window>
 {:else}
-  <!--MOCK-->
-  <!-- TODO: If these's time, turn News into data to render -->
   <Window windowTitle="News.exe" width="300px" Class="panel-container {side}">
     <h4 class="panel-under-title">Updates</h4>
     <ul class="news-list-section">
-      <li>
-        <h5 class="news-title">500 minuter OUT NOW!</h5>
-        <p>Finally, out new single '500 minuter' is now out on spotify.</p>
-        <a
-          href="https://open.spotify.com/track/484HRV0bKybqTmfqNwEyVq?si=fe6b1c8a8f7841d5"
-          target="_blank"
-          title="Spotify">Click here to listen TODAY</a
-        >
-      </li>
-      <li>
-        <h5 class="news-title">500 minuter OUT NOW!</h5>
-        <p>Finally, out new single '500 minuter' is now out on spotify.</p>
-        <a
-          href="https://open.spotify.com/track/484HRV0bKybqTmfqNwEyVq?si=fe6b1c8a8f7841d5"
-          target="_blank"
-          title="Spotify">Click here to listen TODAY</a
-        >
-      </li>
-      <li>
-        <h5 class="news-title">Omg we have a new website!</h5>
-        <p>
-          Welcome to our brand new website!! This is a dream come true. I hope you enjoy it as much
-          as we do. xoxo
-        </p>
-      </li>
-      <li>
-        <h5 class="news-title">Omg we have a new website!</h5>
-        <p>
-          Welcome to our brand new website!! This is a dream come true. I hope you enjoy it as much
-          as we do. xoxo
-        </p>
-      </li>
+      {#if news.length > 0}
+        {#each news as post}
+          <li class="post">
+            <div>
+              <h4 class="post-title">{post.title}</h4>
+              <p class="post-text">{post.text}</p>
+              <p class="post-date">
+                {new Date(post.date).toLocaleDateString('en-US', {
+                  weekday: 'long',
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
+              </p>
+              <span class="author">/ {post.author}</span>
+            </div>
+          </li>
+        {/each}
+      {:else}
+        <li>No posts available</li>
+      {/if}
     </ul>
   </Window>
 {/if}

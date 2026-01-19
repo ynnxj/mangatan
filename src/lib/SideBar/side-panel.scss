@@ -56,6 +56,20 @@
       border: 1px solid var(--win98-black);
       box-shadow: 1px 1px 3px var(--win98-dark-gray);
       margin-bottom: 10px;
+
+      .post-title {
+        font-size: 1.2rem;
+        margin: 0;
+        font-family: var(--win98-font-title);
+      }
+
+      .post-date {
+        font-style: italic;
+      }
+
+      .author {
+        font-weight: bold;
+      }
     }
   }
 }

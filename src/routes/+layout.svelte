@@ -1,6 +1,7 @@
 <script lang="ts">
   import '../app.scss';
   import Nav from '$lib/Nav/Nav.svelte';
+
   import SidePanel from '$lib/SideBar/SidePanel.svelte';
   import { page } from '$app/stores';
 
@@ -8,7 +9,7 @@
   const isMerchPage = $derived($page.url.pathname === '/merch');
   const isCheckoutPage = $derived($page.url.pathname === '/merch/checkout');
 
-  let { children } = $props();
+  let { children, data } = $props();
 </script>
 
 <!-- TODO: Maybe fix this eventually. It's looking a bit messy atm -->
@@ -19,7 +20,7 @@
       {@render children()}
       <Nav />
     </main>
-    <SidePanel side={'right'} />
+    <SidePanel side={'right'} news={data.news} />
   </div>
 {/if}
 
