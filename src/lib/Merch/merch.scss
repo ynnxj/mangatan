@@ -86,5 +86,26 @@
 
   .item-img {
     width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .add-to-cart {
+    button {
+      height: 28px;
+      padding: 0 12px;
+      background: var(--win98-button-face);
+      border: 2px solid;
+      border-top-color: var(--win98-button-highlight);
+      border-left-color: var(--win98-button-highlight);
+      border-right-color: var(--win98-button-shadow);
+      border-bottom-color: var(--win98-button-shadow);
+      color: var(--win98-black);
+      align-items: center;
+
+      &:hover {
+        background: var(--win98-accent-hover);
+      }
+    }
   }
 }

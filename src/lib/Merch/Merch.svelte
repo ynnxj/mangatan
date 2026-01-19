@@ -116,12 +116,8 @@
     {#if sortedMerch.length > 0}
       {#each sortedMerch as item}
         <li>
-          <Window windowTitle={'Item.exe'}>
-            <img
-              class="item-img"
-              src="/assets/images/placeholders/tote-placeholder.jpg"
-              alt={item.name}
-            />
+          <Window windowTitle={'Item.exe'} width="100%">
+            <img class="item-img" src={item.image_url} alt={item.name} />
             <h3 class="item-name">{item.name}</h3>
             <p class="item-desc">{item.description}</p>
             <p class="item-price">{item.price}SEK</p>
@@ -129,22 +125,22 @@
 
             <div class="add-to-cart">
               <button class="add-btn" onclick={() => addToCart(item)}>Add to Cart</button>
-
-              {#if showAddModal}
-                <div class="added-modal" use:overlayClick={() => (showAddModal = false)}>
-                  <Window windowTitle="Success!">
-                    <p>˖⟡˚Added item to Cart˚⟡˖ ࣪</p>
-
-                    <div class="btn-container">
-                      <button onclick={closeAddModal}>Continue shopping</button>
-                      <button><a href="merch/checkout">Go to checkout</a></button>
-                    </div>
-                  </Window>
-                </div>
-              {/if}
             </div>
           </Window>
         </li>
+
+        {#if showAddModal}
+          <div class="added-modal" use:overlayClick={() => (showAddModal = false)}>
+            <Window windowTitle={'Success!'}>
+              <p>˖⟡˚Added item to Cart˚⟡˖ ࣪</p>
+
+              <div class="btn-container">
+                <button onclick={closeAddModal}>Continue shopping</button>
+                <button><a href="merch/checkout">Go to checkout</a></button>
+              </div>
+            </Window>
+          </div>
+        {/if}
       {/each}
     {:else}
       <li>
