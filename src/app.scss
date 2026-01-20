@@ -73,7 +73,10 @@ body {
   background-attachment: fixed;
   color: var(--win98-black);
   overflow-x: hidden;
-  overflow-y: auto;
+}
+
+html {
+  scrollbar-gutter: stable;
 }
 
 main {
