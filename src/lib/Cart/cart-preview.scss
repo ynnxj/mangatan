@@ -9,6 +9,21 @@
   img {
     width: 80px;
   }
+
+  .cart-badge {
+    background-color: white;
+    padding: 10px;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
 }
 
 .cart-preview {

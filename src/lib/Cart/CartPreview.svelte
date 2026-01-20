@@ -17,6 +17,9 @@
     isCartOpen = !isCartOpen;
   };
 
+  // Get total in cart
+  const totalItems = () => props.cart.reduce((sum: number, item: Cart) => sum + item.quantity, 0);
+
   // Scroll toggle
   $effect(() => {
     scroll.toggle(isCartOpen);
@@ -43,6 +46,9 @@
 
 <button class="shopping-bag" onclick={toggleCart}>
   <img src="src/lib/Icons/Merch/ShoppingBag.png" alt="A brown paper shopping bag" />
+  {#if totalItems() > 0}
+    <span class="cart-badge">{totalItems()}</span>
+  {/if}
 </button>
 
 {#if isCartOpen}
