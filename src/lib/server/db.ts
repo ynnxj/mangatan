@@ -1,11 +1,11 @@
-//TODO: Refactor this. It's too loooong and repeating.
-
 import { MongoClient } from 'mongodb';
 import { MONGODB_URI, DB_NEWS, DB_GIGS, DB_MERCH } from '$env/static/private';
+import type { Post } from '$lib/types/posts';
 
 const client = new MongoClient(MONGODB_URI);
 let connected = false;
 
+// Connect to client
 const connectToClient = async () => {
   if (!connected) {
     await client.connect();
@@ -15,53 +15,31 @@ const connectToClient = async () => {
   return client;
 };
 
-export const connectToNews = async () => {
+const connectToDb = async (database: string) => {
   try {
     const client = await connectToClient();
-    return client.db(DB_NEWS);
+    return client.db(database);
   } catch (error) {
     console.error('MongoDB connection error:', error);
     throw error;
   }
 };
 
-export const getNews = async () => {
-  const db = await connectToNews();
-  const news = await db.collection('posts').find().toArray();
+// Connect to dbs
+export const connectToNews = () => connectToDb(DB_NEWS),
+  connectToGigs = () => connectToDb(DB_GIGS),
+  connectToMerch = () => connectToDb(DB_MERCH);
 
-  return JSON.parse(JSON.stringify(news));
+// Get collections
+export const getCollection = async <T = unknown>(
+  database: string,
+  collectionName: string
+): Promise<T[]> => {
+  const db = await connectToDb(database);
+  const data = await db.collection(collectionName).find().toArray();
+  return JSON.parse(JSON.stringify(data));
 };
 
-export const connectToGigs = async () => {
-  try {
-    const client = await connectToClient();
-    return client.db(DB_GIGS);
-  } catch (error) {
-    console.error('MongoDB connection error:', error);
-    throw error;
-  }
-};
-
-export const getGigs = async () => {
-  const db = await connectToGigs();
-  const gigs = await db.collection('gigs').find().toArray();
-
-  return JSON.parse(JSON.stringify(gigs));
-};
-
-export const connectToMerch = async () => {
-  try {
-    const client = await connectToClient();
-    return client.db(DB_MERCH);
-  } catch (error) {
-    console.error('MongoDB connection error:', error);
-    throw error;
-  }
-};
-
-export const getMerch = async () => {
-  const db = await connectToMerch();
-  const merch = await db.collection('items').find().toArray();
-
-  return JSON.parse(JSON.stringify(merch));
-};
+export const getNews = () => getCollection<Post>(DB_NEWS, 'posts'),
+  getGigs = () => getCollection(DB_GIGS, 'gigs'),
+  getMerch = () => getCollection(DB_MERCH, 'items');
