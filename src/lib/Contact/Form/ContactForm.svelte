@@ -1,5 +1,7 @@
 <script lang="ts">
+  import ModalOverlay from '$lib/ModalOverlay/ModalOverlay.svelte';
   import Window from '$lib/WindowBorder/Window.svelte';
+  import { overlayClick } from '$lib/actions/overlayClick';
   import { scroll } from '$lib/utils/scroll';
   import './contact-form.scss';
 
@@ -44,14 +46,9 @@ and ensure proper labeling for screen readers -->
   </form>
 
   {#if showFeedbackModal}
-    <button
-      class="confirm-overlay"
-      onclick={() => (showFeedbackModal = false)}
-      aria-label="Confirm submit message overlay"
-    ></button>
+    <ModalOverlay />
 
-    <div class="confirm-submit-message">
-      <!-- TODO: Maybe make this a reusable component -->
+    <div class="confirm-submit-message" use:overlayClick={() => (showFeedbackModal = false)}>
       <Window windowTitle="Message Sent">
         <div class="submit-modal">
           <div class="submit-title">

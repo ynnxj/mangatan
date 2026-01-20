@@ -6,6 +6,7 @@
   import { scroll } from '$lib/utils/scroll';
   import './merch.scss';
   import SortBy from './SortBy/SortBy.svelte';
+  import ModalOverlay from '$lib/ModalOverlay/ModalOverlay.svelte';
 
   // States
   let sortBy = $state(''),
@@ -143,11 +144,10 @@
   </ul>
 
   {#if showAddModal}
-    <div class="modal-overlay"></div>
+    <ModalOverlay />
     <div class="added-modal" use:overlayClick={closeAddModal}>
       <Window windowTitle={'Success!'}>
         <p>˖⟡˚Added item to Cart˚⟡˖ ࣪</p>
-
         <div class="btn-container">
           <button onclick={closeAddModal}>Continue shopping</button>
           <button><a href="merch/checkout">Go to checkout</a></button>

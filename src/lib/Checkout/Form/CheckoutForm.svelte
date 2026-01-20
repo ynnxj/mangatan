@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { overlayClick } from '$lib/actions/overlayClick';
   import type { Cart } from '$lib/types/merch';
   import { patterns } from '$lib/utils/validation';
   import Window from '$lib/WindowBorder/Window.svelte';
@@ -195,7 +196,7 @@
 </Window>
 
 {#if showFeedbackModal}
-  <button class="message-overlay" aria-label="Message Overlay"></button>
+  <div class="message-overlay"></div>
   <div class="confrimation-modal">
     <FeedbackModal />
   </div>

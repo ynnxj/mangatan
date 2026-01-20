@@ -3,6 +3,7 @@
   import { scroll } from '$lib/utils/scroll';
   import { overlayClick } from '$lib/actions/overlayClick';
   import './cart-preview.scss';
+  import ModalOverlay from '$lib/ModalOverlay/ModalOverlay.svelte';
 
   // Props
   const props = $props<{
@@ -52,7 +53,7 @@
 </button>
 
 {#if isCartOpen}
-  <div class="cart-overlay"></div>
+  <ModalOverlay />
   <div class="cart-preview" use:overlayClick={toggleCart}>
     <div class="cart-preview-header">
       <h3 class="cart-preview-title">Cart</h3>

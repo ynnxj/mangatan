@@ -1,9 +1,11 @@
 <script lang="ts">
   import Window from '$lib/WindowBorder/Window.svelte';
   import { scroll } from '$lib/utils/scroll';
+  import { overlayClick } from '$lib/actions/overlayClick';
   import { members } from '../data/members';
   import AboutBand from './Band/AboutBand.svelte';
   import './about.scss';
+  import ModalOverlay from '$lib/ModalOverlay/ModalOverlay.svelte';
 
   let selectedMember = $state<string | null>(null);
   const openMember = (name: string) => (selectedMember = name),
@@ -50,8 +52,8 @@
   </div>
 
   {#if selectedMember}
-    <div class="member-overlay" onclick={closeMember} aria-label="Close member modal"></div>
-    <div class="member {selectedMember.toLowerCase()}">
+    <ModalOverlay />
+    <div class="member {selectedMember.toLowerCase()}" use:overlayClick={closeMember}>
       <button class="exit-btn" onclick={closeMember}>X</button>
       {#each members as { name, Member }}
         {#if name === selectedMember}
