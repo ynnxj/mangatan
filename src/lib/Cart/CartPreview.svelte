@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { Cart } from '$lib/types/merch';
   import { scroll } from '$lib/utils/scroll';
+  import { overlayClick } from '$lib/actions/overlayClick';
   import './cart-preview.scss';
 
   // Props
@@ -45,9 +46,8 @@
 </button>
 
 {#if isCartOpen}
-  <button class="cart-overlay" onclick={toggleCart} aria-label="Close cart"></button>
-
-  <div class="cart-preview">
+  <div class="cart-overlay"></div>
+  <div class="cart-preview" use:overlayClick={toggleCart}>
     <div class="cart-preview-header">
       <h3 class="cart-preview-title">Cart</h3>
       <button class="close-btn" onclick={toggleCart}
@@ -61,11 +61,7 @@
         <ul>
           {#each props.cart as cartItem}
             <li>
-              <img
-                class="item-img"
-                src="/assets/images/placeholders/tote-placeholder.jpg"
-                alt={cartItem.item.name}
-              />
+              <img class="item-img" src={cartItem.item.image_url} alt={cartItem.item.name} />
               <div>
                 <p>{cartItem.item.name}</p>
                 <p class="cart-item-total">

@@ -128,19 +128,6 @@
             </div>
           </Window>
         </li>
-
-        {#if showAddModal}
-          <div class="added-modal" use:overlayClick={() => (showAddModal = false)}>
-            <Window windowTitle={'Success!'}>
-              <p>˖⟡˚Added item to Cart˚⟡˖ ࣪</p>
-
-              <div class="btn-container">
-                <button onclick={closeAddModal}>Continue shopping</button>
-                <button><a href="merch/checkout">Go to checkout</a></button>
-              </div>
-            </Window>
-          </div>
-        {/if}
       {/each}
     {:else}
       <li>
@@ -154,4 +141,18 @@
       </li>
     {/if}
   </ul>
+
+  {#if showAddModal}
+    <div class="modal-overlay"></div>
+    <div class="added-modal" use:overlayClick={closeAddModal}>
+      <Window windowTitle={'Success!'}>
+        <p>˖⟡˚Added item to Cart˚⟡˖ ࣪</p>
+
+        <div class="btn-container">
+          <button onclick={closeAddModal}>Continue shopping</button>
+          <button><a href="merch/checkout">Go to checkout</a></button>
+        </div>
+      </Window>
+    </div>
+  {/if}
 </section>

@@ -4,6 +4,7 @@
 </script>
 
 <section class="checkout-page">
+  <!--TODO: make this a component maybe -->
   <div class="merch-page-header">
     <img
       class="merch-page-logo"

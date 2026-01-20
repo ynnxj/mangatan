@@ -23,11 +23,7 @@
     <ul class="order-item-list">
       {#each cart as item}
         <li class="order-item">
-          <img
-            class="item-img"
-            src="/assets/images/placeholders/tote-placeholder.jpg"
-            alt={item.item.name}
-          />
+          <img class="item-img" src={item.item.image_url} alt={item.item.name} />
           <div>
             <h4 class="item-name">{item.item.name}</h4>
             <p>{item.quantity} × {item.item.price} SEK</p>
