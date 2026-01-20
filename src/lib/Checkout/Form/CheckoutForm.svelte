@@ -1,24 +1,60 @@
 <script lang="ts">
+  import type { Cart } from '$lib/types/merch';
   import { patterns } from '$lib/utils/validation';
   import Window from '$lib/WindowBorder/Window.svelte';
   import FeedbackModal from '../FeedbackModal.svelte';
   import './checkout-form.scss';
 
-  let showFeedbackModal = $state(false);
+  let cart: Cart[] = $state([]),
+    showFeedbackModal = $state(false),
+    errors = $state<Record<string, string>>({}),
+    // Temporary
+    form = $state({
+      name: 'Test User',
+      email: 'test@example.com',
+      personalId: '123456-7890',
+      phone: '0701234567',
+      cardNumber: '4111111111111111',
+      postalAddress: 'Test Street 123',
+      zipCode: '123 45',
+      cvv: '123'
+    });
 
-  let form = $state({
-    name: 'Test User',
-    email: 'test@example.com',
-    personalId: '123456-7890',
-    phone: '0701234567',
-    cardNumber: '4111111111111111',
-    postalAddress: 'Test Street 123',
-    zipCode: '123 45',
-    cvv: '123'
+  $effect(() => {
+    const stored = localStorage.getItem('cart');
+    if (stored) {
+      cart = JSON.parse(stored);
+    }
   });
-  let errors = $state<Record<string, string>>({});
 
-  const handleSubmit = (e: Event) => {
+  const checkoutCart = async () => {
+    try {
+      // Maybe figure out a better solution for this, visually atleast.
+      if (!cart || cart.length === 0) {
+        return false;
+      }
+
+      const res = await fetch('/merch/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(cart)
+      });
+
+      const data = await res.json();
+      console.log('Server response data:', data);
+
+      if (!res.ok) {
+        return false;
+      }
+
+      return true;
+    } catch (error) {
+      console.error('Checkout error:', error);
+      return false;
+    }
+  };
+
+  const handleSubmit = async (e: Event) => {
     e.preventDefault();
     errors = {};
     let isValid = true;
@@ -69,8 +105,14 @@
     }
 
     if (isValid) {
-      showFeedbackModal = true;
-      localStorage.removeItem('cart');
+      const success = await checkoutCart();
+      if (success) {
+        showFeedbackModal = true;
+        setTimeout(() => {
+          cart = [];
+          localStorage.removeItem('cart');
+        }, 0);
+      }
     }
   };
 </script>
