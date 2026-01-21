@@ -41,7 +41,7 @@
     <ul>
       {#each members as { name }}
         <li>
-          <button onclick={() => openMember(name)}>
+          <button class="member-btn" onclick={() => openMember(name)}>
             <!-- TODO: replace placeholders -->
             <img src={`assets/images/${name.toLowerCase()}/${name.toLowerCase()}.png`} alt={name} />
             {name}
