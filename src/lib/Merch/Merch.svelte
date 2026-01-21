@@ -7,6 +7,7 @@
   import './merch.scss';
   import SortBy from './SortBy/SortBy.svelte';
   import ModalOverlay from '$lib/ModalOverlay/ModalOverlay.svelte';
+  import MerchHeader from './MerchHeader/MerchHeader.svelte';
 
   // States
   let sortBy = $state(''),
@@ -90,18 +91,7 @@
 <section class="merch-page">
   <CartPreview {cart} {cartTotal} onCartUpdate={updateQuantity} />
 
-  <div class="merch-page-header">
-    <img
-      class="merch-page-logo"
-      src="/assets/images/mangatan/mangatan-logo.PNG"
-      alt="Mångatan logo"
-    />
-    <img
-      class="merch-page-title"
-      src="/src/lib/Icons/Merch/GlitterTitle.gif"
-      alt="Glitter merch logo"
-    />
-  </div>
+  <MerchHeader />
 
   <SortBy
     {sortBy}
