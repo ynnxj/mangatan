@@ -11,7 +11,7 @@
   }
 
   .cart-badge {
-    background-color: white;
+    background-color: var(--win98-white);
     padding: 10px;
     border-radius: 100%;
     width: 20px;
@@ -34,14 +34,14 @@
   right: 0;
   width: 500px;
   height: 100%;
-  background-color: rgb(30, 163, 168);
+  background-color: var(--win98-light-blue);
   z-index: 30;
 
   .cart-preview-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid var(--win98-accent-blue);
 
     .cart-preview-title {
       font-family: 'Times New Roman', Times, serif;
@@ -72,6 +72,33 @@
       text-align: center;
     }
 
+    ul {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      padding: 30px;
+
+      li {
+        display: flex;
+        font-family: var(--win98-font);
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        font-size: 1.5rem;
+        border-bottom: 1px solid var(--win98-accent-blue);
+        margin-bottom: 30px;
+
+        img {
+          margin-bottom: 30px;
+          width: 35%;
+        }
+
+        .item-name {
+          font-weight: bold;
+        }
+      }
+    }
+
     .subtotal-text {
       font-size: 1.5rem;
       text-align: right;
@@ -80,35 +107,6 @@
       .subtotal {
         font-weight: bold;
       }
-    }
-
-    .cart-item-total {
-      font-size: 1rem;
-    }
-  }
-
-  ul {
-    flex: 1;
-    min-height: 0;
-    overflow-y: auto;
-    padding: 30px;
-  }
-
-  li {
-    display: flex;
-    font-family: var(--win98-font);
-    flex-direction: row;
-    gap: 20px;
-    align-items: center;
-    font-size: 1.5rem;
-    border-bottom: 1px solid var(--win98-blue);
-    margin-bottom: 30px;
-
-    img {
-      margin-bottom: 30px;
-      width: 35%;
-      border: 1px solid white;
-      box-shadow: 1px 1px 20px rgb(129, 179, 180);
     }
   }
 
@@ -119,24 +117,28 @@
     margin: 15px 0;
     width: 100px;
     padding: 10px;
+    font-size: 2rem;
+    background-color: var(--win98-blue);
+    color: var(--win98-white);
 
     button {
       background: none;
       border: none;
+      font-size: 2rem;
+      color: var(--win98-white);
     }
   }
 
   .checkout-btn {
     font-size: 2rem;
     text-decoration: none;
-    color: white;
-    text-shadow: 1px 1px 1px black;
+    color: var(--win98-white);
+    text-shadow: 1px 1px 1px var(--win98-black);
     align-self: center;
-    padding: 15px 30px;
+    padding: 10px 15px;
     background: var(--win7-button-face);
     border-radius: 15px;
-    border: 1px solid white;
-    box-shadow: 1px 1px 20px rgb(129, 179, 180);
+    border: 1px solid var(--win98-white);
     margin-bottom: 90px;
 
     &:hover {

@@ -70,13 +70,13 @@
             <li>
               <img class="item-img" src={cartItem.item.image_url} alt={cartItem.item.name} />
               <div>
-                <p>{cartItem.item.name}</p>
+                <p class="item-name">{cartItem.item.name}</p>
                 <p class="cart-item-total">
                   {cartItem.item.price} SEK × {cartItem.quantity} =
                   {cartItem.item.price * cartItem.quantity} SEK
                 </p>
                 <div class="cart-btn-container">
-                  <button onclick={() => handleRemove(cartItem.item._id)}>-</button>
+                  <button onclick={() => handleRemove(cartItem.item._id)}>−</button>
                   <span class="quantity">{cartItem.quantity}</span>
                   <button onclick={() => handleAdd(cartItem.item._id)}>+</button>
                 </div>

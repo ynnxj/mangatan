@@ -7,12 +7,10 @@
   --win98-black: #000000;
   --win98-white: #ffffff;
 
-  /* Classic Blues */
+  /* Accent Colors */
   --win98-blue: #000080;
   --win98-accent-blue: blue;
-  --win98-light-blue: #1084d0;
-
-  /* Accent Colors */
+  --win98-light-blue: #3bb7dd;
   --win98-accent-pink: #ff00ff;
   --win98-accent-purple: rgb(97, 53, 155);
   --win98-accent-hover: #d4d4d4;
@@ -25,7 +23,7 @@
   --win98-button-dark-shadow: #404040;
   --win98-window-bg: #c0c0c0;
 
-  /* Wndows 7 Styles */
+  /* Wndows 7 Button */
   --win7-button-face: linear-gradient(
     to bottom,
     #f2f2f2 0%,
@@ -41,20 +39,13 @@
     #a7d9f5 100%
   );
 
-  --win7-title-header: linear-gradient(
-    0deg,
-    rgba(191, 191, 191, 1) 0%,
-    rgba(99, 99, 99, 1) 14%,
-    rgba(74, 70, 70, 1) 29%,
-    rgba(77, 77, 77, 1) 38%,
-    rgba(196, 196, 196, 1) 100%
-  );
-
   /* Fonts */
   --win98-font: 'MS Sans Serif', 'Microsoft Sans Serif', Arial, sans-serif;
   --win98-font-size: 11px;
   --win98-font-title: 'Orbitron', sans-serif;
 }
+
+// Default styling
 
 * {
   box-sizing: border-box;
@@ -92,4 +83,24 @@ ul {
 
 button:hover {
   cursor: pointer;
+}
+
+.win98-btn {
+  padding: 10px 30px;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-family: 'Orbitron', sans-serif;
+  align-self: center;
+  text-shadow: 1px 1px 2px var(--win98-black);
+  border: 1px solid var(--win98-white);
+  box-shadow: 0 0 0 1px var(--win98-dark-gray);
+  border-radius: 15px;
+  background: var(--win7-button-face);
+  color: white;
+
+  &:hover {
+    border: 1px solid #ecf7fd;
+    box-shadow: 0 0 0 1px var(--win98-light-blue);
+    background: var(--win7-button-hover);
+  }
 }
