@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { overlayClick } from '$lib/actions/overlayClick';
+  import ModalOverlay from '$lib/ModalOverlay/ModalOverlay.svelte';
   import type { Cart } from '$lib/types/merch';
   import { patterns } from '$lib/utils/validation';
   import Window from '$lib/WindowBorder/Window.svelte';
@@ -196,7 +196,7 @@
 </Window>
 
 {#if showFeedbackModal}
-  <div class="message-overlay"></div>
+  <ModalOverlay />
   <div class="confrimation-modal">
     <FeedbackModal />
   </div>
