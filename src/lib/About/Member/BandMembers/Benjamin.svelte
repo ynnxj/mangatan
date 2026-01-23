@@ -1,6 +1,9 @@
 <script lang="ts">
   import ProfileModal from '../MemberProfile/ProfileModal.svelte';
   import type { Profile } from '$lib/types/profile';
+  import listIcon from '$lib/Icons/SmallIcons/Cross.gif';
+  import listGif from '$lib/Icons/Gifs/Crow.gif';
+  import divider from '$lib/Icons/Dividers/SwordDivider.png';
 
   const benjaminProfile: Profile = {
     name: 'Benjamin',
@@ -16,9 +19,9 @@
       songLink: 'soundcloud%253Atracks%253A256142132&color=%23000000'
     },
     favImg: '/assets/images/benjamin/benjamin-half-portrait.png',
-    listIcon: '/src/lib/Icons/SmallIcons/Cross.gif',
-    listGif: '/src/lib/Icons/Gifs/Crow.gif',
-    divider: '/src/lib/Icons/Dividers/SwordDivider.png',
+    listIcon,
+    listGif,
+    divider,
     themeClass: 'benjamins-theme'
   };
 </script>

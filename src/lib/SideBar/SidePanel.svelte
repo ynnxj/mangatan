@@ -1,7 +1,8 @@
 <script lang="ts">
   import Window from '$lib/WindowBorder/Window.svelte';
   import type { Post } from '$lib/types/posts';
-  import SpinningStar from '../Icons/SmallIcons/SpinningStar.gif';
+  import SpinningStar from '$lib/Icons/SmallIcons/SpinningStar.gif';
+  import desktop from '$lib/Icons/WebStamps/Desktop.webp';
   import './side-panel.scss';
 
   export let side: 'left' | 'right';
@@ -45,9 +46,10 @@
         </li>
       </ul>
     </div>
-    <img class="left-img" src="/src/lib/Icons/WebStamps/desktop.webp" alt="stamp" />
+    <img class="left-img" src={desktop} alt="Web stamp saying best viewed on desktop" />
   </Window>
 {:else}
+  <!-- TODO: sort it by date -->
   <Window windowTitle="News.exe" width="300px" Class="panel-container {side}">
     <h4 class="panel-under-title">Updates</h4>
     <ul class="news-list-section">

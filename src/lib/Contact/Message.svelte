@@ -1,5 +1,6 @@
 <script lang="ts">
   import Window from '$lib/WindowBorder/Window.svelte';
+  import sparkleFilter from '$lib/Icons/Frames/SparkleFilter.gif';
 </script>
 
 <Window windowTitle={'A Message from Us'}>
@@ -18,7 +19,7 @@
     </div>
 
     <div class="image-container">
-      <img src="src/lib/Icons/Frames/SparkleFilter.gif" class="sparkle" alt="sparkle" />
+      <img src={sparkleFilter} class="sparkle" alt="sparkle" />
       <img
         src="/assets/images/mangatan/group-half-cold.jpg"
         class="contact-img"

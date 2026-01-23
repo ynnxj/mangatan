@@ -2,6 +2,8 @@
   import type { Cart } from '$lib/types/merch';
   import { scroll } from '$lib/utils/scroll';
   import { overlayClick } from '$lib/actions/overlayClick';
+  import paperBag from '$lib/Icons/Merch/ShoppingBag.png';
+  import closeBtn from '$lib/Icons/WindowIcons/CloseIcon.svg';
   import './cart-preview.scss';
   import ModalOverlay from '$lib/ModalOverlay/ModalOverlay.svelte';
 
@@ -46,7 +48,7 @@
 </script>
 
 <button class="shopping-bag" onclick={toggleCart}>
-  <img src="src/lib/Icons/Merch/ShoppingBag.png" alt="A brown paper shopping bag" />
+  <img src={paperBag} alt="A brown paper shopping bag" />
   {#if totalItems() > 0}
     <span class="cart-badge">{totalItems()}</span>
   {/if}
@@ -58,7 +60,7 @@
     <div class="cart-preview-header">
       <h3 class="cart-preview-title">Cart</h3>
       <button class="close-btn" onclick={toggleCart}
-        ><img src="src/lib/Icons/WindowIcons/CloseIcon.svg" alt="Close window button" /></button
+        ><img src={closeBtn} alt="Close window button" /></button
       >
     </div>
     <div class="cart-content">

@@ -1,6 +1,9 @@
 <script lang="ts">
   import ProfileModal from '../MemberProfile/ProfileModal.svelte';
   import type { Profile } from '$lib/types/profile';
+  import listIcon from '$lib/Icons/SmallIcons/Sparkle.gif';
+  import listGif from '$lib/Icons/Gifs/MetalHeart.gif';
+  import divider from '$lib/Icons/Dividers/SkullDivider.png';
 
   const lunaProfile: Profile = {
     name: 'Luna',
@@ -16,9 +19,9 @@
       songLink: 'soundcloud%253Atracks%253A1738505556&color=%23ff0099'
     },
     favImg: '/assets/images/luna/luna-fav-img.png',
-    listIcon: '/src/lib/Icons/SmallIcons/Sparkle.gif',
-    listGif: '/src/lib/Icons/Gifs/MetalHeart.gif ',
-    divider: '/src/lib/Icons/Dividers/SkullDivider.png',
+    listIcon,
+    listGif,
+    divider,
     themeClass: 'lunas-theme'
   };
 </script>

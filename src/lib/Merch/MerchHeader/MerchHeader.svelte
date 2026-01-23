@@ -1,14 +1,14 @@
+<script lang="ts">
+  import glitterTitle from '$lib/Icons/Merch/GlitterTitle.gif';
+</script>
+
 <div class="merch-page-header">
   <img
     class="merch-page-logo"
     src="/assets/images/mangatan/mangatan-logo.PNG"
     alt="Mångatan logo"
   />
-  <img
-    class="merch-page-title"
-    src="/src/lib/Icons/Merch/GlitterTitle.gif"
-    alt="Glitter merch logo"
-  />
+  <img class="merch-page-title" src={glitterTitle} alt="Glitter merch logo" />
 </div>
 
 <style lang="scss">

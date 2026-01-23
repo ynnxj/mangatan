@@ -1,6 +1,9 @@
 <script lang="ts">
   import ProfileModal from '../MemberProfile/ProfileModal.svelte';
   import type { Profile } from '$lib/types/profile';
+  import listIcon from '$lib/Icons/SmallIcons/PinkBow.gif';
+  import listGif from '$lib/Icons/Gifs/Gyaru.webp';
+  import divider from '$lib/Icons/Dividers/PinkDivider.webp';
 
   const angelaProfile: Profile = {
     name: 'Angela Rocky',
@@ -16,9 +19,9 @@
       songLink: 'soundcloud%253Atracks%253A1062635944&color=%23ff01e3'
     },
     favImg: '/assets/images/angela/angela-full-cold.jpg',
-    listIcon: '/src/lib/Icons/SmallIcons/PinkBow.gif',
-    listGif: '/src/lib/Icons/Gifs/Gyaru.webp',
-    divider: '/src/lib/Icons/Dividers/PinkDivider.webp',
+    listIcon,
+    listGif,
+    divider,
     themeClass: 'angelas-theme'
   };
 </script>
