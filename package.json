@@ -44,6 +44,7 @@
     "vitest-browser-svelte": "^2.0.1"
   },
   "dependencies": {
+    "@sveltejs/adapter-vercel": "^6.3.1",
     "mongodb": "^7.0.0"
   }
 }
