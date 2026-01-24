@@ -32,6 +32,7 @@
     try {
       // Maybe figure out a better solution for this, visually atleast.
       if (!cart || cart.length === 0) {
+        console.log('Cart is empty, cannot checkout.');
         return false;
       }
 
@@ -118,7 +119,7 @@
   };
 </script>
 
-<Window windowTitle="Form.exe" width="450px">
+<Window windowTitle="Checkout.exe" width="450px">
   <form onsubmit={handleSubmit}>
     <label for="name">Full Name:</label>
     <input

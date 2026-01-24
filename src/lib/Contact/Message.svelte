@@ -3,7 +3,7 @@
   import sparkleFilter from '$lib/Icons/Frames/SparkleFilter.gif';
 </script>
 
-<Window windowTitle={'A Message from Us'}>
+<Window windowTitle={'A Message from Us'} width="600px">
   <div class="message-container">
     <div class="message-text">
       <p>

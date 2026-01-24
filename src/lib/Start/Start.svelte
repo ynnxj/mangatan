@@ -28,7 +28,7 @@
 
     .logo {
       position: absolute;
-      filter: invert(1) drop-shadow(1px 1px 5px var(--win98-white));
+      filter: invert(1);
       width: 1000px;
       max-width: 80vw;
       height: auto;
@@ -36,6 +36,8 @@
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 10;
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
     }
 
     .enter-btn {
@@ -43,10 +45,11 @@
       font-family: 'Times New Roman', Times, serif;
       top: 50%;
       left: 65%;
-      padding: 10px 40px;
       font-size: 4em;
       color: var(--win98-white);
       z-index: 10;
+      opacity: 0;
+      animation: fadeIn 3s ease-in forwards;
 
       &:hover {
         color: var(--win98-accent-pink);
@@ -60,6 +63,24 @@
       height: 100vh;
       object-fit: cover;
       filter: sepia(100%) hue-rotate(180deg) saturate(350%) brightness(60%) contrast(80%);
+    }
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    section .logo {
+      top: 15%;
+    }
+
+    section .enter-btn {
+      top: 85%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 </style>

@@ -107,7 +107,7 @@
     {#if sortedMerch.length > 0}
       {#each sortedMerch as item}
         <li>
-          <Window windowTitle={'Item.exe'} width="100%">
+          <Window windowTitle={'Item.exe'} width="400px">
             <img class="item-img" src={item.image_url} alt={item.name} />
             <h3 class="item-name">{item.name}</h3>
             <p class="item-desc">{item.description}</p>

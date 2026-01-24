@@ -65,13 +65,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: var(--win98-white);
   border: 1px solid var(--win98-black);
   width: 900px;
   height: 700px;
   z-index: 40;
-  background-size: 100% 100%;
-  background-position: center;
+  background-size: cover;
 
   &.angela {
     background-image: url('/assets/images/angela/angela-bg.jfif');
@@ -85,11 +83,26 @@
   &.luna {
     background-image: url('/assets/images/luna/luna-bg.jpg');
   }
+}
 
-  // TODO: Fix this button
-  .exit-btn {
-    position: absolute;
-    z-index: 100;
-    padding: 10px 20px;
+@media (max-width: 768px) {
+  .star-emoticon {
+    display: none;
+  }
+
+  .title-members {
+    font-size: 2.5rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  .about-members ul li button img {
+    width: 100%;
+  }
+
+  .member {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
   }
 }

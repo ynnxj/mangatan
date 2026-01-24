@@ -19,6 +19,17 @@
 <style lang="scss">
   .checkout-content {
     display: flex;
+    flex-direction: row;
     gap: 30px;
+  }
+
+  @media (max-width: 950px) {
+    .checkout-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+    }
   }
 </style>

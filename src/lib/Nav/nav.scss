@@ -104,3 +104,27 @@
     align-items: center;
   }
 }
+
+@media (max-width: 768px) {
+  .taskbar {
+    padding: 0 30px 0 25px;
+    height: 60px;
+
+    .left .start-btn {
+      height: 40px;
+    }
+
+    .separator {
+      height: 40px;
+    }
+
+    .menu-item {
+      height: 40px;
+    }
+
+    .time {
+      height: 30px;
+      margin-left: 10px;
+    }
+  }
+}

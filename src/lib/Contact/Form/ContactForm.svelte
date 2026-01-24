@@ -26,7 +26,7 @@
 <!--TODO: Add accessibility attributes to all form elements 
 and ensure proper labeling for screen readers -->
 
-<Window windowTitle={'Contact Us'}>
+<Window windowTitle={'Contact Us'} width="600px">
   <h3 class="form-title">Send a Message</h3>
 
   <form method="post" action="/contact" onsubmit={handleSubmit}>

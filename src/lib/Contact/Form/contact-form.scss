@@ -79,3 +79,15 @@ form {
     }
   }
 }
+
+@media (max-width: 768px) {
+  .confirm-submit-message .submit-title {
+    font-size: 2rem;
+    text-align: center;
+
+    pre {
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
+}

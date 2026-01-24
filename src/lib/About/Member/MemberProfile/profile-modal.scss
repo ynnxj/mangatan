@@ -86,7 +86,8 @@ article {
     }
 
     .fav-song-link {
-      width: 100%;
+      width: 380px;
+      height: 95px;
     }
   }
 
@@ -103,5 +104,57 @@ article {
       display: block;
       border: var(--profile-img-border);
     }
+  }
+}
+
+.exit-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-items: center;
+    padding: 30px 5px;
+    margin-bottom: 120px;
+
+    .likes-list .list-img {
+      display: none;
+    }
+
+    .info-box {
+      flex-direction: column;
+      text-align: center;
+
+      p {
+        width: 100%;
+      }
+
+      .profile-img {
+        width: 100px;
+        margin: 0;
+      }
+
+      .divider {
+        width: 100%;
+      }
+    }
+
+    .fav-img {
+      display: none;
+    }
+
+    .fav-song .fav-song-link {
+      width: 100%;
+    }
+  }
+
+  .exit-btn {
+    position: sticky;
+    top: 10px;
   }
 }

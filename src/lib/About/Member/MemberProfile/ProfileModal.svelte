@@ -3,9 +3,7 @@
   import '$lib/About/Member/BandMembers/member-themes.scss';
   import './profile-modal.scss';
 
-  export let profile: Profile;
-
-  $: listIcon = profile.listIcon || 'src/lib/Icons/SmallIcons/SpinningStar.gif';
+  let { profile } = $props<{ profile: Profile }>();
 </script>
 
 <article class={profile.themeClass}>
@@ -25,7 +23,7 @@
     <ul>
       {#each profile.likes as like}
         <li>
-          <img src={listIcon} alt="List icon" />
+          <img src={profile.listIcon} alt="List icon" />
           {like}
         </li>
       {/each}
@@ -40,10 +38,8 @@
         <p>{profile.favSong.title} by {profile.favSong.artist}</p>
       </div>
       <iframe
-        class="fave-song-link"
+        class="fav-song-link"
         title="Music Player"
-        width="380"
-        height="95"
         scrolling="no"
         frameborder="no"
         allow="autoplay"

@@ -4,6 +4,7 @@
   import { overlayClick } from '$lib/actions/overlayClick';
   import { members } from '../data/members';
   import AboutBand from './Band/AboutBand.svelte';
+  import closeBtn from '$lib/Icons/WindowIcons/CloseIcon.svg';
   import './about.scss';
   import ModalOverlay from '$lib/ModalOverlay/ModalOverlay.svelte';
 
@@ -18,7 +19,7 @@
   });
 </script>
 
-<Window windowTitle="About Us">
+<Window windowTitle="About Us" width="600px">
   <AboutBand />
 
   <pre class="star-emoticon">
@@ -54,7 +55,9 @@
   {#if selectedMember}
     <ModalOverlay />
     <div class="member {selectedMember.toLowerCase()}" use:overlayClick={closeMember}>
-      <button class="exit-btn" onclick={closeMember}>X</button>
+      <button class="exit-btn win98-btn" onclick={closeMember}
+        ><img src={closeBtn} alt="Close button" /></button
+      >
       {#each members as { name, Member }}
         {#if name === selectedMember}
           <Member />

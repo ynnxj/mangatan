@@ -5,7 +5,7 @@
   export let gigs: Gig[] = [];
 </script>
 
-<Window windowTitle="Gigs">
+<Window windowTitle="Gigs" width="600px">
   <h3 class="gigs-title">⋆ Upcoming gigs ⋆‧°𓏲ּ𝄢</h3>
   <ul class="gigs-list">
     {#if gigs.length > 0}
@@ -33,7 +33,6 @@
 </Window>
 
 <style lang="scss">
-  // TODO: fix this. ugly.
   .gigs-title {
     font-family: var(--win98-font-title);
     font-size: 3.5rem;
@@ -71,6 +70,13 @@
         box-shadow: 0 0 0 1px var(--win98-light-blue);
         background: var(--win7-button-hover);
       }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .gigs-title {
+      font-size: 2.5rem;
+      padding: 0;
     }
   }
 </style>

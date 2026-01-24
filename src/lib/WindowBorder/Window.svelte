@@ -16,7 +16,7 @@
 <style lang="scss">
   .window {
     position: relative;
-    max-width: 600px;
+    max-width: none;
     height: auto;
     border-top: 2px solid var(--win98-white);
     border-left: 2px solid var(--win98-white);
@@ -28,6 +28,18 @@
     .window-content {
       overflow: auto;
       padding: 10px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .window {
+      max-width: 500px;
+    }
+  }
+
+  @media (max-width: 568px) {
+    .window {
+      max-width: 400px;
     }
   }
 </style>

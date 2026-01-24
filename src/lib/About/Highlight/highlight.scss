@@ -1,7 +1,9 @@
 .highlight {
   display: flex;
   flex-direction: column;
-  margin: 50px 0;
+  margin-top: 20px;
+  margin-bottom: 35px;
+  width: 100%;
 
   .highlight-wmp {
     background-image: url('/assets/images/mangatan/radarn.gif');
@@ -20,5 +22,12 @@
         cursor: pointer;
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .highlight {
+    margin-top: 10px;
+    margin-bottom: 25px;
   }
 }

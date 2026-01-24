@@ -13,3 +13,12 @@
   <Highlight />
   <GigsList {gigs} />
 </section>
+
+<style lang="scss">
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

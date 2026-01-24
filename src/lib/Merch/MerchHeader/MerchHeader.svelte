@@ -31,12 +31,35 @@
       height: auto;
       z-index: 10;
     }
+
     .merch-page-logo {
       filter: invert(100%);
       width: 500px;
       margin-right: -360px;
       margin-bottom: -60px;
       z-index: 10;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .merch-page-header {
+      margin: 10;
+      flex-direction: column;
+      border-image-width: 0.5;
+      width: 100%;
+
+      .merch-page-title {
+        width: 150px;
+        margin-top: -70px;
+        margin-left: 0;
+        margin-bottom: 0;
+        align-self: end;
+      }
+
+      .merch-page-logo {
+        width: 300px;
+        margin: 0;
+      }
     }
   }
 </style>

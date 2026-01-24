@@ -17,7 +17,7 @@
   });
 </script>
 
-<Window windowTitle="Items.exe" width="400px">
+<Window windowTitle="Items.exe" width="450px">
   <div class="order-summary">
     <h3 class="order-title">Your Order</h3>
     <ul class="order-item-list">
@@ -68,6 +68,7 @@
 
       .item-name {
         font-size: 1.5rem;
+        padding-right: 10px;
       }
 
       img {
