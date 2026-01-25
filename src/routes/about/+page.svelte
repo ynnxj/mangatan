@@ -1,17 +1,23 @@
 <script lang="ts">
   import GigsList from '$lib/Gigs/GigsList.svelte';
-  import type { Gig } from '$lib/types/gigs';
-  import { page } from '$app/stores';
   import About from '$lib/About/About.svelte';
   import Highlight from '$lib/About/Highlight/Highlight.svelte';
+  import News from '$lib/About/News/News.svelte';
+  import { isMobile } from '$lib/stores/checkMobile';
 
-  let gigs: Gig[] = $page.data?.gigs || [];
+  const props = $props();
+
+  const news = $derived(() => props.data?.news ?? []),
+    gigs = $derived(() => props.data?.gigs ?? []);
 </script>
 
 <section class="about-container">
   <About />
   <Highlight />
-  <GigsList {gigs} />
+  {#if isMobile}
+    <News news={news()} />
+  {/if}
+  <GigsList gigs={gigs()} />
 </section>
 
 <style lang="scss">
