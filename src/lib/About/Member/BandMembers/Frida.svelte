@@ -2,7 +2,7 @@
   import ProfileModal from '../MemberProfile/ProfileModal.svelte';
   import type { Profile } from '$lib/types/profile';
   import divider from '$lib/Icons/Dividers/BlueDivider.png';
-  import listIcon from '$lib/Icons/SmallIcons/Ring.webp';
+  import listIcon from '$lib/Icons/SmallIcons/Wing.webp';
   import listGif from '$lib/Icons/Gifs/Dawn.webp';
 
   const fridaProfile: Profile = {
