@@ -1,18 +1,16 @@
 <script lang="ts">
   import '../app.scss';
   import Nav from '$lib/Nav/Nav.svelte';
-
   import SidePanel from '$lib/SideBar/SidePanel.svelte';
   import { page } from '$app/stores';
 
-  const isLandingPage = $derived($page.url.pathname === '/');
-  const isMerchPage = $derived($page.url.pathname === '/merch');
-  const isCheckoutPage = $derived($page.url.pathname === '/merch/checkout');
-
   let { children, data } = $props();
+
+  const isLandingPage = $derived($page.url.pathname === '/'),
+    isMerchPage = $derived($page.url.pathname === '/merch'),
+    isCheckoutPage = $derived($page.url.pathname === '/merch/checkout');
 </script>
 
-<!-- TODO: Maybe fix this eventually. It's looking a bit messy atm -->
 {#if !isLandingPage && !isMerchPage && !isCheckoutPage}
   <div class="layout-container">
     <SidePanel side={'left'} />
@@ -22,13 +20,9 @@
     </main>
     <SidePanel side={'right'} news={data.news} />
   </div>
-{/if}
-
-{#if isLandingPage}
+{:else if isLandingPage}
   {@render children()}
-{/if}
-
-{#if isMerchPage || isCheckoutPage}
+{:else}
   <main>
     {@render children()}
     <Nav />
