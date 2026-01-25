@@ -2,11 +2,11 @@
   import TopBorder from './TopBorder.svelte';
 
   export let windowTitle: string = 'Window Title',
-    width: string = 'auto',
+    width: string | null = null,
     Class: string = '';
 </script>
 
-<div class="window {Class}" style="width: {width};">
+<div class="window {Class}" style={width ? `width: ${width};` : undefined}>
   <TopBorder title={windowTitle} />
   <div class="window-content">
     <slot />

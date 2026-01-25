@@ -10,7 +10,7 @@
 </script>
 
 {#if side === 'left'}
-  <Window windowTitle="Important Links" width="200px" Class="panel-container {side}">
+  <Window windowTitle="Important Links" Class="panel-container {side}">
     <h4 class="panel-under-title">Social Media</h4>
     <div class="links">
       <ul class="links-list">
@@ -50,7 +50,7 @@
   </Window>
 {:else}
   <!-- TODO: sort it by date -->
-  <Window windowTitle="News.exe" width="300px" Class="panel-container {side}">
+  <Window windowTitle="News.exe" Class="panel-container {side}">
     <h4 class="panel-under-title">Updates</h4>
     <ul class="news-list-section">
       {#if news.length > 0}
