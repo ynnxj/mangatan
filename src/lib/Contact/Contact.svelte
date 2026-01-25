@@ -7,7 +7,7 @@
 
 <div class="contact-container">
   <Message />
-  {#if isMobile}
+  {#if $isMobile}
     <SocialMedia />
   {/if}
   <ContactForm />

@@ -14,7 +14,7 @@
 <section class="about-container">
   <About />
   <Highlight />
-  {#if isMobile}
+  {#if $isMobile}
     <News news={news()} />
   {/if}
   <GigsList gigs={gigs()} />
