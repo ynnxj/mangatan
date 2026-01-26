@@ -1,3 +1,4 @@
+// Members container styles
 .title-members {
   font-size: 3.5rem;
   font-weight: 400;
@@ -9,6 +10,7 @@
   font-family: 'Orbitron', sans-serif;
 }
 
+// Star emotion
 .star-emoticon {
   transform: scale(-1, 1);
   right: 5%;
@@ -16,6 +18,7 @@
   position: absolute;
 }
 
+// About members list
 .about-members {
   text-align: center;
 
@@ -40,6 +43,7 @@
         flex-direction: column;
         align-items: center;
 
+        // Member profile images
         img {
           width: 200px;
           height: auto;
@@ -60,6 +64,7 @@
   }
 }
 
+// Member modal default styles
 .member {
   position: fixed;
   top: 50%;
@@ -71,6 +76,7 @@
   z-index: 40;
   background-size: cover;
 
+  // Modal backgrounds
   &.angela {
     background-image: url('/assets/images/angela/angela-bg.jfif');
   }
@@ -85,6 +91,7 @@
   }
 }
 
+// Responsive styles
 @media (max-width: 768px) {
   .star-emoticon {
     display: none;

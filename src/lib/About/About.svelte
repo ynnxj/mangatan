@@ -1,68 +1,10 @@
 <script lang="ts">
   import Window from '$lib/WindowBorder/Window.svelte';
-  import { scroll } from '$lib/utils/scroll';
-  import { overlayClick } from '$lib/actions/overlayClick';
-  import { members } from '../data/members';
   import AboutBand from './Band/AboutBand.svelte';
-  import closeBtn from '$lib/Icons/WindowIcons/CloseIcon.svg';
-  import './about.scss';
-  import ModalOverlay from '$lib/ModalOverlay/ModalOverlay.svelte';
-
-  let selectedMember = $state<string | null>(null);
-  const openMember = (name: string) => (selectedMember = name),
-    closeMember = () => (selectedMember = null);
-
-  // Scroll toggle
-  $effect(() => {
-    scroll.toggle(selectedMember);
-    return () => scroll.unlock();
-  });
+  import Members from './Member/Members.svelte';
 </script>
 
 <Window windowTitle="About Us" width="600px">
   <AboutBand />
-
-  <pre class="star-emoticon">
-⠀⠀⠀⠀⠀⠀⠀⠠⡧⠀⠀⠀⠄⠀⣆
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⡄⠀⠀⠀⢺⠂⠀⠀⠀⢀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣧
-⠀⠐⠗⠀⠀⠀⠀⠁⠀⠀⠀⣼⣿⡏⣿⣷⡀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠐⠺⠂⠀⠀⠀⠀⠀⠀⠄
-⠤⣤⣤⣤⣤⣤⣤⣤⣤⣿⣿⠇⠀⢿⣿⣿⣷⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒
-⠀⠀⠘⢿⣿⣿⣟⠛⠛⠛⠛⠀⠀⠀⠛⠛⠛⠛⠋⠉⠉⠉
-⠀⠀⠁⠀⠈⠛⣿⣿⣦
-⠀⠀⠀⠀⠀⠀⠀⢹⣿⡿
-⠀⠀⠀⠠⡧⠀⠀⣾⣿⠁⢀⣤⣾⣦⡀
-⠀⠠⠀⠀⠀⠀⣸⣿⢇⣶⣿⠟⠙⠻⣿⣄
-⠀⠀⠀⠀⠀⢠⣿⣿⠿⠋⠁⠀⠀⠀⠀⠉⠳⡄
-⠀⠀⠀⠀⠀⡿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈
-  </pre>
-
-  <h3 class="title-members">⋆ Members ⋆⭒˚.⋆𝜗𝜚</h3>
-  <div class="about-members">
-    <ul>
-      {#each members as { name }}
-        <li>
-          <button class="member-btn" onclick={() => openMember(name)}>
-            <!-- TODO: replace placeholders -->
-            <img src={`assets/images/${name.toLowerCase()}/${name.toLowerCase()}.png`} alt={name} />
-            {name}
-          </button>
-        </li>
-      {/each}
-    </ul>
-  </div>
-
-  {#if selectedMember}
-    <ModalOverlay />
-    <div class="member {selectedMember.toLowerCase()}" use:overlayClick={closeMember}>
-      <button class="exit-btn win98-btn" onclick={closeMember}
-        ><img src={closeBtn} alt="Close button" /></button
-      >
-      {#each members as { name, Member }}
-        {#if name === selectedMember}
-          <Member />
-        {/if}
-      {/each}
-    </div>
-  {/if}
+  <Members />
 </Window>
