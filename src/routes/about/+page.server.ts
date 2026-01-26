@@ -1,5 +1,4 @@
 import { getGigs } from '$lib/server/db';
-import type { Gig } from '$lib/types/gigs';
 
 /**
  * Load functions for the page.
@@ -10,7 +9,7 @@ export const load = async () => {
   try {
     const gigs = await getGigs();
     console.log(`About page: Loaded ${gigs.length} gigs`);
-    return { gigs: gigs as Gig[] };
+    return { gigs };
   } catch (error) {
     console.error('About page error:', error);
     return { gigs: [] };

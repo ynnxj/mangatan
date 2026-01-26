@@ -5,4 +5,5 @@
   export let data: PageData;
 </script>
 
+<!-- Merch Page -->
 <Merch {data} />

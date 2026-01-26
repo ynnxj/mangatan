@@ -5,11 +5,14 @@
   export let news: Post[] = [];
 </script>
 
+<!-- News Container-->
 <Window windowTitle="News.exe" width="600px">
   <h4 class="updates-title">Updates</h4>
+  <!-- News Data List -->
   <ul class="news-list">
     {#if news.length > 0}
       {#each news as post}
+        <!-- Post -->
         <li class="post">
           <div>
             <h4 class="post-title">{post.title}</h4>
@@ -27,12 +30,14 @@
         </li>
       {/each}
     {:else}
+      <!-- Error if no data -->
       <li>No posts available</li>
     {/if}
   </ul>
 </Window>
 
 <style lang="scss">
+  // News lists styles
   .news-list {
     li {
       background-color: var(--win98-white);

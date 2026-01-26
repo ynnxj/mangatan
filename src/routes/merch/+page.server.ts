@@ -1,10 +1,14 @@
 import { getMerch } from '$lib/server/db';
-import type { Item } from '$lib/types/merch';
 
+/**
+ * Load functions for the page.
+ * Fetch all merch items from db.
+ * Log error if error.
+ */
 export const load = async () => {
   try {
     const merch = await getMerch();
-    return { merch: merch as Item[] };
+    return { merch };
   } catch (error) {
     console.error('Merch page error:', error);
     return { merch: [] };

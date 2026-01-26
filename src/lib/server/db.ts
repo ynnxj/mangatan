@@ -1,6 +1,8 @@
 import { MongoClient } from 'mongodb';
 import { MONGODB_URI, DB_NEWS, DB_GIGS, DB_MERCH } from '$env/static/private';
 import type { Post } from '$lib/types/posts';
+import type { Gig } from '$lib/types/gigs';
+import type { Item } from '$lib/types/merch';
 
 const client = new MongoClient(MONGODB_URI);
 let connected = false;
@@ -41,5 +43,5 @@ export const getCollection = async <T = unknown>(
 };
 
 export const getNews = () => getCollection<Post>(DB_NEWS, 'posts'),
-  getGigs = () => getCollection(DB_GIGS, 'gigs'),
-  getMerch = () => getCollection(DB_MERCH, 'items');
+  getGigs = () => getCollection<Gig>(DB_GIGS, 'gigs'),
+  getMerch = () => getCollection<Item>(DB_MERCH, 'items');

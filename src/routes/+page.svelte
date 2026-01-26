@@ -2,4 +2,5 @@
   import Start from '$lib/Start/Start.svelte';
 </script>
 
+<!-- Start Page -->
 <Start />

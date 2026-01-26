@@ -2,4 +2,5 @@
   import Checkout from '$lib/Checkout/Checkout.svelte';
 </script>
 
+<!-- Checkout Page -->
 <Checkout />

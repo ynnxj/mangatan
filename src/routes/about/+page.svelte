@@ -1,6 +1,9 @@
 <script lang="ts">
   import About from '$lib/About/About.svelte';
-  export let data: { news: any[]; gigs: any[] };
+  import type { PageData } from './$types';
+
+  export let data: PageData;
 </script>
 
+<!-- About Page -->
 <About newsData={data.news} gigsData={data.gigs} />
