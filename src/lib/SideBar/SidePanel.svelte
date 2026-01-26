@@ -4,6 +4,7 @@
   import SpinningStar from '$lib/Icons/SmallIcons/SpinningStar.gif';
   import desktop from '$lib/Icons/WebStamps/Desktop.webp';
   import './side-panel.scss';
+  import { socialMedia } from '$lib/data/socialMedia';
 
   export let side: 'left' | 'right';
   export let news: Post[] = [];
@@ -14,36 +15,14 @@
     <h4 class="panel-under-title">Social Media</h4>
     <div class="links">
       <ul class="links-list">
-        <li>
-          <img src={SpinningStar} alt="list-star" />
-          <a href="https://www.instagram.com/mangatanband/" target="_blank" title="Instagram"
-            >Instagram</a
-          >
-        </li>
-        <li>
-          <img src={SpinningStar} alt="list-star" />
-          <a
-            href="https://www.youtube.com/channel/UCs3M4AnSaBZ8AiqLlUD4q5w"
-            target="_blank"
-            title="YouTube">YouTube</a
-          >
-        </li>
-        <li>
-          <img src={SpinningStar} alt="list-star" />
-          <a
-            href="https://music.apple.com/se/artist/m%C3%A5ngatan/1462652734"
-            target="_blank"
-            title="Apple Music">Apple Music</a
-          >
-        </li>
-        <li>
-          <img src={SpinningStar} alt="list-star" />
-          <a
-            href="https://open.spotify.com/artist/04sRSWXovcYM8oSfApH4a6"
-            target="_blank"
-            title="Spotify">Spotify</a
-          >
-        </li>
+        {#each socialMedia as item}
+          <li>
+            <img src={SpinningStar} alt="list-star" />
+            <a href={item.href} target="_blank" rel="noopener noreferrer">
+              {item.title}
+            </a>
+          </li>
+        {/each}
       </ul>
     </div>
     <img class="left-img" src={desktop} alt="Web stamp saying best viewed on desktop" />
