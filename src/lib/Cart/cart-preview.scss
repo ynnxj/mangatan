@@ -1,3 +1,4 @@
+// Shopping / paper bag icon
 .shopping-bag {
   position: absolute;
   background: none;
@@ -10,6 +11,7 @@
     width: 80px;
   }
 
+  // Badge for number of items in cart
   .cart-badge {
     background-color: var(--win98-white);
     padding: 10px;
@@ -26,6 +28,7 @@
   }
 }
 
+// Cart preview sidebar
 .cart-preview {
   position: fixed;
   display: flex;
@@ -60,18 +63,21 @@
     }
   }
 
+  // Cart content
   .cart-content {
     flex: 1;
     min-height: 0;
     display: flex;
     flex-direction: column;
 
+    // Message for empty cart
     .empty-text {
       padding: 20px;
       font-size: 2rem;
       text-align: center;
     }
 
+    // Items in cart
     ul {
       flex: 1;
       min-height: 0;
@@ -99,6 +105,7 @@
       }
     }
 
+    // Subtotal section
     .subtotal-text {
       font-size: 1.5rem;
       text-align: right;
@@ -110,6 +117,7 @@
     }
   }
 
+  // Cart buttons (subtract/add)
   .cart-btn-container {
     display: flex;
     flex-direction: row;
@@ -129,6 +137,7 @@
     }
   }
 
+  // Checkout button
   .checkout-btn {
     font-size: 2rem;
     text-decoration: none;
@@ -147,7 +156,9 @@
   }
 }
 
+// Responsive styles
 @media (max-width: 768px) {
+  // Shopping / paper bag icon
   .shopping-bag {
     margin: 15px 5px;
 
@@ -156,6 +167,7 @@
     }
   }
 
+  // Cart content
   .cart-preview {
     width: 100%;
     height: 100%;
@@ -169,6 +181,8 @@
         width: 30%;
       }
     }
+
+    // Cart buttons (subtract/add)
     .cart-btn-container {
       margin-bottom: 10px;
       width: 100px;

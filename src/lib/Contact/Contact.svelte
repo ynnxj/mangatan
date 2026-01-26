@@ -5,6 +5,7 @@
   import SocialMedia from './SocialMedia.svelte';
 </script>
 
+<!-- Contact Container-->
 <div class="contact-container">
   <Message />
   {#if $isMobile}

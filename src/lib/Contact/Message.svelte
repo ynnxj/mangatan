@@ -3,6 +3,7 @@
   import sparkleFilter from '$lib/Icons/Frames/SparkleFilter.gif';
 </script>
 
+<!-- Message Container -->
 <Window windowTitle={'A Message from Us'} width="600px">
   <div class="message-container">
     <div class="message-text">
@@ -30,6 +31,7 @@
 </Window>
 
 <style lang="scss">
+  // Message container styles
   .message-container {
     display: flex;
     justify-content: center;

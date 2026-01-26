@@ -1,3 +1,37 @@
+// Merch item list container
+.merch-list {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 30px;
+
+  .item-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  // Add to cart button
+  .add-to-cart {
+    button {
+      height: 28px;
+      padding: 0 12px;
+      background: var(--win98-button-face);
+      border: 2px solid;
+      border-top-color: var(--win98-button-highlight);
+      border-left-color: var(--win98-button-highlight);
+      border-right-color: var(--win98-button-shadow);
+      border-bottom-color: var(--win98-button-shadow);
+      color: var(--win98-black);
+      align-items: center;
+
+      &:hover {
+        background: var(--win98-accent-hover);
+      }
+    }
+  }
+}
+
+// Added to cart modal
 .added-modal {
   position: fixed;
   top: 50%;
@@ -11,6 +45,7 @@
     text-align: center;
   }
 
+  // Button container
   .btn-container {
     display: flex;
     flex-direction: row;
@@ -41,38 +76,9 @@
   }
 }
 
-.merch-list {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 30px;
-
-  .item-img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-  }
-
-  .add-to-cart {
-    button {
-      height: 28px;
-      padding: 0 12px;
-      background: var(--win98-button-face);
-      border: 2px solid;
-      border-top-color: var(--win98-button-highlight);
-      border-left-color: var(--win98-button-highlight);
-      border-right-color: var(--win98-button-shadow);
-      border-bottom-color: var(--win98-button-shadow);
-      color: var(--win98-black);
-      align-items: center;
-
-      &:hover {
-        background: var(--win98-accent-hover);
-      }
-    }
-  }
-}
-
+// Responsive styles
 @media (max-width: 853px) {
+  // Merch item list container
   .merch-list {
     display: flex;
     width: 100%;
@@ -85,6 +91,7 @@
     }
   }
 
+  // Added to cart Modal
   .added-modal {
     p {
       font-size: 1.5rem;

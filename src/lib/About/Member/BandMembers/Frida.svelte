@@ -5,6 +5,9 @@
   import listIcon from '$lib/Icons/SmallIcons/Wing.webp';
   import listGif from '$lib/Icons/Gifs/Dawn.webp';
 
+  /* -------------------------------------------------------------------------- */
+  /*                            Frida's Profile Data                            */
+  /* -------------------------------------------------------------------------- */
   const fridaProfile: Profile = {
     name: 'Frida',
     img: '/assets/images/frida/frida.png',

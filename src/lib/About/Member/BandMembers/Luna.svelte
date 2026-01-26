@@ -5,6 +5,9 @@
   import listGif from '$lib/Icons/Gifs/MetalHeart.gif';
   import divider from '$lib/Icons/Dividers/SkullDivider.png';
 
+  /* -------------------------------------------------------------------------- */
+  /*                             Luna's Profile Data                            */
+  /* -------------------------------------------------------------------------- */
   const lunaProfile: Profile = {
     name: 'Luna',
     img: '/assets/images/luna/luna.png',

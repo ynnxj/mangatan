@@ -5,8 +5,10 @@
   export let gigs: Gig[] = [];
 </script>
 
+<!-- Gigs List Container -->
 <Window windowTitle="Gigs" width="600px">
   <h3 class="gigs-title">⋆ Upcoming gigs ⋆‧°𓏲ּ𝄢</h3>
+  <!-- List of Gigs -->
   <ul class="gigs-list">
     {#if gigs.length > 0}
       {#each gigs as gig}
@@ -27,12 +29,14 @@
         </li>
       {/each}
     {:else}
+      <!-- No Gigs Message -->
       <li>No gigs available</li>
     {/if}
   </ul>
 </Window>
 
 <style lang="scss">
+  // Gigs list styles
   .gigs-title {
     font-family: var(--win98-font-title);
     font-size: 3.5rem;
@@ -73,6 +77,7 @@
     }
   }
 
+  // Responsive styles
   @media (max-width: 768px) {
     .gigs-title {
       font-size: 2.5rem;

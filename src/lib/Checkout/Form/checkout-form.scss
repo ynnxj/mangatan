@@ -1,3 +1,4 @@
+// Checkout Form Styles
 form {
   margin-top: 10px;
   display: flex;
@@ -17,6 +18,7 @@ form {
     font-family: inherit;
   }
 
+  // Contact buttons container
   .contact-buttons {
     display: flex;
     justify-content: end;
@@ -45,6 +47,7 @@ form {
   }
 }
 
+// Confirmation Modal Styles
 .confrimation-modal {
   position: fixed;
   top: 50%;

@@ -1,3 +1,4 @@
+// Contact From Styles
 .form-title {
   font-family: var(--win98-font-title);
   font-size: 2rem;
@@ -6,27 +7,6 @@
   text-shadow: 1px 1px 3px var(--win98-black);
   font-weight: 500;
   background-color: var(--win98-light-gray);
-}
-
-.confirm-submit-message {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 50;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  .submit-title {
-    font-size: 3rem;
-    padding: 0 0px;
-
-    pre {
-      font-size: 2rem;
-      text-align: center;
-    }
-  }
 }
 
 form {
@@ -80,6 +60,29 @@ form {
   }
 }
 
+// Confirm message modal
+.confirm-submit-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .submit-title {
+    font-size: 3rem;
+    padding: 0 0px;
+
+    pre {
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
+}
+
+// Responsive styles
 @media (max-width: 768px) {
   .confirm-submit-message .submit-title {
     font-size: 2rem;

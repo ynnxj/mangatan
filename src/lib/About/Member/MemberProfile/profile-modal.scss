@@ -1,3 +1,4 @@
+// About Member Profile Modal Styles
 article {
   width: 100%;
   height: 100%;
@@ -7,6 +8,7 @@ article {
   justify-items: center;
   padding: 80px;
 
+  // All box styles
   .box {
     background-color: var(--profile-bg-color);
     padding: 10px 20px;
@@ -15,6 +17,7 @@ article {
     border-image: var(--profile-border-img);
   }
 
+  // Titles, text, and fonts
   h3,
   h4 {
     color: var(--profile-title-color);
@@ -37,6 +40,7 @@ article {
     font-size: 1.4rem;
   }
 
+  // Likes list box
   .likes-list {
     width: 100%;
 
@@ -54,6 +58,7 @@ article {
     }
   }
 
+  // Info box
   .info-box {
     display: flex;
     flex-direction: row;
@@ -76,6 +81,7 @@ article {
     }
   }
 
+  // Fav song box
   .fav-song {
     padding: 20px;
 
@@ -91,6 +97,7 @@ article {
     }
   }
 
+  // Fav img box
   .fav-img {
     padding: 10px;
     width: 100%;
@@ -107,12 +114,14 @@ article {
   }
 }
 
+// Exit button
 .exit-btn {
   position: absolute;
   top: 10px;
   right: 10px;
 }
 
+// Responsive styles
 @media (max-width: 768px) {
   article {
     display: flex;
@@ -122,10 +131,12 @@ article {
     padding: 30px 5px;
     margin-bottom: 120px;
 
+    // Likes list box
     .likes-list .list-img {
       display: none;
     }
 
+    // Info box
     .info-box {
       flex-direction: column;
       text-align: center;
@@ -144,10 +155,12 @@ article {
       }
     }
 
+    // Fav img box
     .fav-img {
       display: none;
     }
 
+    // Fav song box
     .fav-song .fav-song-link {
       width: 100%;
     }

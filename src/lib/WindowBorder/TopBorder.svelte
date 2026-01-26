@@ -6,8 +6,10 @@
   export let title: string = 'Window Title';
 </script>
 
+<!-- Window Top Border -->
 <div class="window-top-border">
   <span>{title}</span>
+  <!-- Window Icons -->
   <div class="window-left">
     <img src={MinimizeIcon} class="window-icon" alt="Minimize icon" />
     <img src={WindowIcon} class="window-icon" alt="Maximize icon" />
@@ -16,6 +18,7 @@
 </div>
 
 <style lang="scss">
+  // Window top border styles
   .window-top-border {
     border: 1px solid var(--win98-white);
     display: flex;
@@ -25,10 +28,12 @@
     font-weight: bold;
     background-color: var(--win98-blue);
 
+    // Window title
     span {
       margin-left: 1rem;
     }
 
+    // Window icons
     .window-left {
       display: flex;
       padding: 3px;

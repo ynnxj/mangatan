@@ -1,4 +1,6 @@
-<section>
+<!-- Start Page Container-->
+<section class="start-page-container">
+  <!-- Mångatan Title -->
   <h1>
     <img
       class="logo"
@@ -9,15 +11,18 @@
     />
   </h1>
 
+  <!-- Enter Button -->
   <a class="enter-btn" href="/about">Enter</a>
 
+  <!-- Background Video -->
   <video class="background-video" autoplay loop muted>
     <source src="/assets/videos/video1.mp4" type="video/mp4" />
   </video>
 </section>
 
 <style lang="scss">
-  section {
+  // Start page styles
+  .start-page-container {
     display: flex;
     justify-content: center;
     position: relative;
@@ -26,6 +31,7 @@
     height: 100vh;
     z-index: 100;
 
+    // Mångatan title logo
     .logo {
       position: absolute;
       filter: invert(1);
@@ -40,6 +46,7 @@
       animation: fadeIn 1s ease-in forwards;
     }
 
+    // Enter button
     .enter-btn {
       position: absolute;
       font-family: 'Times New Roman', Times, serif;
@@ -58,6 +65,7 @@
       }
     }
 
+    // Background video
     .background-video {
       width: 100vw;
       height: 100vh;
@@ -66,18 +74,22 @@
     }
   }
 
+  // Fade in animations
   @keyframes fadeIn {
     to {
       opacity: 1;
     }
   }
 
+  // Responsive styles
   @media (max-width: 768px) {
-    section .logo {
+    // Mångatan title logo
+    .start-page-container .logo {
       top: 15%;
     }
 
-    section .enter-btn {
+    // Enter button
+    .start-page-containeron .enter-btn {
       top: 85%;
       left: 50%;
       transform: translate(-50%, -50%);

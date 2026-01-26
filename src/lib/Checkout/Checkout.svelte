@@ -4,6 +4,7 @@
   import OrderSummary from './OrderSummary.svelte';
 </script>
 
+<!-- Checkout Page Content -->
 <section class="checkout-page">
   <MerchHeader />
   <div class="checkout-content">
@@ -17,12 +18,14 @@
 </section>
 
 <style lang="scss">
+  // Checkout content layout
   .checkout-content {
     display: flex;
     flex-direction: row;
     gap: 30px;
   }
 
+  // Responsive styles
   @media (max-width: 950px) {
     .checkout-content {
       display: flex;

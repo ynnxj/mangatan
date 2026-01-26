@@ -3,13 +3,18 @@
   import { menuItems } from '../data/menuItems';
   import './nav.scss';
 
+  // Get current path
+  const path = $derived($page.url.pathname);
+
+  // Store current time
   let currentTime = $state(new Date());
 
-  const path = $derived($page.url.pathname),
-    formattedTime = $derived(
-      currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-    );
+  // Format current time
+  const formattedTime = $derived(
+    currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+  );
 
+  // Update clock every second
   setInterval(() => (currentTime = new Date()), 1000);
 </script>
 

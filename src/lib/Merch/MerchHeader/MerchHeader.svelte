@@ -2,16 +2,20 @@
   import glitterTitle from '$lib/Icons/Merch/GlitterTitle.gif';
 </script>
 
+<!-- Merch Page Header -->
 <div class="merch-page-header">
+  <!-- Mångatan Logo -->
   <img
     class="merch-page-logo"
     src="/assets/images/mangatan/mangatan-logo.PNG"
     alt="Mångatan logo"
   />
+  <!-- Glitter Merch Title -->
   <img class="merch-page-title" src={glitterTitle} alt="Glitter merch logo" />
 </div>
 
 <style lang="scss">
+  // Merch page header styles
   .merch-page-header {
     display: flex;
     flex-direction: row;
@@ -24,6 +28,7 @@
     border-image-width: 1;
     border-image-outset: 0;
 
+    // Glitter merch title
     .merch-page-title {
       width: 250px;
       margin-left: 190px;
@@ -32,6 +37,7 @@
       z-index: 10;
     }
 
+    // Mångatan logo
     .merch-page-logo {
       filter: invert(100%);
       width: 500px;
@@ -41,6 +47,7 @@
     }
   }
 
+  // Responsive styles
   @media (max-width: 768px) {
     .merch-page-header {
       margin: 10;

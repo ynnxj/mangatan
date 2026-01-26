@@ -5,8 +5,13 @@
   import { scroll } from '$lib/utils/scroll';
   import './contact-form.scss';
 
+  // State for feedback modal
   let showFeedbackModal = $state(false);
 
+  /**
+   * Handle form submission.
+   * Show feedback modal on submit.
+   */
   const handleSubmit = (e: Event) => {
     e.preventDefault();
 
@@ -23,22 +28,24 @@
   });
 </script>
 
-<!--TODO: Add accessibility attributes to all form elements 
-and ensure proper labeling for screen readers -->
-
+<!-- Contact Form -->
 <Window windowTitle={'Contact Us'} width="600px">
   <h3 class="form-title">Send a Message</h3>
 
+  <!-- Name -->
   <form method="post" action="/contact" onsubmit={handleSubmit}>
     <label for="name">Name:</label>
     <input type="text" aria-label="Name" placeholder="Full name" required />
 
+    <!-- Email -->
     <label for="email">Email:</label>
     <input type="email" aria-label="Email" name="email" placeholder="Email adress" required />
 
+    <!-- Message -->
     <label for="message">Message:</label>
     <textarea aria-label="Message" placeholder="Write something..." required></textarea>
 
+    <!-- Buttons-->
     <div class="contact-buttons">
       <button type="submit">Send</button>
       <button type="reset">Reset</button>
@@ -46,8 +53,10 @@ and ensure proper labeling for screen readers -->
   </form>
 
   {#if showFeedbackModal}
+    <!-- Modal Overlay -->
     <ModalOverlay />
 
+    <!-- Confirm Message Modal-->
     <div class="confirm-submit-message" use:overlayClick={() => (showFeedbackModal = false)}>
       <Window windowTitle="Message Sent">
         <div class="submit-modal">

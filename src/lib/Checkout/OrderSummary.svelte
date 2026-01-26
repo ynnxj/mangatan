@@ -3,11 +3,15 @@
   import Window from '$lib/WindowBorder/Window.svelte';
   import { onMount } from 'svelte';
 
-  let cart = $state<Cart[]>([]);
-  let cartTotal = $state(0);
-  const shippingCost = 49;
-  const totalWithShipping = $derived.by(() => cartTotal + shippingCost);
+  // States for cart
+  let cart = $state<Cart[]>([]),
+    cartTotal = $state(0);
 
+  // Shipping
+  const shippingCost = 49,
+    totalWithShipping = $derived.by(() => cartTotal + shippingCost);
+
+  // Load cart from localStorage on component mount
   onMount(() => {
     const stored = localStorage.getItem('cart');
     if (stored) {
@@ -17,11 +21,13 @@
   });
 </script>
 
+<!-- Order Summary -->
 <Window windowTitle="Items.exe" width="450px">
   <div class="order-summary">
     <h3 class="order-title">Your Order</h3>
     <ul class="order-item-list">
       {#each cart as item}
+        <!-- Cart Item -->
         <li class="order-item">
           <img class="item-img" src={item.item.image_url} alt={item.item.name} />
           <div>
@@ -33,6 +39,7 @@
       {/each}
     </ul>
 
+    <!-- Total Summary-->
     <div class="total-summary">
       <div class="order-total">
         <div class="subtotal">
@@ -54,6 +61,7 @@
 </Window>
 
 <style lang="scss">
+  // Order summary styles
   .order-summary {
     .order-title {
       font-size: 2rem;
@@ -78,6 +86,7 @@
       }
     }
 
+    // Total
     .total-summary {
       display: flex;
       justify-content: space-between;

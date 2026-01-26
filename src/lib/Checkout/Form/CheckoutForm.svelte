@@ -6,10 +6,11 @@
   import FeedbackModal from '../FeedbackModal.svelte';
   import './checkout-form.scss';
 
+  // State variables
   let cart: Cart[] = $state([]),
     showFeedbackModal = $state(false),
     errors = $state<Record<string, string>>({}),
-    // Temporary
+    // Temporary user data for testing
     form = $state({
       name: 'Test User',
       email: 'test@example.com',
@@ -21,6 +22,7 @@
       cvv: '123'
     });
 
+  // Load cart from localStorage on page load
   $effect(() => {
     const stored = localStorage.getItem('cart');
     if (stored) {
@@ -28,6 +30,10 @@
     }
   });
 
+  /**
+   * Handles the checkout process by sending cart data to the server.
+   * @return - true if checkout is successful, false otherwise.
+   */
   const checkoutCart = async () => {
     try {
       // Maybe figure out a better solution for this, visually atleast.
@@ -56,6 +62,10 @@
     }
   };
 
+  /**
+   * Form submit handler.
+   * Validates form inputs and handles form submission.
+   */
   const handleSubmit = async (e: Event) => {
     e.preventDefault();
     errors = {};
@@ -119,9 +129,11 @@
   };
 </script>
 
+<!-- Checkout From Window -->
 <Window windowTitle="Checkout.exe" width="450px">
   <form onsubmit={handleSubmit}>
-    <label for="name">Full Name:</label>
+    <!-- Name -->
+    <label for="name">Name:</label>
     <input
       type="text"
       aria-label="Name"
@@ -131,6 +143,7 @@
     />
     {#if errors.name}<p>{errors.name}</p>{/if}
 
+    <!-- Email -->
     <label for="email">Email:</label>
     <input
       type="email"
@@ -142,6 +155,7 @@
     />
     {#if errors.email}<p>{errors.email}</p>{/if}
 
+    <!-- Phone Number -->
     <label for="phone">Phone Number:</label>
     <input
       id="phone"
@@ -152,10 +166,12 @@
     />
     {#if errors.phone}<p>{errors.phone}</p>{/if}
 
+    <!-- Personal ID -->
     <label for="personalId">Personal ID</label>
     <input id="personalId" type="text" bind:value={form.personalId} placeholder="YYMMDD-XXXX" />
     {#if errors.personalId}<p>{errors.personalId}</p>{/if}
 
+    <!-- Postal Address -->
     <label for="postalAddress">Postal Adress</label>
     <input
       id="postalAddress"
@@ -166,6 +182,7 @@
     />
     {#if errors.postalAddress}<p>{errors.postalAddress}</p>{/if}
 
+    <!-- Zip Code -->
     <label for="zipCode">Zip Code</label>
     <input
       id="zipCode"
@@ -176,6 +193,7 @@
     />
     {#if errors.zipCode}<p>{errors.zipCode}</p>{/if}
 
+    <!-- Card Number -->
     <label for="cardNumber">Card Number:</label>
     <input
       id="cardNumber"
@@ -185,10 +203,12 @@
     />
     {#if errors.cardNumber}<p>{errors.cardNumber}</p>{/if}
 
+    <!-- CVV -->
     <label for="cvv">cvv</label>
     <input id="cvv" type="text" bind:value={form.cvv} placeholder="123" maxlength="4" />
     {#if errors.cvv}<p>{errors.cvv}</p>{/if}
 
+    <!-- Submit and Reset Buttons -->
     <div class="contact-buttons">
       <button type="submit">Pay</button>
       <button type="reset">Reset</button>
@@ -196,6 +216,7 @@
   </form>
 </Window>
 
+<!-- Feedback Modal -->
 {#if showFeedbackModal}
   <ModalOverlay />
   <div class="confrimation-modal">

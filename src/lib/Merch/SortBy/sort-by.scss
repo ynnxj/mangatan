@@ -1,3 +1,4 @@
+// Sort buttons container styles
 .sort-container {
   display: flex;
   flex-direction: row;
@@ -9,10 +10,10 @@
     font-weight: bold;
   }
 
+  // Sort buttons
   .name,
   .price,
-  .category,
-  .reset {
+  .category {
     height: 28px;
     padding: 0 12px;
     background: var(--win98-button-face);
@@ -39,6 +40,7 @@
     }
   }
 
+  // Category list dropdown styles
   .category-list {
     position: absolute;
     padding: 0 10px;
@@ -50,6 +52,7 @@
     border-right-color: var(--win98-button-shadow);
     border-bottom-color: var(--win98-button-shadow);
 
+    // Category list
     .categories {
       li {
         text-align: left;

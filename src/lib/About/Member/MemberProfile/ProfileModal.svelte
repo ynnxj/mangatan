@@ -6,18 +6,21 @@
   let { profile } = $props<{ profile: Profile }>();
 </script>
 
+<!-- Profile Modal -->
 <article class={profile.themeClass}>
+  <!-- Info Box-->
   <div class="info-box box">
     <div>
       <img src={profile.img} alt={`a portrait of ${profile.name}`} class="profile-img" />
     </div>
     <div class="info-text">
       <h3>{profile.name}</h3>
-      <img src={profile.divider} alt="A gif" class="divider" />
+      <img src={profile.divider} alt="A divider" class="divider" />
       <p>{profile.desc}</p>
     </div>
   </div>
 
+  <!-- Likes Box -->
   <div class="likes-list box">
     <h4>Likes</h4>
     <ul>
@@ -28,9 +31,10 @@
         </li>
       {/each}
     </ul>
-    <img src={profile.listGif} alt="A gif" class="list-img" />
+    <img src={profile.listGif} alt="A moving gif" class="list-img" />
   </div>
 
+  <!-- Fav Song Box -->
   <div class="fav-song box">
     <div>
       <h4>Favorite song</h4>
@@ -50,7 +54,8 @@
     </div>
   </div>
 
+  <!-- Fav Image Box -->
   <div class="fav-img box">
-    <img src={profile.favImg} alt="favorite img" class="fav-img" />
+    <img src={profile.favImg} alt="Band members favorite img" class="fav-img" />
   </div>
 </article>

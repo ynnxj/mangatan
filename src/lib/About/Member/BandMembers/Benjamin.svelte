@@ -5,6 +5,9 @@
   import listGif from '$lib/Icons/Gifs/Crow.gif';
   import divider from '$lib/Icons/Dividers/SwordDivider.png';
 
+  /* -------------------------------------------------------------------------- */
+  /*                           Benjamin's Profile Data                          */
+  /* -------------------------------------------------------------------------- */
   const benjaminProfile: Profile = {
     name: 'Benjamin',
     img: '/assets/images/benjamin/benjamin.png',

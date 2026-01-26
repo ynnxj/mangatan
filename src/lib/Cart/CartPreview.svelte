@@ -47,6 +47,7 @@
   };
 </script>
 
+<!-- Shopping Bag Icon w Badge -->
 <button class="shopping-bag" onclick={toggleCart}>
   <img src={paperBag} alt="A brown paper shopping bag" />
   {#if totalItems() > 0}
@@ -55,7 +56,10 @@
 </button>
 
 {#if isCartOpen}
+  <!-- Modal Overlay -->
   <ModalOverlay />
+
+  <!-- Cart Preview Sidebar-->
   <div class="cart-preview" use:overlayClick={toggleCart}>
     <div class="cart-preview-header">
       <h3 class="cart-preview-title">Cart</h3>
@@ -63,10 +67,12 @@
         ><img src={closeBtn} alt="Close window button" /></button
       >
     </div>
+    <!-- Cart Content -->
     <div class="cart-content">
       {#if props.cart.length === 0}
         <p class="empty-text">Your cart is empty</p>
       {:else}
+        <!-- Items in Cart List -->
         <ul>
           {#each props.cart as cartItem}
             <li>
@@ -86,6 +92,7 @@
             </li>
           {/each}
         </ul>
+        <!-- Subtotal Section -->
         <div class="subtotal-text">
           <span class="subtotal">Subtotal: </span>
           <span>{props.cartTotal} SEK</span>
@@ -93,6 +100,7 @@
       {/if}
     </div>
     {#if props.cart.length > 0}
+      <!-- Checkout Button -->
       <a href="/merch/checkout" class="checkout-btn">Checkout</a>
     {/if}
   </div>

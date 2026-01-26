@@ -2,6 +2,7 @@
   import Window from '$lib/WindowBorder/Window.svelte';
 </script>
 
+<!-- Feedback Modal -->
 <Window windowTitle="Order Confirmed">
   <div class="feedback-modal">
     <div class="feedback-title">
@@ -22,6 +23,7 @@
 </Window>
 
 <style lang="scss">
+  // Feedback Modal Styles
   .feedback-modal {
     display: flex;
     flex-direction: column;
@@ -70,8 +72,5 @@
         }
       }
     }
-  }
-
-  @media (max-width: 768px) {
   }
 </style>

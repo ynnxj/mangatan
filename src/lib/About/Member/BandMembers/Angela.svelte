@@ -5,6 +5,9 @@
   import listGif from '$lib/Icons/Gifs/Gyaru.webp';
   import divider from '$lib/Icons/Dividers/PinkDivider.webp';
 
+  /* -------------------------------------------------------------------------- */
+  /*                            Angela's Profile Data                           */
+  /* -------------------------------------------------------------------------- */
   const angelaProfile: Profile = {
     name: 'Angela Rocky',
     img: '/assets/images/angela/angela.png',

@@ -1,19 +1,24 @@
 <script lang="ts">
   import TopBorder from './TopBorder.svelte';
 
-  export let windowTitle: string = 'Window Title',
-    width: string | null = null,
-    Class: string = '';
+  // Props
+  export let windowTitle: string = 'Window Title', // Optional window title
+    width: string | null = null, // Optional window width
+    Class: string = ''; // Optional extra class
 </script>
 
+<!-- Window Container -->
 <div class="window {Class}" style={width ? `width: ${width};` : undefined}>
+  <!-- Window Top Border -->
   <TopBorder title={windowTitle} />
+  <!-- Window Content -->
   <div class="window-content">
     <slot />
   </div>
 </div>
 
 <style lang="scss">
+  // Window container default styles
   .window {
     position: relative;
     max-width: none;
@@ -31,6 +36,7 @@
     }
   }
 
+  // Responsive styles
   @media (max-width: 768px) {
     .window {
       max-width: 500px;

@@ -11,9 +11,11 @@
 </script>
 
 {#if side === 'left'}
+  <!-- Left Side Panel -->
   <Window windowTitle="Important Links" Class="panel-container {side}">
     <h4 class="panel-under-title">Social Media</h4>
     <div class="links">
+      <!-- Social Media Links -->
       <ul class="links-list">
         {#each socialMedia as item}
           <li>
@@ -28,9 +30,10 @@
     <img class="left-img" src={desktop} alt="Web stamp saying best viewed on desktop" />
   </Window>
 {:else}
-  <!-- TODO: sort it by date -->
+  <!-- Right Side Panel -->
   <Window windowTitle="News.exe" Class="panel-container {side}">
     <h4 class="panel-under-title">Updates</h4>
+    <!-- News List -->
     <ul class="news-list-section">
       {#if news.length > 0}
         {#each news as post}
@@ -51,6 +54,7 @@
           </li>
         {/each}
       {:else}
+        <!-- If no posts -->
         <li>No posts available</li>
       {/if}
     </ul>
