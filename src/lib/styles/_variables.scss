@@ -1,0 +1,46 @@
+:root {
+  // Base colors
+  --win98-light-gray: #e0e0e0;
+  --win98-gray: #c0c0c0;
+  --win98-dark-gray: #808080;
+  --win98-darker-gray: #404040;
+  --win98-black: #000000;
+  --win98-white: #ffffff;
+
+  // Accent colors
+  --win98-blue: #000080;
+  --win98-accent-blue: blue;
+  --win98-light-blue: #3bb7dd;
+  --win98-accent-pink: #ff00ff;
+  --win98-accent-purple: rgb(97, 53, 155);
+  --win98-accent-hover: #d4d4d4;
+  --win98-accent-active: rgb(219, 219, 219);
+
+  // Windows 98 button colors
+  --win98-button-face: #c0c0c0;
+  --win98-button-shadow: #808080;
+  --win98-button-highlight: #ffffff;
+  --win98-button-dark-shadow: #404040;
+  --win98-window-bg: #c0c0c0;
+
+  // Windows 7 button colors
+  --win7-button-face: linear-gradient(
+    to bottom,
+    #f2f2f2 0%,
+    #d4d6e6 50%,
+    #8996bb 51%,
+    #cfcfcf 100%
+  );
+  --win7-button-hover: linear-gradient(
+    to bottom,
+    #eaf6fd 0%,
+    #d9f0fc 50%,
+    #bee6fd 51%,
+    #a7d9f5 100%
+  );
+
+  // Fonts
+  --win98-font: 'MS Sans Serif', 'Microsoft Sans Serif', Arial, sans-serif;
+  --win98-font-size: 11px;
+  --win98-font-title: 'Orbitron', sans-serif;
+}

@@ -1,0 +1,47 @@
+// Default global styles
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--win98-font);
+  font-size: var(--win98-font-size);
+  background-image: url('/assets/images/background/main-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--win98-black);
+  overflow-x: hidden;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin: 90px 270px;
+}
+
+// Lists
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+// Buttons
+button:hover {
+  cursor: pointer;
+}
+
+// Responsive styles
+@media (max-width: 1050px) {
+  main {
+    margin: 90px 80px;
+  }
+}
