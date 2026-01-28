@@ -157,6 +157,7 @@
 }
 
 // Responsive styles
+
 @media (max-width: 768px) {
   // Shopping / paper bag icon
   .shopping-bag {
@@ -197,5 +198,39 @@
         color: var(--win98-white);
       }
     }
+  }
+}
+
+@media (max-height: 500px) {
+  .cart-preview {
+    height: 100%;
+    overflow-y: visible;
+
+    .cart-content ul li {
+      font-size: 1rem;
+      margin-bottom: 0;
+
+      img {
+        margin-bottom: 0;
+        width: 20%;
+      }
+    }
+
+    // Checkout button
+    .checkout-btn {
+      font-size: 1.2rem;
+      align-self: end;
+      margin-bottom: 60px;
+      margin-right: 10px;
+
+      &:hover {
+        background: var(--win7-button-hover);
+      }
+    }
+  }
+
+  .cart-preview .cart-content .subtotal-text {
+    font-size: 1rem;
+    padding: 10px;
   }
 }
