@@ -7,21 +7,36 @@
   width: 100%;
 
   .highlight-wmp {
-    background-image: url('/assets/images/mangatan/radarn.gif');
-    background-repeat: no-repeat;
-    background-position: center 10px;
-    background-size: 100%;
+    position: relative;
     border-radius: 30px;
-    filter: drop-shadow(1px 1px 5px var(--win98-black));
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('/assets/images/mangatan/radarn.gif') no-repeat center 10px / 100%;
+      filter: grayscale(100%) drop-shadow(1px 1px 5px var(--win98-black));
+      transition: filter 0.2s ease;
+      z-index: 0;
+    }
+
+    &:hover::before {
+      filter: grayscale(0);
+    }
 
     .wmp {
-      z-index: 10;
+      position: relative;
+      z-index: 1;
       width: 100%;
       height: auto;
+      cursor: pointer;
+      filter: drop-shadow(1px 1px 5px var(--win98-black));
+    }
 
-      &:hover {
-        cursor: pointer;
-      }
+    &:hover {
+      cursor: pointer;
+      filter: drop-shadow(1px 1px 5px var(--win98-white));
     }
   }
 }

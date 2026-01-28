@@ -4,8 +4,8 @@
   font-weight: 400;
   margin: 10px 0;
   padding: 0 10px;
-  color: var(--win98-white);
-  background-color: var(--win98-darker-gray);
+  color: var(--win98-black);
+  text-shadow: 1px 1px 10px var(--win98-black);
   font-family: 'Orbitron', sans-serif;
 }
 
@@ -29,9 +29,9 @@
   }
 
   .image {
-    min-width: 300px;
-    width: 500px;
-    height: auto;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
     border: 1px solid var(--win98-black);
   }
 
