@@ -2,12 +2,14 @@
   import Window from '$lib/WindowBorder/Window.svelte';
   import type { Post } from '$lib/types/posts';
   import SpinningStar from '$lib/Icons/SmallIcons/SpinningStar.gif';
-  import desktop from '$lib/Icons/WebStamps/Desktop.webp';
   import './side-panel.scss';
   import { socialMedia } from '$lib/data/socialMedia';
 
   export let side: 'left' | 'right';
   export let news: Post[] = [];
+
+  // Sort news by date
+  $: sortedNews = [...news].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 </script>
 
 {#if side === 'left'}
@@ -27,7 +29,6 @@
         {/each}
       </ul>
     </div>
-    <img class="left-img" src={desktop} alt="Web stamp saying best viewed on desktop" />
   </Window>
 {:else}
   <!-- Right Side Panel -->
@@ -35,12 +36,13 @@
     <h4 class="panel-under-title">Updates</h4>
     <!-- News List -->
     <ul class="news-list-section">
-      {#if news.length > 0}
-        {#each news as post}
+      {#if sortedNews.length > 0}
+        {#each sortedNews as post}
           <li class="post">
             <div>
               <h4 class="post-title">{post.title}</h4>
               <p class="post-text">{post.text}</p>
+              <span class="author">/ {post.author}</span>
               <p class="post-date">
                 {new Date(post.date).toLocaleDateString('en-US', {
                   weekday: 'long',
@@ -49,7 +51,6 @@
                   day: 'numeric'
                 })}
               </p>
-              <span class="author">/ {post.author}</span>
             </div>
           </li>
         {/each}
