@@ -30,7 +30,7 @@
 
 <!-- Contact Form -->
 <Window windowTitle={'Contact Us'} width="600px">
-  <h3 class="form-title">Send a Message</h3>
+  <h3 class="form-title">Send a Message ✮⋆˙</h3>
 
   <!-- Name -->
   <form method="post" action="/contact" onsubmit={handleSubmit}>

@@ -1,6 +1,5 @@
 <script lang="ts">
   import Window from '$lib/WindowBorder/Window.svelte';
-  import sparkleFilter from '$lib/Icons/Frames/SparkleFilter.gif';
 </script>
 
 <!-- Message Container -->
@@ -8,26 +7,20 @@
   <div class="message-container">
     <div class="message-text">
       <p>
-        Please visit us on social media or leave a message if you have any questions or just want to
-        say hi, and we'll get back to you as soon as possible. We appreciate all the love and
-        support!
+        Hello and thank you for visiting our website! Please, check out our social media, listen to
+        our music, and leave a message if you have any questions or just want to say hi. We'll get
+        back to you as soon as possible and we appreciate all the love and support.
       </p>
-      <pre class="love-cat">
-  ∧,,,∧
-( ̳• · • ̳)
-/   づ♡ We love you
-          </pre>
+      <pre class="divider">
+─ ⊹ ⊱ ☆ ⊰ ⊹ ─
+      </pre>
     </div>
 
     <div class="image-container">
-      <img src={sparkleFilter} class="sparkle" alt="sparkle" />
-      <img
-        src="/assets/images/mangatan/group-half-cold.jpg"
-        class="contact-img"
-        alt="Band portrait"
-      />
+      <img src="/assets/images/mangatan/mangatan-bw.png" class="contact-img" alt="Band portrait" />
     </div>
   </div>
+  <p class="love">xoxo Mångatan</p>
 </Window>
 
 <style lang="scss">
@@ -51,13 +44,17 @@
       max-width: 100%;
       border: 1px solid var(--win98-black);
     }
-
-    .sparkle {
-      position: absolute;
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      filter: grayscale(100%);
-    }
+  }
+  .love {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    text-align: end;
+    margin-top: 0;
+    font-size: 1.2rem;
+  }
+  .divider {
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: center;
   }
 </style>

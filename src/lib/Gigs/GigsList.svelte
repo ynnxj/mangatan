@@ -7,7 +7,7 @@
 
 <!-- Gigs List Container -->
 <Window windowTitle="Gigs" width="600px">
-  <h3 class="gigs-title">⋆ Upcoming gigs ⋆‧°𓏲ּ𝄢</h3>
+  <h3 class="gigs-title">⋆ Upcoming gigs ⋆‧°</h3>
   <!-- List of Gigs -->
   <ul class="gigs-list">
     {#if gigs.length > 0}
@@ -39,7 +39,7 @@
   // Gigs list styles
   .gigs-title {
     font-family: var(--win98-font-title);
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 400;
     margin: 30px 0;
     padding: 0 10px;

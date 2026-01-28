@@ -1,7 +1,7 @@
 // Merch item list container
 .merch-list {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(2, 400px);
   gap: 30px;
 
   .item-img {
