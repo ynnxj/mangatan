@@ -12,16 +12,14 @@
     name: 'Luna',
     img: '/assets/images/luna/luna.png',
     desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-    nisi ut aliquip ex ea commodo consequat.`,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
     likes: ['Lorem ipsum', 'Dolor', 'Sit amet'],
     favSong: {
       title: 'PRATA TILL PUNK',
       artist: 'LNK',
       songLink: 'soundcloud%253Atracks%253A1738505556&color=%23ff0099'
     },
-    favImg: '/assets/images/luna/luna-fav-img.png',
+    favImg: '/assets/images/luna/luna-fav.jpg',
     listIcon,
     listGif,
     divider,

@@ -37,7 +37,7 @@
   </pre>
 
 <!-- About Member Title -->
-<h3 class="title-members">⋆ Members ⋆⭒˚.⋆𝜗𝜚</h3>
+<h3 class="title-members">⋆ Members ⋆⭒˚.⋆</h3>
 <!-- About Member Container -->
 <div class="about-members">
   <!-- Member List -->

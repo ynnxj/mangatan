@@ -5,16 +5,16 @@
   margin: 30px 0;
   margin-top: 70px;
   padding: 0 10px;
-  color: black;
+  color: var(--win98-black);
   text-shadow: 1px 1px 5px var(--win98-black);
-  font-family: 'Orbitron', sans-serif;
+  font-family: var(--win98-font-title);
 }
 
 // Star emotion
 .star-emoticon {
   transform: scale(-1, 1);
   right: 5%;
-  top: 37%;
+  top: 38%;
   position: absolute;
 }
 
@@ -71,8 +71,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   border: 1px solid var(--win98-black);
-  width: 900px;
-  height: 700px;
+  width: 1000px;
+  height: 800px;
   z-index: 40;
   background-size: cover;
 
@@ -92,7 +92,23 @@
 }
 
 // Responsive styles
-@media (max-width: 768px) {
+
+@media (max-width: 1050px) {
+  .member {
+    width: 900px;
+    height: 700px;
+  }
+}
+
+@media (max-width: 905px) {
+  .member {
+    width: 100%;
+    height: 60%;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 768px), (max-height: 500px) {
   .star-emoticon {
     display: none;
   }

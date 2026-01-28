@@ -12,16 +12,14 @@
     name: 'Angela Rocky',
     img: '/assets/images/angela/angela.png',
     desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-    nisi ut aliquip ex ea commodo consequat.`,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
     likes: ['Lorem ipsum', 'Dolor', 'Sit amet'],
     favSong: {
       title: 'Meltdown',
       artist: 'Iroha(sasaki)',
       songLink: 'soundcloud%253Atracks%253A1062635944&color=%23ff01e3'
     },
-    favImg: '/assets/images/angela/angela-full-cold.jpg',
+    favImg: '/assets/images/angela/angela-fav.png',
     listIcon,
     listGif,
     divider,

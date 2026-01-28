@@ -12,9 +12,7 @@
     name: 'Frida',
     img: '/assets/images/frida/frida.png',
     desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-    nisi ut aliquip ex ea commodo consequat.`,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
     likes: ['Lorem ipsum', 'Dolor', 'Sit amet'],
     favSong: {
       title: 'September Gurls',

@@ -3,15 +3,16 @@ article {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   justify-items: center;
+  align-items: center;
   padding: 80px;
 
   // All box styles
   .box {
     background-color: var(--profile-bg-color);
-    padding: 10px 20px;
+    padding: 20px;
     border: 20px solid transparent;
     background-clip: padding-box;
     border-image: var(--profile-border-img);
@@ -65,7 +66,7 @@ article {
     align-items: center;
 
     p {
-      width: 200px;
+      width: 100%;
       text-align: justify;
       font-size: 1rem;
     }
@@ -119,17 +120,54 @@ article {
   position: absolute;
   top: 10px;
   right: 10px;
+  z-index: 100;
 }
 
 // Responsive styles
-@media (max-width: 768px) {
+@media (max-width: 1050px) {
+  article {
+    gap: 5px;
+    padding: 40px 20px;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 905px) {
+  article {
+    .box .profile-img {
+      width: 100px;
+    }
+
+    // Info box
+    .info-text p,
+    .info-text .divider {
+      width: 90%;
+    }
+
+    // Fav song box
+    .fav-song {
+      .fav-song-link {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px), (max-height: 500px) {
   article {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    justify-items: center;
-    padding: 30px 5px;
-    margin-bottom: 120px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    padding-bottom: 100px;
+
+    max-width: 400px;
+    min-width: 0;
+    margin: 0 auto;
+    height: auto;
+    overflow-y: visible;
 
     // Likes list box
     .likes-list .list-img {
@@ -141,15 +179,8 @@ article {
       flex-direction: column;
       text-align: center;
 
-      p {
-        width: 100%;
-      }
-
-      .profile-img {
-        width: 100px;
-        margin: 0;
-      }
-
+      p,
+      .profile-img,
       .divider {
         width: 100%;
       }
@@ -168,6 +199,7 @@ article {
 
   .exit-btn {
     position: sticky;
-    top: 10px;
+    top: 30px;
+    left: 30px;
   }
 }
