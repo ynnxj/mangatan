@@ -14,7 +14,7 @@
 
 {#if side === 'left'}
   <!-- Left Side Panel -->
-  <Window windowTitle="Important Links" Class="panel-container {side}">
+  <Window windowTitle="Links.exe" Class="panel-container {side}">
     <h4 class="panel-under-title">Social Media</h4>
     <div class="links">
       <!-- Social Media Links -->
