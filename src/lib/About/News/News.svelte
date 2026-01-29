@@ -7,7 +7,7 @@
 
 <!-- News Container-->
 <Window windowTitle="News.exe" width="600px">
-  <h4 class="updates-title">Updates</h4>
+  <h4 class="updates-title win7-title">Updates ☆</h4>
   <!-- News Data List -->
   <ul class="news-list">
     {#if news.length > 0}
@@ -38,6 +38,11 @@
 
 <style lang="scss">
   // News lists styles
+  .updates-title {
+    font-size: 2.5rem;
+    margin: 20px 0;
+  }
+
   .news-list {
     li {
       background-color: var(--win98-white);

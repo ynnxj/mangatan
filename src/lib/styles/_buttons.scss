@@ -2,10 +2,11 @@
 .win7-btn {
   padding: 10px 30px;
   margin-bottom: 15px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: 'Orbitron', sans-serif;
   align-self: center;
   text-shadow: 1px 1px 2px var(--win98-black);
+  text-decoration: none;
   border: 1px solid var(--win98-white);
   box-shadow: 0 0 0 1px var(--win98-dark-gray);
   border-radius: 15px;
@@ -22,7 +23,7 @@
 // Windows 98 style button
 .win98-btn {
   height: 28px;
-  padding: 0 5px;
+  padding: 0 10px;
   background: var(--win98-button-face);
   border: 2px solid;
   border-top-color: var(--win98-button-highlight);

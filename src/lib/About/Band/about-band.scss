@@ -1,12 +1,7 @@
 // About Band Section Styles
 .about-greeting-title {
   font-size: 5rem;
-  font-weight: 400;
   margin: 10px 0;
-  padding: 0 10px;
-  color: var(--win98-black);
-  text-shadow: 1px 1px 10px var(--win98-black);
-  font-family: 'Orbitron', sans-serif;
 }
 
 .about {
@@ -21,7 +16,7 @@
   box-shadow: 1px 1px 4px var(--win98-darker-gray);
 
   .about-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 400;
     font-family: 'Orbitron', sans-serif;
     margin: 0;

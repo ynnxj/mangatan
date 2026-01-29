@@ -11,23 +11,8 @@
   }
 
   // Add to cart button
-  .add-to-cart {
-    button {
-      height: 28px;
-      padding: 0 12px;
-      background: var(--win98-button-face);
-      border: 2px solid;
-      border-top-color: var(--win98-button-highlight);
-      border-left-color: var(--win98-button-highlight);
-      border-right-color: var(--win98-button-shadow);
-      border-bottom-color: var(--win98-button-shadow);
-      color: var(--win98-black);
-      align-items: center;
-
-      &:hover {
-        background: var(--win98-accent-hover);
-      }
-    }
+  .add-btn {
+    align-items: center;
   }
 }
 
@@ -54,21 +39,6 @@
   }
 
   button {
-    height: 28px;
-    padding: 0 12px;
-    background: var(--win98-button-face);
-    border: 2px solid;
-    border-top-color: var(--win98-button-highlight);
-    border-left-color: var(--win98-button-highlight);
-    border-right-color: var(--win98-button-shadow);
-    border-bottom-color: var(--win98-button-shadow);
-    color: var(--win98-black);
-    align-items: center;
-
-    &:hover {
-      background: var(--win98-accent-hover);
-    }
-
     a {
       color: var(--win98-black);
       text-decoration: none;
@@ -94,7 +64,7 @@
   // Added to cart Modal
   .added-modal {
     p {
-      font-size: 1.5rem;
+      font-size: 1rem;
       padding: 0px;
       text-align: center;
     }
@@ -105,9 +75,7 @@
     }
 
     button {
-      height: 38px;
-      padding: 0;
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
   }
 }

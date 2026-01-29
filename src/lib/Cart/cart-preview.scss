@@ -49,7 +49,7 @@
     .cart-preview-title {
       font-family: 'Times New Roman', Times, serif;
       font-style: italic;
-      font-size: 3rem;
+      font-size: 2rem;
       margin: 0;
       padding: 20px 30px;
     }
@@ -73,7 +73,7 @@
     // Message for empty cart
     .empty-text {
       padding: 20px;
-      font-size: 2rem;
+      font-size: 1.5rem;
       text-align: center;
     }
 
@@ -90,7 +90,7 @@
         flex-direction: row;
         gap: 20px;
         align-items: center;
-        font-size: 1.5rem;
+        font-size: 1rem;
         border-bottom: 1px solid var(--win98-accent-blue);
         margin-bottom: 30px;
 
@@ -107,7 +107,7 @@
 
     // Subtotal section
     .subtotal-text {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       text-align: right;
       padding: 20px;
 
@@ -125,39 +125,26 @@
     margin: 15px 0;
     width: 100px;
     padding: 10px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     background-color: var(--win98-blue);
     color: var(--win98-white);
 
     button {
       background: none;
       border: none;
-      font-size: 2rem;
+      font-size: 1.2rem;
       color: var(--win98-white);
     }
   }
 
   // Checkout button
   .checkout-btn {
-    font-size: 2rem;
-    text-decoration: none;
-    color: var(--win98-white);
-    text-shadow: 1px 1px 1px var(--win98-black);
     align-self: center;
-    padding: 10px 15px;
-    background: var(--win7-button-face);
-    border-radius: 15px;
-    border: 1px solid var(--win98-white);
     margin-bottom: 90px;
-
-    &:hover {
-      background: var(--win7-button-hover);
-    }
   }
 }
 
 // Responsive styles
-
 @media (max-width: 768px) {
   // Shopping / paper bag icon
   .shopping-bag {

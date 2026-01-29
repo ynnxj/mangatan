@@ -30,7 +30,7 @@
 
 <!-- Contact Form -->
 <Window windowTitle={'Contact Us'} width="600px">
-  <h3 class="form-title">Send a Message ✮⋆˙</h3>
+  <h3 class="form-title win7-title">Send a Message ✮⋆˙</h3>
 
   <!-- Name -->
   <form method="post" action="/contact" onsubmit={handleSubmit}>
@@ -47,8 +47,8 @@
 
     <!-- Buttons-->
     <div class="contact-buttons">
-      <button type="submit">Send</button>
-      <button type="reset">Reset</button>
+      <button type="submit" class="win7-btn">Send</button>
+      <button type="reset" class="win7-btn">Reset</button>
     </div>
   </form>
 

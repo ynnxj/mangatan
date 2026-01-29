@@ -210,8 +210,8 @@
 
     <!-- Submit and Reset Buttons -->
     <div class="contact-buttons">
-      <button type="submit">Pay</button>
-      <button type="reset">Reset</button>
+      <button type="submit" class="win7-btn">Pay</button>
+      <button type="reset" class="win7-btn">Reset</button>
     </div>
   </form>
 </Window>

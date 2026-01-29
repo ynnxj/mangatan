@@ -132,7 +132,7 @@
             <p class="item-stock">{isInStock(item) ? 'In stock' : 'Sold out'}</p>
             <!-- Add to Cart Button -->
             <div class="add-to-cart">
-              <button class="add-btn" onclick={() => addToCart(item)}>Add to Cart</button>
+              <button class="add-btn win98-btn" onclick={() => addToCart(item)}>Add to Cart</button>
             </div>
           </Window>
         </li>
@@ -160,8 +160,8 @@
         <p>˖⟡˚Added item to Cart˚⟡˖ ࣪</p>
         <!-- Button Container -->
         <div class="btn-container">
-          <button onclick={closeAddModal}>Continue shopping</button>
-          <button><a href="merch/checkout">Go to checkout</a></button>
+          <button class="win98-btn" onclick={closeAddModal}>Continue shopping</button>
+          <button class="win98-btn"><a href="merch/checkout">Go to checkout</a></button>
         </div>
       </Window>
     </div>

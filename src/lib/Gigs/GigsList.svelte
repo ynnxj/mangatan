@@ -7,7 +7,7 @@
 
 <!-- Gigs List Container -->
 <Window windowTitle="Gigs" width="600px">
-  <h3 class="gigs-title">⋆ Upcoming gigs ⋆‧°</h3>
+  <h3 class="gigs-title win7-title">⋆ Upcoming gigs ⋆‧°</h3>
   <!-- List of Gigs -->
   <ul class="gigs-list">
     {#if gigs.length > 0}
@@ -25,7 +25,7 @@
               })}
             </p>
           </div>
-          <a class="tickets" target="_blank" href={gig.tickets_link}>Tickets</a>
+          <a class="win7-btn" target="_blank" href={gig.tickets_link}>Tickets</a>
         </li>
       {/each}
     {:else}
@@ -38,13 +38,8 @@
 <style lang="scss">
   // Gigs list styles
   .gigs-title {
-    font-family: var(--win98-font-title);
     font-size: 3rem;
-    font-weight: 400;
     margin: 30px 0;
-    padding: 0 10px;
-    color: var(--win98-black);
-    text-shadow: 1px 1px 5px var(--win98-black);
   }
 
   .gigs {
@@ -57,24 +52,6 @@
     border: 2px solid var(--win98-white);
     border-right: 2px solid var(--win98-dark-gray);
     border-bottom: 2px solid var(--win98-dark-gray);
-
-    .tickets {
-      padding: 10px 30px;
-      font-size: 1.2rem;
-      align-self: center;
-      text-shadow: 1px 1px 2px var(--win98-black);
-      border: 1px solid var(--win98-white);
-      box-shadow: 0 0 0 1px var(--win98-dark-gray);
-      border-radius: 15px;
-      background: var(--win7-button-face);
-      color: white;
-
-      &:hover {
-        border: 1px solid var(--win98-white);
-        box-shadow: 0 0 0 1px var(--win98-light-blue);
-        background: var(--win7-button-hover);
-      }
-    }
   }
 
   // Responsive styles

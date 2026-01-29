@@ -101,7 +101,7 @@
     </div>
     {#if props.cart.length > 0}
       <!-- Checkout Button -->
-      <a href="/merch/checkout" class="checkout-btn">Checkout</a>
+      <a href="/merch/checkout" class="checkout-btn win7-btn">Checkout</a>
     {/if}
   </div>
 {/if}

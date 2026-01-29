@@ -55,7 +55,7 @@
           <span>{totalWithShipping} SEK</span>
         </div>
       </div>
-      <a href="/merch">Edit Cart</a>
+      <a href="/merch" class="win7-btn">Edit Cart</a>
     </div>
   </div>
 </Window>
@@ -64,18 +64,18 @@
   // Order summary styles
   .order-summary {
     .order-title {
-      font-size: 2rem;
-      margin: 0;
+      font-size: 1.5rem;
+      margin-bottom: 0;
     }
 
     .order-item {
       display: flex;
       gap: 10px;
       margin-top: 20px;
-      border: 1px solid black;
+      border: 1px solid var(--win98-black);
 
       .item-name {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         padding-right: 10px;
       }
 
@@ -96,28 +96,9 @@
         .total {
           font-size: 1.5rem;
         }
+
         .strong {
           font-weight: bold;
-        }
-      }
-
-      a {
-        padding: 10px 30px;
-        font-size: 1.2rem;
-        font-family: 'Orbitron', sans-serif;
-        align-self: center;
-        text-shadow: 1px 1px 2px var(--win98-black);
-        border: 1px solid var(--win98-white);
-        box-shadow: 0 0 0 1px var(--win98-dark-gray);
-        border-radius: 15px;
-        background: var(--win7-button-face);
-        color: white;
-        text-decoration: none;
-
-        &:hover {
-          border: 1px solid #ecf7fd;
-          box-shadow: 0 0 0 1px var(--win98-light-blue);
-          background: var(--win7-button-hover);
         }
       }
     }

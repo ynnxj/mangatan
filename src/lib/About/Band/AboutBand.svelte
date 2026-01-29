@@ -3,11 +3,11 @@
 </script>
 
 <!-- About the Band Section-->
-<h2 class="about-greeting-title">⋆Welcome⋆˙―</h2>
+<h2 class="about-greeting-title win7-title">⋆Welcome⋆˙―</h2>
 <div class="about">
   <img
     class="image"
-    src="/assets/images/mangatan/about-img.jpg"
+    src="/assets/images/mangatan/about-img.png"
     alt="Group portrait of the band Mångatan"
     width="828"
     height="853"

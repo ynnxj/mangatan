@@ -16,8 +16,8 @@
     </div>
 
     <div class="links-container">
-      <a href="/merch">Continue</a>
-      <a href="/">Back to Start</a>
+      <a href="/merch" class="win98-btn">Continue</a>
+      <a href="/" class="win98-btn">Back to Start</a>
     </div>
   </div>
 </Window>
@@ -31,7 +31,7 @@
     z-index: 50;
 
     .feedback-title {
-      font-size: 3rem;
+      font-size: 2rem;
       padding: 0 0px;
 
       pre {
@@ -41,7 +41,7 @@
     }
 
     .feedback-text {
-      font-size: 1.5rem;
+      font-size: 1rem;
       padding: 0 50px;
     }
 
@@ -51,26 +51,6 @@
       gap: 10px;
       align-self: end;
       padding: 10px 5px;
-
-      a {
-        padding: 10px 30px;
-        font-size: 1.2rem;
-        text-decoration: none;
-        font-family: 'Orbitron', sans-serif;
-        align-self: center;
-        text-shadow: 1px 1px 2px var(--win98-black);
-        border: 1px solid var(--win98-white);
-        box-shadow: 0 0 0 1px var(--win98-dark-gray);
-        border-radius: 15px;
-        background: var(--win7-button-face);
-        color: white;
-
-        &:hover {
-          border: 1px solid #ecf7fd;
-          box-shadow: 0 0 0 1px var(--win98-light-blue);
-          background: var(--win7-button-hover);
-        }
-      }
     }
   }
 </style>

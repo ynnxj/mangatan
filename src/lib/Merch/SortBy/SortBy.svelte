@@ -25,14 +25,14 @@
   <span>Sort by:</span>
   <!-- A-Z Sorting -->
   <button
-    class="name {sortBy === 'name' ? 'active' : ''}"
+    class="win98-btn name {sortBy === 'name' ? 'active' : ''}"
     onclick={() => onSort?.(sortBy === 'name' ? '' : 'name')}
   >
     A→Z{sortBy === 'name' ? ' ✕' : ''}
   </button>
   <!-- Rising Price Sorting-->
   <button
-    class="price {sortBy === 'price' ? 'active' : ''}"
+    class="win98-btn price {sortBy === 'price' ? 'active' : ''}"
     onclick={() => onSort?.(sortBy === 'price' ? '' : 'price')}
   >
     ↑ Price {sortBy === 'price' ? ' ✕' : ''}
@@ -40,7 +40,7 @@
   <div>
     <!-- Category Dropdown-->
     <button
-      class="category"
+      class="win98-btn category"
       onclick={toggleCategoryBtn}
       use:overlayClick={() => (showCategories = false)}>Category</button
     >
